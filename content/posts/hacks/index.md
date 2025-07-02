@@ -1,24 +1,24 @@
 +++
-title = "never trust your vendor"
+title = "Unleash a notebook's de-facto RAM capacity"
 date = 2025-05-16T12:00:00Z
 updated =  2025-05-20T12:00:00Z
 [taxonomies]
-categories = ["hardware"]
-tags = ["hacks", "notebooks", "linux"]
+categories = ["hardware", "late_capitalism"]
+tags = ["hacks", "notebooks", "linux", "DIY"]
 [extra]
-subtitle = "Hack your vendor's RAM capacity"
+subtitle = "How to hack your vendor's RAM capacity"
 disable_comments = true
 image = "urban.gif"
 +++
 
-## Vendors tend to lie for profit
+## Vendors may lie for profit
 
 <br>
 
 <p class="notice_warning"><strong>🐧 Attention! you'll need a <em>linux</em> powered operating system! 🐧</strong></p>
 
 <br>
-<p class="notice_danger"><strong>☠️</strong> For the maximization of profits, vendors tend to lie about the actual supported random access memory limits. ☠️ <br>It could also be a fact that later firmware releases support greater amounts than the initial ones. </p>
+<p class="notice_danger"><strong>☠️</strong> For the maximization of profits, vendors may lie about the actual supported random access memory limits. ☠️ <br>It could also be a fact that later firmware releases support greater amounts than the initial ones. </p>
 
 <br>
 
