@@ -1,5 +1,5 @@
 theme = "halve-z"
-base_url = "deckmoss.github.io"
+base_url = "https://deckmoss.github.io"
 title = "Portfolio"
 description = ""
 default_language = "en"
