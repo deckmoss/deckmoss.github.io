@@ -1,9 +1,9 @@
 +++
 title = "Unleash a notebook's de-facto RAM capacity"
 date = 2025-05-16T12:00:00Z
-updated =  2025-05-20T12:00:00Z
+updated =  2025-06-03T14:18:00Z
 [taxonomies]
-categories = ["hardware", "late_capitalism"]
+categories = ["hardware"]
 tags = ["hacks", "notebooks", "linux", "DIY"]
 [extra]
 subtitle = "How to hack your vendor's RAM capacity"
@@ -11,18 +11,22 @@ disable_comments = true
 image = "urban.gif"
 +++
 
+## [⚠️]-(`Disclaimer`)
+
+<p class="notice_success"><strong>⚠️ Please note that there is a risk that you could completely destroy your device or that the module you purchased may be incompatible with it. This article is simply a reflection of my personal experience that I wanted to share with you.<br><br> 
+❌ I accept no liability if you do not achieve the desired results from your experiment.</strong></p>
+
 ## Vendors may lie for profit
-
 <br>
-
 <p class="notice_warning"><strong>🐧 Attention! you'll need a <em>linux</em> powered operating system! 🐧</strong></p>
 
 <br>
-<p class="notice_danger"><strong>☠️</strong> For the maximization of profits, vendors may lie about the actual supported random access memory limits. ☠️ <br>It could also be a fact that later firmware releases support greater amounts than the initial ones. </p>
+<p class="notice_danger"><strong>☠️ For the maximization of profits, vendors may lie about the actual supported random access memory limits. ☠️ <br>It could also be a fact that later firmware releases support greater amounts than the initial ones. </strong></p>
 
 <br>
-
+<p>
 One common cumulative problem with modern notebooks' memory is that one or more RAM modules are soldered directly onto the motherboard. Most customers cannot change these types. However, often only one module is soldered, while the second module is mounted in a regular socket. These types are very easily upgradeable, which can save you a lot of money and time.
+</p>
 
 ## Reasons for a RAM upgrade and against buying a new notebook
 - Saves **a lot** of cash!
@@ -70,7 +74,7 @@ sudo apt install dmidecode
 ```bash
 sudo dmidecode -t memory
 ```
-#### Output
+### Output
 ```c
 # dmidecode 3.6
 Getting SMBIOS data from sysfs.
@@ -110,6 +114,22 @@ Memory Device
 	Configured Voltage: 1.2 V
 ```
 
-#### Interpretation
+### Interpretation
 The output starts with the overall specifications of the currently installed BIOS firmware, which supports an amount of 64 GB of RAM. This differs significantly from the official vendor specification of 12 GB.
+
+## Choosing the correct module
+### By size
+Since commercial memory modules are mostly _manufactured in capacities that are **powers of two**_, such as `2, 4, 8, 16, 32, and 64 GB`, you must not buy a module that, when combined with the _already soldered **4 GB**_ module, exceeds 64 GB (the maximum supported amount by the current firmware). 
+
+<p class="notice_success">✅ In this example, <em> I chose <strong>32 GB</strong></em>, which brings the <em>total to <strong>36 GB</strong> when combined</em> with the <em>soldered module</em>.</p>
+
+### By other specifications
+It is **highly recommended** to choose a module that has **exactly the same specifications as the soldered** one and is-  also older than the currently installed firmware. 
+<br><br>
+
+<p class="notice_info">ℹ️ Additionally, consider <strong>upgrading your BIOS firmware beforehand</strong> and rechecking with <code>dmidecode</code> (as mentioned above) to see if the supported amount has increased.</p>
+
+## Uprading your memory
+
+⚠️ Under construction
 
