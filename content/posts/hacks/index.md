@@ -11,17 +11,19 @@ disable_comments = true
 image = "urban.gif"
 +++
 
-## [⚠️]-(`Disclaimer`)
+## ⚠️ Disclaimer
 
 <p class="notice_success"><strong>⚠️ Please note that there is a risk that you could completely destroy your device or that the module you purchased may be incompatible with it. This article is simply a reflection of my personal experience that I wanted to share with you.<br><br> 
-❌ I accept no liability if you do not achieve the desired results from your experiment.</strong></p>
+❌ <em> I accept no liability if you do not achieve the desired results from your experiment. </em>
+</strong>
+</p>
 
 ## Vendors may lie for profit
 <br>
 <p class="notice_warning"><strong>🐧 Attention! you'll need a <em>linux</em> powered operating system! 🐧</strong></p>
 
 <br>
-<p class="notice_danger"><strong>☠️ For the maximization of profits, vendors may lie about the actual supported random access memory limits. ☠️ <br>It could also be a fact that later firmware releases support greater amounts than the initial ones. </strong></p>
+<p class="notice"><strong>☠️ For the maximization of profits, vendors may lie about the actual supported random access memory limits. ☠️ <br>It could also be a fact that later firmware releases support greater amounts than the initial ones. </strong></p>
 
 <br>
 <p>

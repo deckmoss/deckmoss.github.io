@@ -5,9 +5,8 @@ title = "[ ☄️ ]-(`MyBlog`):"
 
 
 
-<figure>
-<img src="portrait.png" alt="That's me" width=700>
-</figure>
+
+<img src="portrait.png" alt="That's me">
 
 ## **Salutations!** 
 
