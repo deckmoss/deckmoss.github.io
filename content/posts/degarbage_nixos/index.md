@@ -48,12 +48,10 @@ tmpfs           1,0M     0  1,0M   0% /run/credentials/systemd-sysctl.service
 tmpfs           3,1G  200K  3,1G   1% /run/user/1000
 ```
 
-### Interpretation (`df -h`) 
-
 <p class="notice_success">✅ 40% of <abbr title="the line where / is in the row of 'Mounted on'">system root directory</abbr> are free and theres also no sub-partition mounted in root besides boot and tempfs. Therefore the "no space left" error was not caused by a lack of overall disk space.</p>
 
 <br>
-If you simply don't have disk space left, because you have also forgotten to declare garbage collection cycles, you could do this now manually by continuing from <a href="">here.</a> Otherwise wipe some gigabites and consider to extend your partition.
+<p class="notice">If you simply don't have disk space left, because you have also forgotten to declare garbage collection cycles, you could do this now manually by continuing from <a href="">here.</a> Otherwise wipe some gigabites and consider to extend your partition.</p>
 <br><br>
 
 ## B Checking out the inode consumption with <abbr title="disk free -inodes">df -i</abbr>
@@ -83,8 +81,6 @@ tmpfs              1024      1     1023    1% /run/credentials/systemd-sysctl.se
 tmpfs            798020    278   797742    1% /run/user/1000
 tmpfs              1024      1     1023    1% /run/credentials/getty@tty2.service
 ```
-
-### Interpretation (btrfs)
 
 <p class="notice_danger">❌ df -i can't read the inode consumption of my btrfs root partition, resulting in an output of <code>0/0/0/-</code>.</p> 
 
@@ -122,8 +118,6 @@ System,DUP: Size:8.00MiB, Used:64.00KiB (0.78%)
 /dev/mapper/luks-4b890b26-f927-468e-9ce2-ead3d942224f	  16.00MiB
 ```
 
-### Interpretation (`btrfs filesystem usage`): 
-
 <p class="notice_success">✅ Actually i must have enough space for inode allocation left. On this <code>btrfs</code> partition, only <strong>59.46%</strong> of the preserved space for Metadata/DUP was consumed. This is no surprise, because i already have fixed this. But if you actually don't have any space left, please continue <a href="">here</a> to call the garbage collector and consider also to perform a btrfs scrub.</p>
 
 Let's focus on this part of the previous output:
@@ -160,9 +154,8 @@ tmpfs            869899      697   869202    1% /run/user/1000
 tmpfs              1024        2     1022    1% /run/credentials/getty@tty3.service
 ```
 
-### Interpretation (ext4)
-
 <p class="notice_success">✅ <code>df -i</code> is able to read and process inode statistics of ext4 partitions</p>
+
 ### [🧩] C.3 Optional: xfs
 
 Also for comparison reasons i called for `df -i` statistics from my MX Linux machine with a xfs formated root partition.
@@ -183,10 +176,8 @@ cgroup           126496      4   126492    1% /sys/fs/cgroup
 tmpfs            126496     36   126460    1% /run/user/1000
 ```
 
-### Interpretation (xfs)
-
 <p class="notice_success">✅ <code>df -i</code> is also able to read and process inode statistics of xfs partitions</p>
 
 ## D Comparison of btrfs, ext4 and xfs
 
-<p class="notice_info">Depending on your partition type you must find the correct tool to gather the wanted information about actual inode consumption.<br>E.g. for btrfs i would go for the <a href="/posts/degarbage_nixos/#[%F0%9F%A7%A9]_Optional_-_check_out_btrfs,_if_present_$:%3E">btrfs usage tool</a> and then check the metadata paragraph.<br><br>For at least `ext4` and `xfs` filesystems will `df -i` do the trick</p>
+<p class="notice_info">Depending on your partition type you must find the correct tool to gather the wanted information about actual inode consumption.<br>E.g. for btrfs i would go for the <a href="/posts/degarbage_nixos/#[%F0%9F%A7%A9]_Optional_-_check_out_btrfs,_if_present_$:%3E">btrfs usage tool</a> and then check the metadata paragraph.<br><br>For at least <code>ext4</code> and <code>xfs</code> filesystems will <code>df -i</code> do the trick</p>
