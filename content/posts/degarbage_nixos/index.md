@@ -56,7 +56,7 @@ tmpfs           3,1G  200K  3,1G   1% /run/user/1000
 
 ## B Checking out the inode consumption with <abbr title="disk free -inodes">df -i</abbr>
 
-### [🧩] B.1 Optional: btrfs
+### [🧩] B.1 Optional: btrfs (won't work)
 ```sh
 df -i
 ```
@@ -86,9 +86,9 @@ tmpfs              1024      1     1023    1% /run/credentials/getty@tty2.servic
 
 ## C Choosing the correct inode measurement tool depends on the filesystem format 
 
-Every partition format uses its own technique to preserve or balance a contingent of inodes. Inodes are responsible for storing file-related metadata, like systemlinks, timestamps, ownership, access rights and so on. 
+As demonstrated right above, every partition format uses its own technique to preserve or balance a contingent of inodes. Inodes are responsible for storing file-related metadata, like systemlinks, timestamps, ownership, access rights and so on. 
 
-### [🧩] C.1 Optional - check out btrfs, if present $:>
+### [🧩] C.1 Optional: btrfs
 ```sh
 sudo btrfs filesystem usage /
 ```
