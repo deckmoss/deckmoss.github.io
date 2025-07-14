@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Portfolio - configuration.nix</title>
+    <link rel="self" type="application/atom+xml" href="https://deckmoss.github.io/tags/configuration.nix/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://deckmoss.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-07-12T11:48:00+00:00</updated>
+    <id>https://deckmoss.github.io/tags/configuration.nix/atom.xml</id>
+    <entry xml:lang="en">
+        <title>How to employ your garbage collector sustainably on NixOS.</title>
+        <published>2025-07-12T11:48:00+00:00</published>
+        <updated>2025-07-12T11:48:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Prismatic Arbiter
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://deckmoss.github.io/posts/degarbage_nixos/"/>
+        <id>https://deckmoss.github.io/posts/degarbage_nixos/</id>
+        
+        <content type="html" xml:base="https://deckmoss.github.io/posts/degarbage_nixos/">&lt;h2 id=&quot;0_In_case_you&amp;#39;re_like_me_new_to_NixOS...&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#0_In_case_you&amp;#x27;re_like_me_new_to_NixOS...&quot; aria-label=&quot;Anchor link for: 0_In_case_you&amp;#x27;re_like_me_new_to_NixOS...&quot;&gt;#&lt;&#x2F;a&gt;0 In case you&#x27;re like me new to NixOS...&lt;&#x2F;h2&gt;
+&lt;p class=&quot;notice_warning&quot;&gt;&lt;strong&gt;&lt;em&gt;...you may not have noticed that it is obligatory to declare certain lines for automatic garbage collection in your configuration.nix. Otherwise, you might end up in the worst-case scenario with not a single free inode left to link.&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;I use &lt;abbr title=&quot;modern file system format&quot;&gt;btrfs&lt;&#x2F;abbr&gt; and had already completed &lt;abbr title=&quot;BUILDS are called GENERATIONS in nix&quot;&gt;120 builds&lt;&#x2F;abbr&gt; when my system crashed during the 121st build process, displaying an error like &quot;no space left on device,&quot; even though I had a few hundred unused gigabytes available.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It turned out that hundreds of thousands of files and system links had been created over time, which consumed all of my &lt;abbr title=&quot;Inodes are essential on unixoide systems (like Linux based OS) for storing meta data of files. They may get consumed, long before the memory capacity of it&#x27;s volume exceeds&quot;&gt;inodes&lt;&#x2F;abbr&gt;. I assume that old links were not deallocated and that nixos preserved a totally useless software package release history on my disk. At that point, it became &lt;abbr title=&quot;Because every new build consumes new inodes without freeing old ones&quot;&gt;impossible to rebuild nixos.&lt;&#x2F;abbr&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p class=&quot;notice_info&quot;&gt;&lt;strong&gt;&lt;em&gt;You can&#x27;t simply &lt;abbr title=&quot;to comment smth out causes nixos to build a new system profile, whithout purging the then orphaned packages&quot;&gt;comment out something in the configuration.nix&lt;&#x2F;abbr&gt; or declare garbage collection rules there, because it&#x27;s too late. You can&#x27;t fix this via the configuration.nix file.&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;A_Collect_evidence&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#A_Collect_evidence&quot; aria-label=&quot;Anchor link for: A_Collect_evidence&quot;&gt;#&lt;&#x2F;a&gt;A Collect evidence&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;[🧩]-(Code_Snippet):&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#[🧩]-(Code_Snippet):&quot; aria-label=&quot;Anchor link for: [🧩]-(Code_Snippet):&quot;&gt;#&lt;&#x2F;a&gt;[🧩]-(Code Snippet):&lt;&#x2F;h3&gt;
+&lt;p&gt;Let us begin with printing the disk usage with the &lt;abbr title=&quot;disk free&quot;&gt;df&lt;&#x2F;abbr&gt; tool out, to rule this out.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;sh&quot; class=&quot;language-sh z-code&quot;&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;df&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt;&lt;span class=&quot;z-variable z-parameter z-option z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-parameter z-shell&quot;&gt; -&lt;&#x2F;span&gt;h&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;dt&gt;&lt;p class=&quot;notice_success&quot;&gt;Output:&lt;&#x2F;p&gt;&lt;&#x2F;dt&gt;&lt;dd&gt;&lt;pre&gt;&lt;p class=&quot;notice_success&quot;&gt;Filesystem      Size  Used Avail Use% Mounted on
+devtmpfs        1,6G     0  1,6G   0% &#x2F;dev
+tmpfs            16G   63M   16G   1% &#x2F;dev&#x2F;shm
+tmpfs           7,7G  7,1M  7,7G   1% &#x2F;run
+&#x2F;dev&#x2F;dm-1       457G  266G  185G  60% &#x2F;
+efivarfs        128K   41K   83K  33% &#x2F;sys&#x2F;firmware&#x2F;efi&#x2F;efivars
+tmpfs           1,0M     0  1,0M   0% &#x2F;run&#x2F;credentials&#x2F;systemd-journald.service
+tmpfs           1,0M     0  1,0M   0% &#x2F;run&#x2F;credentials&#x2F;systemd-tmpfiles-setup-dev-early.service
+tmpfs           1,0M     0  1,0M   0% &#x2F;run&#x2F;credentials&#x2F;systemd-tmpfiles-setup-dev.service
+tmpfs            16G  2,0M   16G   1% &#x2F;run&#x2F;wrappers
+tmpfs           1,0M     0  1,0M   0% &#x2F;run&#x2F;credentials&#x2F;systemd-vconsole-setup.service
+&#x2F;dev&#x2F;nvme0n1p3  4,3G   87M  4,2G   2% &#x2F;boot
+tmpfs           1,0M     0  1,0M   0% &#x2F;run&#x2F;credentials&#x2F;systemd-tmpfiles-setup.service
+&#x2F;dev&#x2F;sda4       458G  351G   84G  81% &#x2F;mnt&#x2F;ssd
+&#x2F;dev&#x2F;sdb3       873G  733G   96G  89% &#x2F;mnt&#x2F;hdd
+tmpfs           1,0M     0  1,0M   0% &#x2F;run&#x2F;credentials&#x2F;systemd-sysctl.service
+tmpfs           3,1G  200K  3,1G   1% &#x2F;run&#x2F;user&#x2F;1000
+&lt;&#x2F;p&gt;&lt;&#x2F;pre&gt;
+ &lt;&#x2F;dd&gt;
+&lt;br&gt;
+&lt;h3 id=&quot;A.1.a_Optional:_check_if_your_btrfs_is_healthy&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#A.1.a_Optional:_check_if_your_btrfs_is_healthy&quot; aria-label=&quot;Anchor link for: A.1.a_Optional:_check_if_your_btrfs_is_healthy&quot;&gt;#&lt;&#x2F;a&gt;A.1.a Optional: check if your btrfs is healthy&lt;&#x2F;h3&gt;
+&lt;h4 id=&quot;[🧩]-(Code_Snippet):_&amp;gt;&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#[🧩]-(Code_Snippet):_&amp;gt;&quot; aria-label=&quot;Anchor link for: [🧩]-(Code_Snippet):_&amp;gt;&quot;&gt;#&lt;&#x2F;a&gt;[🧩]-(Code Snippet): &amp;gt;&lt;&#x2F;h4&gt;
+&lt;pre data-lang=&quot;sh&quot; class=&quot;language-sh z-code&quot;&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;sudo&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; btrfs filesystem show  &#x2F;&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-operator z-logical z-and z-shell&quot;&gt;&amp;amp;&amp;amp;&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-support z-function z-echo z-shell&quot;&gt;echo&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; &lt;span class=&quot;z-variable z-parameter z-option z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-parameter z-shell&quot;&gt;-&lt;&#x2F;span&gt;e&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-shell&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;\n&lt;span class=&quot;z-punctuation z-definition z-string z-end z-shell&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-operator z-logical z-and z-shell&quot;&gt;&amp;amp;&amp;amp;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-separator z-continuation z-line z-shell&quot;&gt;\
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;sudo&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; btrfs filesystem usage &#x2F;&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-operator z-logical z-and z-shell&quot;&gt;&amp;amp;&amp;amp;&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-support z-function z-echo z-shell&quot;&gt;echo&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; &lt;span class=&quot;z-variable z-parameter z-option z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-parameter z-shell&quot;&gt;-&lt;&#x2F;span&gt;e&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-shell&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;\n&lt;span class=&quot;z-punctuation z-definition z-string z-end z-shell&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-operator z-logical z-and z-shell&quot;&gt;&amp;amp;&amp;amp;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-separator z-continuation z-line z-shell&quot;&gt;\
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;sudo&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; btrfs filesystem df    &#x2F;&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-operator z-logical z-and z-shell&quot;&gt;&amp;amp;&amp;amp;&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-support z-function z-echo z-shell&quot;&gt;echo&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; &lt;span class=&quot;z-variable z-parameter z-option z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-parameter z-shell&quot;&gt;-&lt;&#x2F;span&gt;e&lt;&#x2F;span&gt; &lt;span class=&quot;z-string z-quoted z-double z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-begin z-shell&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;\n&lt;span class=&quot;z-punctuation z-definition z-string z-end z-shell&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt; &lt;span class=&quot;z-keyword z-operator z-logical z-and z-shell&quot;&gt;&amp;amp;&amp;amp;&lt;&#x2F;span&gt; &lt;span class=&quot;z-punctuation z-separator z-continuation z-line z-shell&quot;&gt;\
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;sudo&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; btrfs scrub status     &#x2F;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;dt&gt;&lt;p class=&quot;notice_success&quot;&gt;Output:&lt;&#x2F;p&gt;&lt;&#x2F;dt&gt;&lt;dd&gt;&lt;pre&gt;&lt;p class=&quot;notice_success&quot;&gt;Overall:
+    Device size:		 456.52GiB
+    Device allocated:		 456.52GiB
+    Device unallocated:		   1.01MiB
+    Device missing:		     0.00B
+    Device slack:		   1.50KiB
+    Used:			 265.34GiB
+    Free (estimated):		 184.69GiB	(min: 184.69GiB)
+    Free (statfs, df):		 184.69GiB
+    Data ratio:			      1.00
+    Metadata ratio:		      2.00
+    Global reserve:		 475.66MiB	(used: 0.00B)
+    Multiple profiles:		        no
+\
+   Data,single: Size:440.50GiB, Used:255.81GiB (58.07%)
+    &#x2F;dev&#x2F;mapper&#x2F;luks-4b890b26-f927-468e-9ce2-ead3d942224f	 440.50GiB
+\
+   Metadata,DUP: Size:8.00GiB, Used:4.76GiB (59.56%)
+    &#x2F;dev&#x2F;mapper&#x2F;luks-4b890b26-f927-468e-9ce2-ead3d942224f	  16.00GiB
+\
+   System,DUP: Size:8.00MiB, Used:64.00KiB (0.78%)
+    &#x2F;dev&#x2F;mapper&#x2F;luks-4b890b26-f927-468e-9ce2-ead3d942224f	  16.00MiB
+\
+   Unallocated:
+    &#x2F;dev&#x2F;mapper&#x2F;luks-4b890b26-f927-468e-9ce2-ead3d942224f	   1.01MiB
+    Label: &#x27;root&#x27;  uuid: 5d1c1d61-5341-4cf7-bc5e-aa9149ad7b03
+	  Total devices 1 FS bytes used 260.58GiB
+	  devid    1 size 456.52GiB used 456.52GiB path &#x2F;dev&#x2F;mapper&#x2F;luks-4b890b26-f927-468e-9ce2-ead3d942224f
+    Data, single: total=440.50GiB, used=255.81GiB
+   System, DUP: total=8.00MiB, used=64.00KiB
+   Metadata, DUP: total=8.00GiB, used=4.76GiB
+   GlobalReserve, single: total=475.66MiB, used=0.00B
+\  
+  UUID:             5d1c1d61-5341-4cf7-bc5e-aa9149ad7b03
+  Scrub started:    Tue Jul  8 22:24:46 2025
+  Status:           finished
+  Duration:         0:05:38
+  Total to scrub:   265.35GiB
+  Rate:             1.24GiB&#x2F;s
+  Error summary:    no errors found&lt;&#x2F;p&gt;&lt;&#x2F;pre&gt;
+ &lt;&#x2F;dd&gt;
+&lt;h3 id=&quot;A.2._Check_the_inode_consumption&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#A.2._Check_the_inode_consumption&quot; aria-label=&quot;Anchor link for: A.2._Check_the_inode_consumption&quot;&gt;#&lt;&#x2F;a&gt;A.2. Check the inode consumption&lt;&#x2F;h3&gt;
+&lt;h6 id=&quot;[_🧩_]-(Code_Snippet)_:&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#[_🧩_]-(Code_Snippet)_:&quot; aria-label=&quot;Anchor link for: [_🧩_]-(Code_Snippet)_:&quot;&gt;#&lt;&#x2F;a&gt;[ 🧩 ]-(&lt;code&gt;Code Snippet&lt;&#x2F;code&gt;) :&lt;&#x2F;h6&gt;
+&lt;pre data-lang=&quot;sh&quot; class=&quot;language-sh z-code&quot;&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;df&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt;&lt;span class=&quot;z-variable z-parameter z-option z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-parameter z-shell&quot;&gt; -&lt;&#x2F;span&gt;i&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+</content>
+        
+    </entry>
+</feed>

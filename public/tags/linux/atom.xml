@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Portfolio - linux</title>
+    <link rel="self" type="application/atom+xml" href="https://deckmoss.github.io/tags/linux/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://deckmoss.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-06-03T14:18:00+00:00</updated>
+    <id>https://deckmoss.github.io/tags/linux/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Unleash a notebook&#x27;s de-facto RAM capacity</title>
+        <published>2025-05-16T12:00:00+00:00</published>
+        <updated>2025-06-03T14:18:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Prismatic Arbiter
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://deckmoss.github.io/posts/unleash_ram/"/>
+        <id>https://deckmoss.github.io/posts/unleash_ram/</id>
+        
+        <content type="html" xml:base="https://deckmoss.github.io/posts/unleash_ram/">&lt;h2 id=&quot;⚠️_Disclaimer&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#⚠️_Disclaimer&quot; aria-label=&quot;Anchor link for: ⚠️_Disclaimer&quot;&gt;#&lt;&#x2F;a&gt;⚠️ Disclaimer&lt;&#x2F;h2&gt;
+&lt;p class=&quot;notice_success&quot;&gt;&lt;strong&gt;⚠️ Please note that there is a risk that you could completely destroy your device or that the module you purchased may be incompatible with it. This article is simply a reflection of my personal experience that I wanted to share with you.&lt;br&gt;&lt;br&gt; 
+❌ &lt;em&gt; I accept no liability if you do not achieve the desired results from your experiment. &lt;&#x2F;em&gt;
+&lt;&#x2F;strong&gt;
+&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;Vendors_may_lie_for_profit&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Vendors_may_lie_for_profit&quot; aria-label=&quot;Anchor link for: Vendors_may_lie_for_profit&quot;&gt;#&lt;&#x2F;a&gt;Vendors may lie for profit&lt;&#x2F;h2&gt;
+&lt;br&gt;
+&lt;p class=&quot;notice_warning&quot;&gt;&lt;strong&gt;🐧 Attention! you&#x27;ll need a &lt;em&gt;linux&lt;&#x2F;em&gt; powered operating system! 🐧&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p class=&quot;notice&quot;&gt;&lt;strong&gt;☠️ For the maximization of profits, vendors may lie about the actual supported random access memory limits. ☠️ &lt;br&gt;It could also be a fact that later firmware releases support greater amounts than the initial ones. &lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;
+One common cumulative problem with modern notebooks&#x27; memory is that one or more RAM modules are soldered directly onto the motherboard. Most customers cannot change these types. However, often only one module is soldered, while the second module is mounted in a regular socket. These types are very easily upgradeable, which can save you a lot of money and time.
+&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;Reasons_for_a_RAM_upgrade_and_against_buying_a_new_notebook&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Reasons_for_a_RAM_upgrade_and_against_buying_a_new_notebook&quot; aria-label=&quot;Anchor link for: Reasons_for_a_RAM_upgrade_and_against_buying_a_new_notebook&quot;&gt;#&lt;&#x2F;a&gt;Reasons for a RAM upgrade and against buying a new notebook&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Saves &lt;strong&gt;a lot&lt;&#x2F;strong&gt; of cash!&lt;&#x2F;li&gt;
+&lt;li&gt;You may not want to reinstall and re-customize all your applications on a new device.&lt;&#x2F;li&gt;
+&lt;li&gt;Additional software applications or the latest updates consume more of your remaining memory, which slows everything down due to the automatic use of hard disk memory (which can also shorten the lifespan of your hard disk drive).&lt;&#x2F;li&gt;
+&lt;li&gt;If you have a mid-range or high-end CPU that is already powerful enough for most users&#x27; tasks, you may not need a new notebook in most cases.&lt;&#x2F;li&gt;
+&lt;li&gt;Saves the environment.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;Example_of_a_vendor&amp;#39;s_official_statement&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Example_of_a_vendor&amp;#x27;s_official_statement&quot; aria-label=&quot;Anchor link for: Example_of_a_vendor&amp;#x27;s_official_statement&quot;&gt;#&lt;&#x2F;a&gt;Example of a vendor&#x27;s official statement&lt;&#x2F;h2&gt;
+&lt;br&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Model&lt;&#x2F;th&gt;&lt;th style=&quot;text-align: left&quot;&gt;&lt;p align=&quot;left&quot;&gt;Acer Swift 3 (SF314-41)&lt;&#x2F;p&gt;&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;RAM&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;&lt;p align=&quot;left&quot;&gt;4 GB (provided memory is soldered)&lt;&#x2F;p&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Max RAM supported&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;&lt;p align=&quot;left&quot;&gt;12 GB&lt;&#x2F;p&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;RAM Type&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;&lt;p align=&quot;left&quot;&gt;DDR4 SDRAM&lt;&#x2F;p&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Form Factor&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;&lt;p align=&quot;left&quot;&gt;SO-DIMM 260-pin&lt;&#x2F;p&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Slots &lt;abbr title=&quot;Quantity&quot;&gt;QTY&lt;&#x2F;abbr&gt;&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;&lt;p align=&quot;left&quot;&gt;1&lt;&#x2F;p&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Empty Slots&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;&lt;p align=&quot;left&quot;&gt;1&lt;&#x2F;p&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;br&gt;
+&lt;p&gt;You may have noticed that &lt;strong&gt;4 GB&lt;&#x2F;strong&gt; is soldered directly onto the motherboard. Most users would not unsolder this nor resolder a larger module.&lt;&#x2F;p&gt;
+&lt;p class=&quot;notice_warning&quot;&gt;The vendor claims that you could insert an &lt;strong&gt;8 GB &lt;&#x2F;strong&gt;Module into the empty slot to obtain the maximum supported limit of &lt;strong&gt;12 GB.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;How_to_obtain_the_real_supported_memory_amount_using_the_Linux_tool_dmidecode&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#How_to_obtain_the_real_supported_memory_amount_using_the_Linux_tool_dmidecode&quot; aria-label=&quot;Anchor link for: How_to_obtain_the_real_supported_memory_amount_using_the_Linux_tool_dmidecode&quot;&gt;#&lt;&#x2F;a&gt;How to obtain the real supported memory amount &lt;em&gt;using the Linux tool &lt;code&gt;dmidecode&lt;&#x2F;code&gt;&lt;&#x2F;em&gt;&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;Installation&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Installation&quot; aria-label=&quot;Anchor link for: Installation&quot;&gt;#&lt;&#x2F;a&gt;Installation&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;On_Red_Hat_Linux&#x2F;Fedora&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#On_Red_Hat_Linux&amp;#x2F;Fedora&quot; aria-label=&quot;Anchor link for: On_Red_Hat_Linux&amp;#x2F;Fedora&quot;&gt;#&lt;&#x2F;a&gt;On Red Hat Linux&#x2F;Fedora&lt;&#x2F;h3&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash z-code&quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;sudo&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; dnf install dmidecode&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;On_NixOS&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#On_NixOS&quot; aria-label=&quot;Anchor link for: On_NixOS&quot;&gt;#&lt;&#x2F;a&gt;On NixOS&lt;&#x2F;h3&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash z-code&quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;nix-shell&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt;&lt;span class=&quot;z-variable z-parameter z-option z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-parameter z-shell&quot;&gt; -&lt;&#x2F;span&gt;p&lt;&#x2F;span&gt; dmidecode&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;On_Debian&#x2F;Ubuntu&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#On_Debian&amp;#x2F;Ubuntu&quot; aria-label=&quot;Anchor link for: On_Debian&amp;#x2F;Ubuntu&quot;&gt;#&lt;&#x2F;a&gt;On Debian&#x2F;Ubuntu&lt;&#x2F;h3&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash z-code&quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;sudo&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; apt install dmidecode&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;Usage&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Usage&quot; aria-label=&quot;Anchor link for: Usage&quot;&gt;#&lt;&#x2F;a&gt;Usage&lt;&#x2F;h2&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash z-code&quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;sudo&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; dmidecode&lt;span class=&quot;z-variable z-parameter z-option z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-parameter z-shell&quot;&gt; -&lt;&#x2F;span&gt;t&lt;&#x2F;span&gt; memory&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;Output&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Output&quot; aria-label=&quot;Anchor link for: Output&quot;&gt;#&lt;&#x2F;a&gt;Output&lt;&#x2F;h3&gt;
+&lt;pre data-lang=&quot;c&quot; class=&quot;language-c z-code&quot;&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;z-source z-c&quot;&gt;# dmidecode &lt;span class=&quot;z-constant z-numeric z-float z-decimal z-c&quot;&gt;3&lt;span class=&quot;z-punctuation z-separator z-decimal z-c&quot;&gt;.&lt;&#x2F;span&gt;6&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;Getting SMBIOS data from sysfs&lt;span class=&quot;z-punctuation z-accessor z-c&quot;&gt;.&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;SMBIOS &lt;span class=&quot;z-constant z-numeric z-float z-decimal z-c&quot;&gt;3&lt;span class=&quot;z-punctuation z-separator z-decimal z-c&quot;&gt;.&lt;&#x2F;span&gt;1&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric z-float z-decimal z-c&quot;&gt;&lt;span class=&quot;z-punctuation z-separator z-decimal z-c&quot;&gt;.&lt;&#x2F;span&gt;1&lt;&#x2F;span&gt; present&lt;span class=&quot;z-punctuation z-accessor z-c&quot;&gt;.&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;&lt;span class=&quot;z-support z-type z-mac-classic z-c&quot;&gt;Handle&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-numeric z-integer z-hexadecimal z-c&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-numeric z-base z-c&quot;&gt;0x&lt;&#x2F;span&gt;000B&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-c&quot;&gt;,&lt;&#x2F;span&gt; DMI type &lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-c&quot;&gt;16&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-c&quot;&gt;,&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-c&quot;&gt;23&lt;&#x2F;span&gt; bytes
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;Physical Memory &lt;span class=&quot;z-meta z-function z-c&quot;&gt;&lt;span class=&quot;z-entity z-name z-function z-c&quot;&gt;Array&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function z-c&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;&lt;span class=&quot;z-meta z-function z-c&quot;&gt;	&lt;&#x2F;span&gt;Location&lt;span class=&quot;z-keyword z-operator z-ternary z-c&quot;&gt;:&lt;&#x2F;span&gt; System Board Or Motherboard
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;	Use&lt;span class=&quot;z-keyword z-operator z-ternary z-c&quot;&gt;:&lt;&#x2F;span&gt; System Memory
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;	Error Correction Type&lt;span class=&quot;z-keyword z-operator z-ternary z-c&quot;&gt;:&lt;&#x2F;span&gt; None
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;	Maximum Capacity&lt;span class=&quot;z-keyword z-operator z-ternary z-c&quot;&gt;:&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-c&quot;&gt;64&lt;&#x2F;span&gt; GB
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;	Error Information &lt;span class=&quot;z-support z-type z-mac-classic z-c&quot;&gt;Handle&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator z-ternary z-c&quot;&gt;:&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-numeric z-integer z-hexadecimal z-c&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-numeric z-base z-c&quot;&gt;0x&lt;&#x2F;span&gt;000E&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;	Number Of Devices&lt;span class=&quot;z-keyword z-operator z-ternary z-c&quot;&gt;:&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-c&quot;&gt;2&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;&lt;span class=&quot;z-support z-type z-mac-classic z-c&quot;&gt;Handle&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-numeric z-integer z-hexadecimal z-c&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-numeric z-base z-c&quot;&gt;0x&lt;&#x2F;span&gt;000D&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-c&quot;&gt;,&lt;&#x2F;span&gt; DMI type &lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-c&quot;&gt;17&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-separator z-c&quot;&gt;,&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-c&quot;&gt;40&lt;&#x2F;span&gt; bytes
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;Memory &lt;span class=&quot;z-meta z-function z-c&quot;&gt;&lt;span class=&quot;z-entity z-name z-function z-c&quot;&gt;Device&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function z-c&quot;&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;&lt;span class=&quot;z-meta z-function z-c&quot;&gt;	&lt;&#x2F;span&gt;Array &lt;span class=&quot;z-support z-type z-mac-classic z-c&quot;&gt;Handle&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator z-ternary z-c&quot;&gt;:&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-numeric z-integer z-hexadecimal z-c&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-numeric z-base z-c&quot;&gt;0x&lt;&#x2F;span&gt;000B&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;	Error Information &lt;span class=&quot;z-support z-type z-mac-classic z-c&quot;&gt;Handle&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator z-ternary z-c&quot;&gt;:&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-numeric z-integer z-hexadecimal z-c&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-numeric z-base z-c&quot;&gt;0x&lt;&#x2F;span&gt;0010&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;	Total Width&lt;span class=&quot;z-keyword z-operator z-ternary z-c&quot;&gt;:&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-c&quot;&gt;64&lt;&#x2F;span&gt; bits
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;	Data Width&lt;span class=&quot;z-keyword z-operator z-ternary z-c&quot;&gt;:&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-c&quot;&gt;64&lt;&#x2F;span&gt; bits
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;	&lt;span class=&quot;z-support z-type z-mac-classic z-c&quot;&gt;Size&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator z-ternary z-c&quot;&gt;:&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-c&quot;&gt;4&lt;&#x2F;span&gt; GB
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;	Form Factor&lt;span class=&quot;z-keyword z-operator z-ternary z-c&quot;&gt;:&lt;&#x2F;span&gt; SODIMM
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;	Set&lt;span class=&quot;z-keyword z-operator z-ternary z-c&quot;&gt;:&lt;&#x2F;span&gt; None
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;	Locator&lt;span class=&quot;z-keyword z-operator z-ternary z-c&quot;&gt;:&lt;&#x2F;span&gt; DIMM &lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-c&quot;&gt;0&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;	Bank Locator&lt;span class=&quot;z-keyword z-operator z-ternary z-c&quot;&gt;:&lt;&#x2F;span&gt; P0 CHANNEL B
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;	Type&lt;span class=&quot;z-keyword z-operator z-ternary z-c&quot;&gt;:&lt;&#x2F;span&gt; DDR4
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;	Type Detail&lt;span class=&quot;z-keyword z-operator z-ternary z-c&quot;&gt;:&lt;&#x2F;span&gt; Synchronous &lt;span class=&quot;z-meta z-function-call z-c&quot;&gt;&lt;span class=&quot;z-variable z-function z-c&quot;&gt;Unbuffered&lt;&#x2F;span&gt; &lt;span class=&quot;z-meta z-group z-c&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-begin z-c&quot;&gt;(&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-c&quot;&gt;&lt;span class=&quot;z-meta z-group z-c&quot;&gt;Unregistered&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-c&quot;&gt;&lt;span class=&quot;z-meta z-group z-c&quot;&gt;&lt;span class=&quot;z-punctuation z-section z-group z-end z-c&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;	Speed&lt;span class=&quot;z-keyword z-operator z-ternary z-c&quot;&gt;:&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-c&quot;&gt;2667&lt;&#x2F;span&gt; MT&lt;span class=&quot;z-keyword z-operator z-arithmetic z-c&quot;&gt;&#x2F;&lt;&#x2F;span&gt;s
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;	Manufacturer&lt;span class=&quot;z-keyword z-operator z-ternary z-c&quot;&gt;:&lt;&#x2F;span&gt; Hynix
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;	Serial Number&lt;span class=&quot;z-keyword z-operator z-ternary z-c&quot;&gt;:&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-numeric z-integer z-octal z-c&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-numeric z-base z-c&quot;&gt;0&lt;&#x2F;span&gt;0000000&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;	Asset Tag&lt;span class=&quot;z-keyword z-operator z-ternary z-c&quot;&gt;:&lt;&#x2F;span&gt; Not Specified
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;	Part Number&lt;span class=&quot;z-keyword z-operator z-ternary z-c&quot;&gt;:&lt;&#x2F;span&gt; HMA851S6CJR6N&lt;span class=&quot;z-keyword z-operator z-arithmetic z-c&quot;&gt;-&lt;&#x2F;span&gt;VK    
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;	Rank&lt;span class=&quot;z-keyword z-operator z-ternary z-c&quot;&gt;:&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-c&quot;&gt;1&lt;&#x2F;span&gt;
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;	Configured Memory Speed&lt;span class=&quot;z-keyword z-operator z-ternary z-c&quot;&gt;:&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-numeric z-integer z-decimal z-c&quot;&gt;2400&lt;&#x2F;span&gt; MT&lt;span class=&quot;z-keyword z-operator z-arithmetic z-c&quot;&gt;&#x2F;&lt;&#x2F;span&gt;s
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;	Minimum Voltage&lt;span class=&quot;z-keyword z-operator z-ternary z-c&quot;&gt;:&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-numeric z-float z-decimal z-c&quot;&gt;1&lt;span class=&quot;z-punctuation z-separator z-decimal z-c&quot;&gt;.&lt;&#x2F;span&gt;2&lt;&#x2F;span&gt; V
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;	Maximum Voltage&lt;span class=&quot;z-keyword z-operator z-ternary z-c&quot;&gt;:&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-numeric z-float z-decimal z-c&quot;&gt;1&lt;span class=&quot;z-punctuation z-separator z-decimal z-c&quot;&gt;.&lt;&#x2F;span&gt;2&lt;&#x2F;span&gt; V
+&lt;&#x2F;span&gt;&lt;span class=&quot;z-source z-c&quot;&gt;	Configured Voltage&lt;span class=&quot;z-keyword z-operator z-ternary z-c&quot;&gt;:&lt;&#x2F;span&gt; &lt;span class=&quot;z-constant z-numeric z-float z-decimal z-c&quot;&gt;1&lt;span class=&quot;z-punctuation z-separator z-decimal z-c&quot;&gt;.&lt;&#x2F;span&gt;2&lt;&#x2F;span&gt; V
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;Interpretation&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Interpretation&quot; aria-label=&quot;Anchor link for: Interpretation&quot;&gt;#&lt;&#x2F;a&gt;Interpretation&lt;&#x2F;h3&gt;
+&lt;p&gt;The output starts with the overall specifications of the currently installed BIOS firmware, which supports an amount of 64 GB of RAM. This differs significantly from the official vendor specification of 12 GB.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;Choosing_the_correct_module&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Choosing_the_correct_module&quot; aria-label=&quot;Anchor link for: Choosing_the_correct_module&quot;&gt;#&lt;&#x2F;a&gt;Choosing the correct module&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;By_size&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#By_size&quot; aria-label=&quot;Anchor link for: By_size&quot;&gt;#&lt;&#x2F;a&gt;By size&lt;&#x2F;h3&gt;
+&lt;p&gt;Since commercial memory modules are mostly &lt;em&gt;manufactured in capacities that are &lt;strong&gt;powers of two&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt;, such as &lt;code&gt;2, 4, 8, 16, 32, and 64 GB&lt;&#x2F;code&gt;, you must not buy a module that, when combined with the &lt;em&gt;already soldered &lt;strong&gt;4 GB&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt; module, exceeds 64 GB (the maximum supported amount by the current firmware).&lt;&#x2F;p&gt;
+&lt;p class=&quot;notice_success&quot;&gt;✅ In this example, &lt;em&gt; I chose &lt;strong&gt;32 GB&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt;, which brings the &lt;em&gt;total to &lt;strong&gt;36 GB&lt;&#x2F;strong&gt; when combined&lt;&#x2F;em&gt; with the &lt;em&gt;soldered module&lt;&#x2F;em&gt;.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;By_other_specifications&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#By_other_specifications&quot; aria-label=&quot;Anchor link for: By_other_specifications&quot;&gt;#&lt;&#x2F;a&gt;By other specifications&lt;&#x2F;h3&gt;
+&lt;p&gt;It is &lt;strong&gt;highly recommended&lt;&#x2F;strong&gt; to choose a module that has &lt;strong&gt;exactly the same specifications as the soldered&lt;&#x2F;strong&gt; one and is-  also older than the currently installed firmware.
+&lt;br&gt;&lt;br&gt;&lt;&#x2F;p&gt;
+&lt;p class=&quot;notice_info&quot;&gt;ℹ️ Additionally, consider &lt;strong&gt;upgrading your BIOS firmware beforehand&lt;&#x2F;strong&gt; and rechecking with &lt;code&gt;dmidecode&lt;&#x2F;code&gt; (as mentioned above) to see if the supported amount has increased.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;Uprading_your_memory&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Uprading_your_memory&quot; aria-label=&quot;Anchor link for: Uprading_your_memory&quot;&gt;#&lt;&#x2F;a&gt;Uprading your memory&lt;&#x2F;h2&gt;
+&lt;p&gt;⚠️ Under construction&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>
