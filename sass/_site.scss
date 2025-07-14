@@ -85,7 +85,7 @@ nav.nav-bar {
 }
 
 nav.nav-bar ul {
-  font-size: 12px;
+  font-size: 14px;
   text-transform: uppercase;
   background: $white;
   list-style: none;
@@ -274,7 +274,6 @@ a.zola-anchor {
     line-height: 30px;
     margin: 10px 0;
     padding-top: 25px;
-
   }
 
   a {
@@ -364,7 +363,7 @@ a.zola-anchor {
   text-align: left;
   h1,
   h2 {
-    font-size: 24px;
+    font-size: 30px;
     color: lighten($black, 27.8431);
     &:after {
       position: absolute;
@@ -378,7 +377,7 @@ a.zola-anchor {
   }
   p {
     color: $overlay-color;
-    font-size: 14px;
+    font-size: 19px;
     margin: 10px 0;
     padding-top: 0;
     line-height: 24px;
@@ -450,7 +449,7 @@ a.zola-anchor {
     }
     p {
       margin-top: 15px;
-      font-size: 16px;
+      font-size: 18px;
       color: darken($white, 40);
     }
     .date {
@@ -489,7 +488,7 @@ a.zola-anchor {
     padding: 7px 8px;
     margin-bottom: 10px;
     color: lighten($black, 28%);
-    font-size: 8px;
+    font-size: 16px;
     text-transform: uppercase;
     margin-right: 12px;
     &:last-child {
@@ -503,8 +502,15 @@ a.zola-anchor {
 
 .inner-post {
   h1 {
+    font-size: 36px;
     line-height: 42px;
     margin-bottom: 30px;
+  }
+  h2 {
+    font-size: 23px;
+  }
+  h3 {
+    font-size: 20px;
   }
   h1,
   h2,
@@ -517,13 +523,13 @@ a.zola-anchor {
     margin-bottom: 20px;
   }
   p {
-    font-size: 14px;
+    font-size: 17px;
     margin: 0.5em 0;
     line-height: 1.6;
   }
   small {
     color: darken($white, 40);
-    font-size: 16px;
+    font-size: 17px;
     margin-bottom: 10px;
     display: block;
   }
@@ -898,7 +904,7 @@ a.zola-anchor {
     }
     p,
     li {
-      font-size: 14px;
+      font-size: 17px;
     }
     .post-ext-info > p,
     .post-music > p {
@@ -931,7 +937,7 @@ a.zola-anchor {
     }
   }
   table {
-    font-size: 14px;
+    font-size: 17px;
   }
 }
 
