@@ -99,7 +99,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 1.8rem 0 0.5rem;
+  margin: 0.5em 0;
   font-family: $base-font;
 }
 
@@ -132,7 +132,7 @@ figure {
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
-  margin: 1em 0;
+   margin: 0.5em 0;
   @include clearfix();
   figcaption {
     margin-bottom: 0.5em;
@@ -199,7 +199,7 @@ img {
 }
 
 blockquote {
-  margin: 1em 1em 1em 0;
+  margin: 0.5em 0;
   padding-left: 1em;
   padding-right: 1em;
   font-style: italic;

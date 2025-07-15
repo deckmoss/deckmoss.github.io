@@ -504,26 +504,25 @@ a.zola-anchor {
   h1 {
     font-size: 36px;
     line-height: 42px;
-    margin-bottom: 30px;
+    margin: 1em 0 0.5em 0;
   }
   h2 {
     font-size: 26px;
+    margin: 1em 0 0.5em 0;
   }
   h3 {
     font-size: 23px;
   }
   h4 {
     font-size: 20px;
+    font-weight: bold;
   }
-  h1,
-  h2,
   h3,
   h4,
   h5,
   h6 {
     font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 0.5em 0;
   }
   p {
     font-size: 17px;
@@ -533,7 +532,7 @@ a.zola-anchor {
   small {
     color: darken($white, 40);
     font-size: 17px;
-    margin-bottom: 10px;
+    margin: 0.5em 0;
     display: block;
   }
   a:not(.btn):not(.pagination_pager):not(.zola-anchor) {
