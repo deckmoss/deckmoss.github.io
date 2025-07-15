@@ -15,6 +15,6 @@ Welcome to my corner. As a computer enthusiast from Europe, I love exploring the
 
 <br>
 
-<strong>Many people around are asking for instagram accounts at these days. Since i don't support meta, i wanted to provide you something different and more authentic.
+<strong>Many people these days are asking for Instagram accounts. Since I don't support Meta, I wanted to provide you with something different and more authentic.
 </strong>
 <br>

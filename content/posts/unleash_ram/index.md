@@ -19,13 +19,12 @@ image = "urban.gif"
 </p>
 
 ## Vendors may lie for profit
-<br>
-<p class="notice_warning"><strong>🐧 Attention! you'll need a <em>linux</em> powered operating system! 🐧</strong></p>
 
-<br>
-<p class="notice"><strong>☠️ For the maximization of profits, vendors may lie about the actual supported random access memory limits. ☠️ <br>It could also be a fact that later firmware releases support greater amounts than the initial ones. </strong></p>
+<p class="notice_warning"><strong>🐧 Attention! you'll need a <em>linux</em> powered operating system!</strong></p>
 
-<br>
+<p class="notice"><strong>For the maximization of profits, vendors may lie about the actual supported random access memory limits. <br>It could also be a fact that later firmware releases support greater amounts than the initial ones. </strong></p>
+
+
 <p>
 One common cumulative problem with modern notebooks' memory is that one or more RAM modules are soldered directly onto the motherboard. Most customers cannot change these types. However, often only one module is soldered, while the second module is mounted in a regular socket. These types are very easily upgradeable, which can save you a lot of money and time.
 </p>
@@ -38,7 +37,6 @@ One common cumulative problem with modern notebooks' memory is that one or more 
 - Saves the environment.
 
 ## Example of a vendor's official statement
-<br>
 
 | Model                                   | <p align="left">Acer Swift 3 (SF314-41)</p>            |
 | --------------------------------------- | :----------------------------------------------------- |
@@ -49,8 +47,6 @@ One common cumulative problem with modern notebooks' memory is that one or more 
 | Slots <abbr title="Quantity">QTY</abbr> | <p align="left">1</p>                                  |
 | Empty Slots                             | <p align="left">1</p>                                  |
 
-
-<br>
 
 You may have noticed that **4 GB** is soldered directly onto the motherboard. Most users would not unsolder this nor resolder a larger module.
 
@@ -127,7 +123,7 @@ Since commercial memory modules are mostly _manufactured in capacities that are 
 
 ### By other specifications
 It is **highly recommended** to choose a module that has **exactly the same specifications as the soldered** one and is-  also older than the currently installed firmware. 
-<br><br>
+
 
 <p class="notice_info">ℹ️ Additionally, consider <strong>upgrading your BIOS firmware beforehand</strong> and rechecking with <code>dmidecode</code> (as mentioned above) to see if the supported amount has increased.</p>
 
