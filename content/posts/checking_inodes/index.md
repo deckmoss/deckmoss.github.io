@@ -6,7 +6,7 @@ updated =  2025-07-15T12:15:00Z
 categories = ["Nix/OS"]
 tags = ["Linux", "Partition Types"]
 [extra]
-subtitle = "Part 1: Checking inode consumption on different parition types"
+subtitle = "1. Checking inode consumption on different parition types"
 disable_comments = true
 image = "urban.gif"
 +++
