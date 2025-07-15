@@ -4,12 +4,12 @@
     <link rel="self" type="application/atom+xml" href="https://deckmoss.github.io/tags/Linux/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://deckmoss.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2025-07-12T11:48:00+00:00</updated>
+    <updated>2025-07-15T14:02:00+00:00</updated>
     <id>https://deckmoss.github.io/tags/Linux/atom.xml</id>
     <entry xml:lang="en">
-        <title>Employ your garbage collector sustainably on NixOS.</title>
-        <published>2025-07-12T11:48:00+00:00</published>
-        <updated>2025-07-12T11:48:00+00:00</updated>
+        <title>Running NixOS and declaring NixOS garbage-collector</title>
+        <published>2025-07-15T14:02:00+00:00</published>
+        <updated>2025-07-15T14:02:00+00:00</updated>
         
         <author>
           <name>
@@ -19,20 +19,41 @@
           </name>
         </author>
         
-        <link rel="alternate" type="text/html" href="https://deckmoss.github.io/posts/degarbage_nixos/"/>
-        <id>https://deckmoss.github.io/posts/degarbage_nixos/</id>
+        <link rel="alternate" type="text/html" href="https://deckmoss.github.io/posts/nixos-garbage-collector/"/>
+        <id>https://deckmoss.github.io/posts/nixos-garbage-collector/</id>
         
-        <content type="html" xml:base="https://deckmoss.github.io/posts/degarbage_nixos/">&lt;h2 id=&quot;In_case_you&amp;#39;re_like_me_new_to_NixOS...&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#In_case_you&amp;#x27;re_like_me_new_to_NixOS...&quot; aria-label=&quot;Anchor link for: In_case_you&amp;#x27;re_like_me_new_to_NixOS...&quot;&gt;#&lt;&#x2F;a&gt;In case you&#x27;re like me new to NixOS...&lt;&#x2F;h2&gt;
-&lt;p class=&quot;notice_info&quot;&gt;&lt;strong&gt;&lt;em&gt;...you may not have noticed that it is obligatory to declare certain lines for automatic garbage collection in your configuration.nix. Otherwise, you might end up in the worst-case scenario with not a single free &lt;abbr title=&quot;Inodes are essential on Unix-like systems (such as Linux-based OS) for storing metadata of files. They may get consumed long before the memory capacity of their volume is exceeded.&quot;&gt;inode&lt;&#x2F;abbr&gt; left to link.&lt;br&gt;&lt;br&gt;
-I use &lt;abbr title=&quot;modern file system format&quot;&gt;btrfs&lt;&#x2F;abbr&gt; and had already completed &lt;abbr title=&quot;BUILDS are called GENERATIONS in nix&quot;&gt;120 builds&lt;&#x2F;abbr&gt; when my system crashed during the 121st build process, displaying an error like &quot;no space left on device,&quot; even though I had a few hundred unused gigabytes available.&lt;br&gt;&lt;br&gt;
-It turned out that hundreds of thousands of files and system links had been created over time, which consumed all of my inodes. I assume that old links were not deallocated and that nixos preserved a totally useless software package release history on my disk. At that point, it became &lt;abbr title=&quot;Because every new build consumes new inodes without freeing old ones&quot;&gt;impossible to rebuild nixos.&lt;&#x2F;abbr&gt;&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt; 
-&lt;p class=&quot;notice_danger&quot;&gt;&lt;strong&gt; ❌ Result: You can&#x27;t simply &lt;abbr title=&quot;to comment smth out causes nixos to build a new system profile, old packages persist as orphanes&quot;&gt;comment out something in the configuration.nix&lt;&#x2F;abbr&gt; nor initiate garbage collection rules there, because it&#x27;s too late. You can&#x27;t fix this via the configuration.nix file at all.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;Printing_out_disk_usage_and_inode_consumption_statistics&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Printing_out_disk_usage_and_inode_consumption_statistics&quot; aria-label=&quot;Anchor link for: Printing_out_disk_usage_and_inode_consumption_statistics&quot;&gt;#&lt;&#x2F;a&gt;Printing out disk usage and inode consumption statistics&lt;&#x2F;h2&gt;
-&lt;h3 id=&quot;[🧩]_Check_Disk_Usage_$:&amp;gt;&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#[🧩]_Check_Disk_Usage_$:&amp;gt;&quot; aria-label=&quot;Anchor link for: [🧩]_Check_Disk_Usage_$:&amp;gt;&quot;&gt;#&lt;&#x2F;a&gt;[🧩] Check Disk Usage $:&amp;gt;&lt;&#x2F;h3&gt;
+        <content type="html" xml:base="https://deckmoss.github.io/posts/nixos-garbage-collector/">&lt;h2 id=&quot;Related_articles&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Related_articles&quot; aria-label=&quot;Anchor link for: Related_articles&quot;&gt;#&lt;&#x2F;a&gt;Related articles&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;a href=&quot;&#x2F;posts&#x2F;checking_inodes&quot; class=&quot;btn btn_info&quot;&gt;[ 0. main article ]&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;#&quot; class=&quot;btn btn_success&quot;&gt;[ 2. running garbage-collector ]&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#&quot; aria-label=&quot;Anchor link for: &quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>1. Checking inode consumption on different parition types</title>
+        <published>2025-07-12T11:48:00+00:00</published>
+        <updated>2025-07-15T12:15:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Prismatic Arbiter
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://deckmoss.github.io/posts/checking_inodes/"/>
+        <id>https://deckmoss.github.io/posts/checking_inodes/</id>
+        
+        <content type="html" xml:base="https://deckmoss.github.io/posts/checking_inodes/">&lt;h2 id=&quot;Related_Articels&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Related_Articels&quot; aria-label=&quot;Anchor link for: Related_Articels&quot;&gt;#&lt;&#x2F;a&gt;Related Articels&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;a href=&quot;&#x2F;posts&#x2F;degarbage_nixos&quot; class=&quot;btn btn_info&quot; width=&quot;100%&quot;&gt;[ 0. main article ]&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;#&quot; class=&quot;btn btn_success&quot;&gt;[ 2. running garbage-collector ]&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;A_Examining_disk_usage_and_inode_consumption_statistics_on_btrfs,_ext4_and_xfs&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#A_Examining_disk_usage_and_inode_consumption_statistics_on_btrfs,_ext4_and_xfs&quot; aria-label=&quot;Anchor link for: A_Examining_disk_usage_and_inode_consumption_statistics_on_btrfs,_ext4_and_xfs&quot;&gt;#&lt;&#x2F;a&gt;A Examining disk usage and inode consumption statistics on &lt;code&gt;btrfs&lt;&#x2F;code&gt;, &lt;code&gt;ext4&lt;&#x2F;code&gt; and &lt;code&gt;xfs&lt;&#x2F;code&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;To put an emphasize on slightly differences between some random filesystem types i was able to examine.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;[🧩]_A.1_Check_Disk_Usage&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#[🧩]_A.1_Check_Disk_Usage&quot; aria-label=&quot;Anchor link for: [🧩]_A.1_Check_Disk_Usage&quot;&gt;#&lt;&#x2F;a&gt;[🧩] A.1 Check Disk Usage&lt;&#x2F;h3&gt;
 &lt;p&gt;Let us begin with printing the disk usage with the &lt;abbr title=&quot;disk free&quot;&gt;df&lt;&#x2F;abbr&gt; tool out, to rule this out.&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;sh&quot; class=&quot;language-sh z-code&quot;&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;df&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt;&lt;span class=&quot;z-variable z-parameter z-option z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-parameter z-shell&quot;&gt; -&lt;&#x2F;span&gt;h&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;&lt;strong&gt;My Output:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;pre class=&quot;z-code&quot;&gt;&lt;code&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Filesystem      Size  Used Avail Use% Mounted on
 &lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;devtmpfs        1,6G     0  1,6G   0% &#x2F;dev
 &lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;tmpfs            16G   63M   16G   1% &#x2F;dev&#x2F;shm
@@ -51,16 +72,14 @@ It turned out that hundreds of thousands of files and system links had been crea
 &lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;tmpfs           1,0M     0  1,0M   0% &#x2F;run&#x2F;credentials&#x2F;systemd-sysctl.service
 &lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;tmpfs           3,1G  200K  3,1G   1% &#x2F;run&#x2F;user&#x2F;1000
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;Interpretation:&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Interpretation:&quot; aria-label=&quot;Anchor link for: Interpretation:&quot;&gt;#&lt;&#x2F;a&gt;Interpretation:&lt;&#x2F;h3&gt;
 &lt;p class=&quot;notice_success&quot;&gt;✅ 40% of &lt;abbr title=&quot;the line where &#x2F; is in the row of &#x27;Mounted on&#x27;&quot;&gt;system root directory&lt;&#x2F;abbr&gt; are free and theres also no sub-partition mounted in root besides boot and tempfs. Therefore the &quot;no space left&quot; error was not caused by a lack of overall disk space.&lt;&#x2F;p&gt;
 &lt;br&gt;
-If you simply don&#x27;t have disk space left, because you have also forgotten to declare garbage collection cycles, you could do this now manually by continuing from &lt;a href=&quot;&quot;&gt;here.&lt;&#x2F;a&gt; Otherwise wipe some gigabites and consider to extend your partition.
-&lt;br&gt;
-&lt;h2 id=&quot;Checking_out_the_inode_consumption_with_df_-i&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Checking_out_the_inode_consumption_with_df_-i&quot; aria-label=&quot;Anchor link for: Checking_out_the_inode_consumption_with_df_-i&quot;&gt;#&lt;&#x2F;a&gt;Checking out the inode consumption with &lt;abbr title=&quot;disk free -inodes&quot;&gt;df -i&lt;&#x2F;abbr&gt;&lt;&#x2F;h2&gt;
-&lt;h3 id=&quot;[🧩]_on_btrfs_$:&amp;gt;&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#[🧩]_on_btrfs_$:&amp;gt;&quot; aria-label=&quot;Anchor link for: [🧩]_on_btrfs_$:&amp;gt;&quot;&gt;#&lt;&#x2F;a&gt;[🧩] on btrfs $:&amp;gt;&lt;&#x2F;h3&gt;
+&lt;p class=&quot;notice&quot;&gt;If you simply don&#x27;t have disk space left, because you have also forgotten to declare garbage collection cycles, you could do this now manually by continuing from &lt;a href=&quot;&quot;&gt;here.&lt;&#x2F;a&gt; Otherwise wipe some gigabites and consider to extend your partition.&lt;&#x2F;p&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;h2 id=&quot;B_Checking_out_the_inode_consumption_with_df_-i&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#B_Checking_out_the_inode_consumption_with_df_-i&quot; aria-label=&quot;Anchor link for: B_Checking_out_the_inode_consumption_with_df_-i&quot;&gt;#&lt;&#x2F;a&gt;B Checking out the inode consumption with &lt;abbr title=&quot;disk free -inodes&quot;&gt;df -i&lt;&#x2F;abbr&gt;&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;[🧩]_B.1_Optional:_btrfs_(won&amp;#39;t_work)&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#[🧩]_B.1_Optional:_btrfs_(won&amp;#x27;t_work)&quot; aria-label=&quot;Anchor link for: [🧩]_B.1_Optional:_btrfs_(won&amp;#x27;t_work)&quot;&gt;#&lt;&#x2F;a&gt;[🧩] B.1 Optional: btrfs (won&#x27;t work)&lt;&#x2F;h3&gt;
 &lt;pre data-lang=&quot;sh&quot; class=&quot;language-sh z-code&quot;&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;df&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt;&lt;span class=&quot;z-variable z-parameter z-option z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-parameter z-shell&quot;&gt; -&lt;&#x2F;span&gt;i&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;&lt;strong&gt;Output:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;pre class=&quot;z-code&quot;&gt;&lt;code&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Filesystem       Inodes  IUsed    IFree IUse% Mounted on
 &lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;devtmpfs        3987643    837  3986806    1% &#x2F;dev
 &lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;tmpfs           3990104    389  3989715    1% &#x2F;dev&#x2F;shm
@@ -80,14 +99,12 @@ If you simply don&#x27;t have disk space left, because you have also forgotten t
 &lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;tmpfs            798020    278   797742    1% &#x2F;run&#x2F;user&#x2F;1000
 &lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;tmpfs              1024      1     1023    1% &#x2F;run&#x2F;credentials&#x2F;getty@tty2.service
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;Interpretation:-1&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Interpretation:-1&quot; aria-label=&quot;Anchor link for: Interpretation:-1&quot;&gt;#&lt;&#x2F;a&gt;Interpretation:&lt;&#x2F;h3&gt;
 &lt;p class=&quot;notice_danger&quot;&gt;❌ df -i can&#x27;t read the inode consumption of my btrfs root partition, resulting in an output of &lt;code&gt;0&#x2F;0&#x2F;0&#x2F;-&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt; 
-&lt;h2 id=&quot;Correct_inode_measurement_depends_on_your_partition_format&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Correct_inode_measurement_depends_on_your_partition_format&quot; aria-label=&quot;Anchor link for: Correct_inode_measurement_depends_on_your_partition_format&quot;&gt;#&lt;&#x2F;a&gt;Correct inode measurement depends on your partition format&lt;&#x2F;h2&gt;
-&lt;p&gt;Every partition format uses its own technique to preserve or balance a contingent of inodes. Inodes are responsible for storing file-related metadata, like systemlinks, timestamps, ownership, access rights and so on.&lt;&#x2F;p&gt;
-&lt;h3 id=&quot;[🧩]_Optional_-_check_out_btrfs,_if_present_$:&amp;gt;&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#[🧩]_Optional_-_check_out_btrfs,_if_present_$:&amp;gt;&quot; aria-label=&quot;Anchor link for: [🧩]_Optional_-_check_out_btrfs,_if_present_$:&amp;gt;&quot;&gt;#&lt;&#x2F;a&gt;[🧩] Optional - check out btrfs, if present $:&amp;gt;&lt;&#x2F;h3&gt;
+&lt;h2 id=&quot;C_Choosing_the_correct_inode_measurement_tool_depends_on_the_filesystem_format&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#C_Choosing_the_correct_inode_measurement_tool_depends_on_the_filesystem_format&quot; aria-label=&quot;Anchor link for: C_Choosing_the_correct_inode_measurement_tool_depends_on_the_filesystem_format&quot;&gt;#&lt;&#x2F;a&gt;C Choosing the correct inode measurement tool depends on the filesystem format&lt;&#x2F;h2&gt;
+&lt;p&gt;As demonstrated right above, every partition format uses its own technique to preserve or balance a contingent of inodes. Inodes are responsible for storing file-related metadata, like systemlinks, timestamps, ownership, access rights and so on.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;[🧩]_C.1_Optional:_btrfs&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#[🧩]_C.1_Optional:_btrfs&quot; aria-label=&quot;Anchor link for: [🧩]_C.1_Optional:_btrfs&quot;&gt;#&lt;&#x2F;a&gt;[🧩] C.1 Optional: btrfs&lt;&#x2F;h3&gt;
 &lt;pre data-lang=&quot;sh&quot; class=&quot;language-sh z-code&quot;&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;sudo&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt; btrfs filesystem usage &#x2F;&lt;&#x2F;span&gt;
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;&lt;strong&gt;Output:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;pre class=&quot;z-code&quot;&gt;&lt;code&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Overall:
 &lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Device size:         456.52GiB
 &lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Device allocated:    456.52GiB
@@ -111,18 +128,16 @@ If you simply don&#x27;t have disk space left, because you have also forgotten t
 &lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;System,DUP: Size:8.00MiB, Used:64.00KiB (0.78%)
 &lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;&#x2F;dev&#x2F;mapper&#x2F;luks-4b890b26-f927-468e-9ce2-ead3d942224f	  16.00MiB
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;Interpretation:-2&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Interpretation:-2&quot; aria-label=&quot;Anchor link for: Interpretation:-2&quot;&gt;#&lt;&#x2F;a&gt;Interpretation:&lt;&#x2F;h3&gt;
 &lt;p class=&quot;notice_success&quot;&gt;✅ Actually i must have enough space for inode allocation left. On this &lt;code&gt;btrfs&lt;&#x2F;code&gt; partition, only &lt;strong&gt;59.46%&lt;&#x2F;strong&gt; of the preserved space for Metadata&#x2F;DUP was consumed. This is no surprise, because i already have fixed this. But if you actually don&#x27;t have any space left, please continue &lt;a href=&quot;&quot;&gt;here&lt;&#x2F;a&gt; to call the garbage collector and consider also to perform a btrfs scrub.&lt;&#x2F;p&gt;
 &lt;p&gt;Let&#x27;s focus on this part of the previous output:&lt;&#x2F;p&gt;
 &lt;pre class=&quot;z-code&quot;&gt;&lt;code&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Metadata,DUP: Size:8.00GiB, Used:4.76GiB (59.56%)
 &lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;&#x2F;dev&#x2F;mapper&#x2F;luks-4b890b26-f927-468e-9ce2-ead3d942224f	  16.00GiB
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;The reserved space for metadata equals 16.00&lt;abbr title=&quot;A gibibyte is a more technical unit of memory size than a gigabyte. Gibibytes are based on powers of two, which fit perfectly with binary processing.&quot;&gt;GiB&lt;&#x2F;abbr&gt; of total disk space but de-facto only 8.00GiB are allocatable for metadata or inodes. These 8.00GiB are mirrored to maximize file consistency. There should always be a backup, just in case. I guess &lt;strong&gt;DUP&lt;&#x2F;strong&gt; simply means &lt;em&gt;duplicate&lt;&#x2F;em&gt;.&lt;&#x2F;p&gt;
-&lt;h3 id=&quot;[🧩]_Optional:_out_your_ext4,_if_present_$:&amp;gt;&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#[🧩]_Optional:_out_your_ext4,_if_present_$:&amp;gt;&quot; aria-label=&quot;Anchor link for: [🧩]_Optional:_out_your_ext4,_if_present_$:&amp;gt;&quot;&gt;#&lt;&#x2F;a&gt;[🧩] Optional: out your ext4, if present $:&amp;gt;&lt;&#x2F;h3&gt;
+&lt;h3 id=&quot;[🧩]_C.2_Optional:_ext4&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#[🧩]_C.2_Optional:_ext4&quot; aria-label=&quot;Anchor link for: [🧩]_C.2_Optional:_ext4&quot;&gt;#&lt;&#x2F;a&gt;[🧩] C.2 Optional: ext4&lt;&#x2F;h3&gt;
 &lt;p&gt;My root partition on my Fedora system is formatted with ext4. I&#x27;m providing &lt;code&gt;df -i&lt;&#x2F;code&gt; for a comparison:&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;sh&quot; class=&quot;language-sh z-code&quot;&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;df&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt;&lt;span class=&quot;z-variable z-parameter z-option z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-parameter z-shell&quot;&gt; -&lt;&#x2F;span&gt;i&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;&lt;strong&gt;Output:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;pre class=&quot;z-code&quot;&gt;&lt;code&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Filesystem       Inodes  IUsed    IFree   IUse% Mounted on
 &lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;&#x2F;dev&#x2F;dm-0       6291456  1145703  5145753   19% &#x2F;
 &lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;devtmpfs        4340946      762  4340184    1% &#x2F;dev
@@ -138,13 +153,11 @@ If you simply don&#x27;t have disk space left, because you have also forgotten t
 &lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;tmpfs            869899      697   869202    1% &#x2F;run&#x2F;user&#x2F;1000
 &lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;tmpfs              1024        2     1022    1% &#x2F;run&#x2F;credentials&#x2F;getty@tty3.service
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;Interpretation&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Interpretation&quot; aria-label=&quot;Anchor link for: Interpretation&quot;&gt;#&lt;&#x2F;a&gt;Interpretation&lt;&#x2F;h3&gt;
 &lt;p class=&quot;notice_success&quot;&gt;✅ &lt;code&gt;df -i&lt;&#x2F;code&gt; is able to read and process inode statistics of ext4 partitions&lt;&#x2F;p&gt;
-## [🧩] Optional: out your xfs, if present $:&gt;
+&lt;h3 id=&quot;[🧩]_C.3_Optional:_xfs&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#[🧩]_C.3_Optional:_xfs&quot; aria-label=&quot;Anchor link for: [🧩]_C.3_Optional:_xfs&quot;&gt;#&lt;&#x2F;a&gt;[🧩] C.3 Optional: xfs&lt;&#x2F;h3&gt;
 &lt;p&gt;Also for comparison reasons i called for &lt;code&gt;df -i&lt;&#x2F;code&gt; statistics from my MX Linux machine with a xfs formated root partition.&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;sh&quot; class=&quot;language-sh z-code&quot;&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;z-source z-shell z-bash&quot;&gt;&lt;span class=&quot;z-meta z-function-call z-shell&quot;&gt;&lt;span class=&quot;z-variable z-function z-shell&quot;&gt;df&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments z-shell&quot;&gt;&lt;span class=&quot;z-variable z-parameter z-option z-shell&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-parameter z-shell&quot;&gt; -&lt;&#x2F;span&gt;i&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;&lt;strong&gt;Output&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;pre class=&quot;z-code&quot;&gt;&lt;code&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;Filesystem       Inodes  IUsed    IFree IUse% Mounted on
 &lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;udev             116689    439   116250    1% &#x2F;dev
 &lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;tmpfs            126496    645   125851    1% &#x2F;run
@@ -155,10 +168,36 @@ If you simply don&#x27;t have disk space left, because you have also forgotten t
 &lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;cgroup           126496      4   126492    1% &#x2F;sys&#x2F;fs&#x2F;cgroup
 &lt;&#x2F;span&gt;&lt;span class=&quot;z-text z-plain&quot;&gt;tmpfs            126496     36   126460    1% &#x2F;run&#x2F;user&#x2F;1000
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;h3 id=&quot;Interpretation-1&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Interpretation-1&quot; aria-label=&quot;Anchor link for: Interpretation-1&quot;&gt;#&lt;&#x2F;a&gt;Interpretation&lt;&#x2F;h3&gt;
 &lt;p class=&quot;notice_success&quot;&gt;✅ &lt;code&gt;df -i&lt;&#x2F;code&gt; is also able to read and process inode statistics of xfs partitions&lt;&#x2F;p&gt;
-&lt;h2 id=&quot;Comparison_of_btrfs,_ext4_and_xfs&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Comparison_of_btrfs,_ext4_and_xfs&quot; aria-label=&quot;Anchor link for: Comparison_of_btrfs,_ext4_and_xfs&quot;&gt;#&lt;&#x2F;a&gt;Comparison of btrfs, ext4 and xfs&lt;&#x2F;h2&gt;
-&lt;p class=&quot;notice_info&quot;&gt;Depending on your partition type you must find the correct tool to gather the wanted information about actual inode consumption. E.g. for btrfs i would go for the &lt;a href=&quot;#[🧩]_Optional:_check_your_btrfs,_if_present__$:&gt;&quot;&gt;btrfs usage tool&lt;&#x2F;a&gt; and then check the metadata paragraph&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;D_Comparison_of_btrfs,_ext4_and_xfs&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#D_Comparison_of_btrfs,_ext4_and_xfs&quot; aria-label=&quot;Anchor link for: D_Comparison_of_btrfs,_ext4_and_xfs&quot;&gt;#&lt;&#x2F;a&gt;D Comparison of btrfs, ext4 and xfs&lt;&#x2F;h2&gt;
+&lt;p class=&quot;notice_info&quot;&gt;Depending on your partition type you must find the correct tool to gather the wanted information about actual inode consumption.&lt;br&gt;E.g. for btrfs i would go for the &lt;a href=&quot;&#x2F;posts&#x2F;checking_inodes&#x2F;#[%F0%9F%A7%A9]_C.1_Optional:_btrfs&quot;&gt;btrfs usage tool&lt;&#x2F;a&gt; and then check the metadata paragraph.&lt;br&gt;&lt;br&gt;For at least &lt;code&gt;ext4&lt;&#x2F;code&gt; and &lt;code&gt;xfs&lt;&#x2F;code&gt; filesystems will &lt;code&gt;df -i&lt;&#x2F;code&gt; do the trick&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Employ your garbage collector sustainably on NixOS.</title>
+        <published>2025-07-12T11:48:00+00:00</published>
+        <updated>2025-07-15T12:15:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Prismatic Arbiter
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://deckmoss.github.io/posts/degarbage_nixos/"/>
+        <id>https://deckmoss.github.io/posts/degarbage_nixos/</id>
+        
+        <content type="html" xml:base="https://deckmoss.github.io/posts/degarbage_nixos/">&lt;h2 id=&quot;In_case_you&amp;#39;re_like_me_new_to_NixOS...&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#In_case_you&amp;#x27;re_like_me_new_to_NixOS...&quot; aria-label=&quot;Anchor link for: In_case_you&amp;#x27;re_like_me_new_to_NixOS...&quot;&gt;#&lt;&#x2F;a&gt;In case you&#x27;re like me new to NixOS...&lt;&#x2F;h2&gt;
+&lt;p class=&quot;notice_info&quot;&gt;&lt;strong&gt;&lt;em&gt;...you may not have noticed that it is obligatory to declare certain lines for automatic garbage collection in your configuration.nix. Otherwise, you might end up in the worst-case scenario with not a single free &lt;abbr title=&quot;Inodes are essential on Unix-like systems (such as Linux-based OS) for storing metadata of files. They may get consumed long before the memory capacity of their volume is exceeded.&quot;&gt;inode&lt;&#x2F;abbr&gt; left to link.&lt;br&gt;&lt;br&gt;
+I use &lt;abbr title=&quot;modern file system format&quot;&gt;btrfs&lt;&#x2F;abbr&gt; and had already completed &lt;abbr title=&quot;BUILDS are called GENERATIONS in nix&quot;&gt;120 builds&lt;&#x2F;abbr&gt; when my system crashed during the 121st build process, displaying an error like &quot;no space left on device,&quot; even though I had a few hundred unused gigabytes available.&lt;br&gt;&lt;br&gt;
+It turned out that hundreds of thousands of files and system links had been created over time, which consumed all of my inodes. I assume that old links were not deallocated and that nixos preserved a totally useless software package release history on my disk. At that point, it became &lt;abbr title=&quot;Because every new build consumes new inodes without freeing old ones&quot;&gt;impossible to rebuild nixos.&lt;&#x2F;abbr&gt;&lt;&#x2F;em&gt;&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt; 
+&lt;p class=&quot;notice_danger&quot;&gt;&lt;strong&gt; ❌ Result: You can&#x27;t simply &lt;abbr title=&quot;to comment smth out causes nixos to build a new system profile, old packages persist as orphanes&quot;&gt;comment out something in the configuration.nix&lt;&#x2F;abbr&gt; nor initiate garbage collection rules there, because it&#x27;s too late. You can&#x27;t fix this via the configuration.nix file at all.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;Continue_with&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Continue_with&quot; aria-label=&quot;Anchor link for: Continue_with&quot;&gt;#&lt;&#x2F;a&gt;Continue with&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;a href=&quot;&#x2F;posts&#x2F;checking_inodes&quot; class=&quot;btn btn_info&quot; border=&quot;5px solid black&quot;&gt;[ 1. checking partition stats ] &lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;&#x2F;posts&#x2F;nixos-garbage-collector&quot; class=&quot;btn btn_success&quot;&gt;[ 2. running garbage-collector ]&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 </content>
         
     </entry>

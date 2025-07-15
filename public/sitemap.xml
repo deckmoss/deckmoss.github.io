@@ -19,8 +19,16 @@
         <loc>https://deckmoss.github.io/posts/</loc>
     </url>
     <url>
+        <loc>https://deckmoss.github.io/posts/checking_inodes/</loc>
+        <lastmod>2025-07-15T12:15:00Z</lastmod>
+    </url>
+    <url>
         <loc>https://deckmoss.github.io/posts/degarbage_nixos/</loc>
-        <lastmod>2025-07-12T11:48:00Z</lastmod>
+        <lastmod>2025-07-15T12:15:00Z</lastmod>
+    </url>
+    <url>
+        <loc>https://deckmoss.github.io/posts/nixos-garbage-collector/</loc>
+        <lastmod>2025-07-15T14:02:00Z</lastmod>
     </url>
     <url>
         <loc>https://deckmoss.github.io/posts/page/1/</loc>
@@ -43,6 +51,9 @@
     </url>
     <url>
         <loc>https://deckmoss.github.io/tags/NixOS/</loc>
+    </url>
+    <url>
+        <loc>https://deckmoss.github.io/tags/Partition Types/</loc>
     </url>
     <url>
         <loc>https://deckmoss.github.io/tags/configuration.nix/</loc>

@@ -1,12 +1,12 @@
 +++
-title = "Employ your garbage collector sustainably on NixOS."
+title = "How to unchain inodes on NixOS, while getting rid of orphaned packages [Introduction]"
 date = 2025-07-12T11:48:00Z
 updated =  2025-07-15T12:15:00Z
 [taxonomies]
 categories = ["Nix/OS"]
 tags = ["Linux", "NixOS", "configuration.nix", "Migration"]
 [extra]
-subtitle = "How to unchain inodes on NixOS, while getting rid of orphaned packages."
+subtitle = "Employ your garbage collector sustainably on NixOS."
 disable_comments = true
 image = "urban.gif"
 +++
@@ -23,5 +23,5 @@ It turned out that hundreds of thousands of files and system links had been crea
 
 <a href="/posts/checking_inodes" class="btn btn_info" border="5px solid black">[ 1. checking partition stats ] </a> 
 
-<a href="#" class="btn btn_success">[ 2. running garbage-collector ]</a>
+<a href="/posts/nixos-garbage-collector" class="btn btn_success">[ 2. running garbage-collector ]</a>
 

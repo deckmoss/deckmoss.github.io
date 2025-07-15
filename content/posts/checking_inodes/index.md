@@ -1,12 +1,12 @@
 +++
-title = "1. Checking inode consumption on different parition types"
+title = "How to unchain inodes on NixOS, while getting rid of orphaned packages [Part 1]"
 date = 2025-07-12T11:48:00Z
 updated =  2025-07-15T12:15:00Z
 [taxonomies]
 categories = ["Nix/OS"]
 tags = ["Linux", "Partition Types"]
 [extra]
-subtitle = "How to unchain inodes on NixOS, while getting rid of orphaned packages."
+subtitle = "Part 1: Checking inode consumption on different parition types"
 disable_comments = true
 image = "urban.gif"
 +++
@@ -14,7 +14,7 @@ image = "urban.gif"
 
 <a href="/posts/degarbage_nixos" class="btn btn_info" width="100%">[ 0. main article ]</a>
 
-<a href="#" class="btn btn_success">[ 2. running garbage-collector ]</a>
+<a href="/posts/nixos-garbage-collector" class="btn btn_success">[ 2. running garbage-collector ]</a>
 ## A Examining disk usage and inode consumption statistics on `btrfs`, `ext4` and `xfs` 
 
 To put an emphasize on slightly differences between some random filesystem types i was able to examine.
@@ -80,7 +80,7 @@ tmpfs              1024      1     1023    1% /run/credentials/getty@tty2.servic
 
 <p class="notice_danger">❌ df -i can't read the inode consumption of my btrfs root partition, resulting in an output of <code>0/0/0/-</code>.</p> 
 
-## C Choosing the correct inode measurement tool depends on the filesystem format 
+## C Choosing the correct inode measurement tool depending on the filesystem format 
 
 As demonstrated right above, every partition format uses its own technique to preserve or balance a contingent of inodes. Inodes are responsible for storing file-related metadata, like systemlinks, timestamps, ownership, access rights and so on. 
 
