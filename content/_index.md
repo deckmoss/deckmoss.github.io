@@ -6,7 +6,7 @@ title = "[ ☄️ ]-(`MyBlog`):"
 
 
 
-<img src="portrait.png" alt="That's me" style="width: 55vw; min-width: 550px;">
+<img src="obsidian_graph.png" alt="That's me" style="width: 55vw; min-width: 550px;">
 <br><br>
 
 ## **Salutations!** 

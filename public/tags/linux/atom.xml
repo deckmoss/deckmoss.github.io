@@ -28,11 +28,8 @@
 &lt;&#x2F;strong&gt;
 &lt;&#x2F;p&gt;
 &lt;h2 id=&quot;Vendors_may_lie_for_profit&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Vendors_may_lie_for_profit&quot; aria-label=&quot;Anchor link for: Vendors_may_lie_for_profit&quot;&gt;#&lt;&#x2F;a&gt;Vendors may lie for profit&lt;&#x2F;h2&gt;
-&lt;br&gt;
-&lt;p class=&quot;notice_warning&quot;&gt;&lt;strong&gt;🐧 Attention! you&#x27;ll need a &lt;em&gt;linux&lt;&#x2F;em&gt; powered operating system! 🐧&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
-&lt;br&gt;
-&lt;p class=&quot;notice&quot;&gt;&lt;strong&gt;☠️ For the maximization of profits, vendors may lie about the actual supported random access memory limits. ☠️ &lt;br&gt;It could also be a fact that later firmware releases support greater amounts than the initial ones. &lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
-&lt;br&gt;
+&lt;p class=&quot;notice_warning&quot;&gt;&lt;strong&gt;🐧 Attention! you&#x27;ll need a &lt;em&gt;linux&lt;&#x2F;em&gt; powered operating system!&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p class=&quot;notice&quot;&gt;&lt;strong&gt;For the maximization of profits, vendors may lie about the actual supported random access memory limits. &lt;br&gt;It could also be a fact that later firmware releases support greater amounts than the initial ones. &lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;
 One common cumulative problem with modern notebooks&#x27; memory is that one or more RAM modules are soldered directly onto the motherboard. Most customers cannot change these types. However, often only one module is soldered, while the second module is mounted in a regular socket. These types are very easily upgradeable, which can save you a lot of money and time.
 &lt;&#x2F;p&gt;
@@ -45,7 +42,6 @@ One common cumulative problem with modern notebooks&#x27; memory is that one or 
 &lt;li&gt;Saves the environment.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;Example_of_a_vendor&amp;#39;s_official_statement&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Example_of_a_vendor&amp;#x27;s_official_statement&quot; aria-label=&quot;Anchor link for: Example_of_a_vendor&amp;#x27;s_official_statement&quot;&gt;#&lt;&#x2F;a&gt;Example of a vendor&#x27;s official statement&lt;&#x2F;h2&gt;
-&lt;br&gt;
 &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Model&lt;&#x2F;th&gt;&lt;th style=&quot;text-align: left&quot;&gt;&lt;p align=&quot;left&quot;&gt;Acer Swift 3 (SF314-41)&lt;&#x2F;p&gt;&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
 &lt;tr&gt;&lt;td&gt;RAM&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;&lt;p align=&quot;left&quot;&gt;4 GB (provided memory is soldered)&lt;&#x2F;p&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;Max RAM supported&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;&lt;p align=&quot;left&quot;&gt;12 GB&lt;&#x2F;p&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
@@ -54,7 +50,6 @@ One common cumulative problem with modern notebooks&#x27; memory is that one or 
 &lt;tr&gt;&lt;td&gt;Slots &lt;abbr title=&quot;Quantity&quot;&gt;QTY&lt;&#x2F;abbr&gt;&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;&lt;p align=&quot;left&quot;&gt;1&lt;&#x2F;p&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;Empty Slots&lt;&#x2F;td&gt;&lt;td style=&quot;text-align: left&quot;&gt;&lt;p align=&quot;left&quot;&gt;1&lt;&#x2F;p&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
-&lt;br&gt;
 &lt;p&gt;You may have noticed that &lt;strong&gt;4 GB&lt;&#x2F;strong&gt; is soldered directly onto the motherboard. Most users would not unsolder this nor resolder a larger module.&lt;&#x2F;p&gt;
 &lt;p class=&quot;notice_warning&quot;&gt;The vendor claims that you could insert an &lt;strong&gt;8 GB &lt;&#x2F;strong&gt;Module into the empty slot to obtain the maximum supported limit of &lt;strong&gt;12 GB.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;How_to_obtain_the_real_supported_memory_amount_using_the_Linux_tool_dmidecode&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#How_to_obtain_the_real_supported_memory_amount_using_the_Linux_tool_dmidecode&quot; aria-label=&quot;Anchor link for: How_to_obtain_the_real_supported_memory_amount_using_the_Linux_tool_dmidecode&quot;&gt;#&lt;&#x2F;a&gt;How to obtain the real supported memory amount &lt;em&gt;using the Linux tool &lt;code&gt;dmidecode&lt;&#x2F;code&gt;&lt;&#x2F;em&gt;&lt;&#x2F;h2&gt;
@@ -116,8 +111,7 @@ One common cumulative problem with modern notebooks&#x27; memory is that one or 
 &lt;p&gt;Since commercial memory modules are mostly &lt;em&gt;manufactured in capacities that are &lt;strong&gt;powers of two&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt;, such as &lt;code&gt;2, 4, 8, 16, 32, and 64 GB&lt;&#x2F;code&gt;, you must not buy a module that, when combined with the &lt;em&gt;already soldered &lt;strong&gt;4 GB&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt; module, exceeds 64 GB (the maximum supported amount by the current firmware).&lt;&#x2F;p&gt;
 &lt;p class=&quot;notice_success&quot;&gt;✅ In this example, &lt;em&gt; I chose &lt;strong&gt;32 GB&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt;, which brings the &lt;em&gt;total to &lt;strong&gt;36 GB&lt;&#x2F;strong&gt; when combined&lt;&#x2F;em&gt; with the &lt;em&gt;soldered module&lt;&#x2F;em&gt;.&lt;&#x2F;p&gt;
 &lt;h3 id=&quot;By_other_specifications&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#By_other_specifications&quot; aria-label=&quot;Anchor link for: By_other_specifications&quot;&gt;#&lt;&#x2F;a&gt;By other specifications&lt;&#x2F;h3&gt;
-&lt;p&gt;It is &lt;strong&gt;highly recommended&lt;&#x2F;strong&gt; to choose a module that has &lt;strong&gt;exactly the same specifications as the soldered&lt;&#x2F;strong&gt; one and is-  also older than the currently installed firmware.
-&lt;br&gt;&lt;br&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;It is &lt;strong&gt;highly recommended&lt;&#x2F;strong&gt; to choose a module that has &lt;strong&gt;exactly the same specifications as the soldered&lt;&#x2F;strong&gt; one and is-  also older than the currently installed firmware.&lt;&#x2F;p&gt;
 &lt;p class=&quot;notice_info&quot;&gt;ℹ️ Additionally, consider &lt;strong&gt;upgrading your BIOS firmware beforehand&lt;&#x2F;strong&gt; and rechecking with &lt;code&gt;dmidecode&lt;&#x2F;code&gt; (as mentioned above) to see if the supported amount has increased.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;Uprading_your_memory&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Uprading_your_memory&quot; aria-label=&quot;Anchor link for: Uprading_your_memory&quot;&gt;#&lt;&#x2F;a&gt;Uprading your memory&lt;&#x2F;h2&gt;
 &lt;p&gt;⚠️ Under construction&lt;&#x2F;p&gt;

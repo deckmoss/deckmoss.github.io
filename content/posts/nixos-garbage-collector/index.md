@@ -6,7 +6,7 @@ date = 2025-07-15T14:02:00Z
 categories = ["Nix/OS"]
 tags = ["Linux", "NixOS", "configuration.nix", "Migration"]
 [extra]
-subtitle = "2. Running NixOS and declaring NixOS garbage-collector"
+subtitle = "2. Running and declaring NixOS garbage-collector routines"
 disable_comments = true
 image = "urban.gif"
 +++

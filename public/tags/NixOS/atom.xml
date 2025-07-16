@@ -7,7 +7,7 @@
     <updated>2025-07-15T14:02:00+00:00</updated>
     <id>https://deckmoss.github.io/tags/NixOS/atom.xml</id>
     <entry xml:lang="en">
-        <title>Running NixOS and declaring NixOS garbage-collector</title>
+        <title>How to unchain inodes on NixOS, while getting rid of orphaned packages [Part 2]</title>
         <published>2025-07-15T14:02:00+00:00</published>
         <updated>2025-07-15T14:02:00+00:00</updated>
         
@@ -24,13 +24,13 @@
         
         <content type="html" xml:base="https://deckmoss.github.io/posts/nixos-garbage-collector/">&lt;h2 id=&quot;Related_articles&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#Related_articles&quot; aria-label=&quot;Anchor link for: Related_articles&quot;&gt;#&lt;&#x2F;a&gt;Related articles&lt;&#x2F;h2&gt;
 &lt;p&gt;&lt;a href=&quot;&#x2F;posts&#x2F;checking_inodes&quot; class=&quot;btn btn_info&quot;&gt;[ 0. main article ]&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;a href=&quot;#&quot; class=&quot;btn btn_success&quot;&gt;[ 2. running garbage-collector ]&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;&#x2F;posts&#x2F;checking_inodes&quot; class=&quot;btn btn_info&quot; border=&quot;5px solid black&quot;&gt;[ 1. checking partition stats ] &lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#&quot; aria-label=&quot;Anchor link for: &quot;&gt;#&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 </content>
         
     </entry>
     <entry xml:lang="en">
-        <title>Employ your garbage collector sustainably on NixOS.</title>
+        <title>How to unchain inodes on NixOS, while getting rid of orphaned packages [Introduction]</title>
         <published>2025-07-12T11:48:00+00:00</published>
         <updated>2025-07-15T12:15:00+00:00</updated>
         
