@@ -1,7 +1,7 @@
 +++
 title = "How to unchain inodes on NixOS, while getting rid of orphaned packages [Part 1]"
 date = 2025-07-12T11:48:00Z
-updated =  2025-07-15T12:15:00Z
+updated =  2025-08-07T16:29:00Z
 [taxonomies]
 categories = ["Nix/OS"]
 tags = ["Linux", "Partition Types"]
@@ -14,8 +14,10 @@ image = "urban.gif"
 
 <a href="/posts/degarbage_nixos" class="btn btn_info" width="100%">[ 0. main article ]</a>
 
-<a href="/posts/nixos-garbage-collector" class="btn btn_success">[ 2. running garbage-collector ]</a>
+<a href="/posts/nixos-garbage-collector" class="btn btn_success">[ 2. how to perform storage clean ups]</a>
 ## A Examining disk usage and inode consumption statistics on `btrfs`, `ext4` and `xfs` 
+
+<p class="notice_info"><strong>What are Inodes?</strong> An <em>Inode</em> is an abbreavation for <em>index node</em>. <em>Index nodes</em> are memory units that store <em>metadata</em>, such as the memory sectors where a certain file is actually stored and the <abbr title="like creation time and last access time and access restrictions">file attributes</abbr>.</p>
 
 To put an emphasize on slightly differences between some random filesystem types i was able to examine.
 
@@ -114,7 +116,7 @@ System,DUP: Size:8.00MiB, Used:64.00KiB (0.78%)
 /dev/mapper/luks-4b890b26-f927-468e-9ce2-ead3d942224f	  16.00MiB
 ```
 
-<p class="notice_success">✅ Actually i must have enough space for inode allocation left. On this <code>btrfs</code> partition, only <strong>59.46%</strong> of the preserved space for Metadata/DUP was consumed. This is no surprise, because i already have fixed this. But if you actually don't have any space left, please continue <a href="">here</a> to call the garbage collector and consider also to perform a btrfs scrub.</p>
+<p class="notice_success">✅ Actually i must have enough space for inode allocation left. On this <code>btrfs</code> partition, only <strong>59.46%</strong> of the preserved space for Metadata/DUP was consumed. This is no surprise, because i already have fixed this. But if you actually don't have any space left, please continue <a href="/posts/nixos-garbage-collector">here</a> to call the garbage collector and consider also to perform a btrfs scrub.</p>
 
 Let's focus on this part of the previous output:
 

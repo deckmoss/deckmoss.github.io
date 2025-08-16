@@ -13,7 +13,7 @@ image = "urban.gif"
 
 ## In case you're like me new to NixOS...
 
-<p class="notice_info"><strong><em>...you may not have noticed that it is obligatory to declare certain lines for automatic garbage collection in your configuration.nix. Otherwise, you might end up in the worst-case scenario with not a single free <abbr title="Inodes are essential on Unix-like systems (such as Linux-based OS) for storing metadata of files. They may get consumed long before the memory capacity of their volume is exceeded.">inode</abbr> left to link.<br><br>
+<p class="notice_info"><strong><em>...you may not have noticed that it is obligatory to declare certain lines for automatic storage clean ups in your configuration.nix. Otherwise, you might end up in the worst-case scenario with not a single free <abbr title="Inodes are essential on Unix-like systems (such as Linux-based OS) for storing metadata of files. They may get consumed long before the memory capacity of their volume is exceeded.">inode</abbr> left to link.<br><br>
 I use <abbr title="modern file system format">btrfs</abbr> and had already completed <abbr title="BUILDS are called GENERATIONS in nix">120 builds</abbr> when my system crashed during the 121st build process, displaying an error like "no space left on device," even though I had a few hundred unused gigabytes available.<br><br>
 It turned out that hundreds of thousands of files and system links had been created over time, which consumed all of my inodes. I assume that old links were not deallocated and that nixos preserved a totally useless software package release history on my disk. At that point, it became <abbr title="Because every new build consumes new inodes without freeing old ones">impossible to rebuild nixos.</abbr></em></strong></p> 
 
