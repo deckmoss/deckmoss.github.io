@@ -107,12 +107,12 @@
 
 @mixin notice($notice-color) {
   font-size: 1rem;
-  padding: 0.65rem;
-  margin: 0.3rem 0;
+  padding: 3%;//0.65rem;
+  margin: 0.6rem 0;
   text-indent: initial;
   background-color: mix(#ddd, $notice-color, 73%);
   border-radius: 0;
-  box-shadow: 0 1px 1px rgba($notice-color, 0.25);
+  box-shadow: 0.2rem 0.2rem 0.5rem lighten($gray,10%);//0 1px 1px rgba($notice-color, 0.25);
   @media (prefers-color-scheme: dark) {
     background-color: mix(#333, $notice-color, 65%);
   }
