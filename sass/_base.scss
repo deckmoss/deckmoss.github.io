@@ -104,27 +104,27 @@ h6 {
 }
 
 h1 {
-  font-size: 1.6em;
+  font-size: 1.7531em; //1.6em;
 }
 
 h2 {
-  font-size: 1em;
+  font-size: 1.618em;  //1em;
 }
 
 h3 {
-  font-size: 0.86em;
+  font-size: 1.4933em; //0.86em;
 }
 
 h4 {
-  font-size: 0.8em;
+  font-size: 1.3782em; //0.8em;
 }
 
 h5 {
-  font-size: 0.72em;
+  font-size: 1.272em; //0.72em;
 }
 
 h6 {
-  font-size: 0.65em;
+  font-size: 1.174em; //0.65em;
 }
 
 figure {
@@ -137,7 +137,7 @@ figure {
   figcaption {
     margin-bottom: 0.5em;
     color: lighten($black, 40);
-    font-size: 12px;
+    font-size: 1em; //12px;
     width: 100%;
     text-align: center;
   }
@@ -247,7 +247,7 @@ dd {
 
 table {
   width: 100%;
-  font-size: 14px;
+  font-size: 0.875em;//14px;
   border-collapse: collapse;
 }
 
@@ -363,7 +363,7 @@ figcaption > code,
 td > code,
 kbd {
   padding: 0.1rem 0.15rem;
-  font-size: 12px;
+  font-size: 0.75em;//12px;
   background-color: darken($white, 15%);
   font-family: $base-font;
 }
@@ -377,7 +377,7 @@ kbd {
 footer {
   margin-bottom: 8px;
   text-align: center;
-  font-size: 11px;
+  font-size: 0.6875em;//11px;
   line-height: 0.8rem;
   width: 100%;
   > a {

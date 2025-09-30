@@ -16,7 +16,7 @@
     display: flex;
     flex-direction: column;
     margin-bottom: auto;
-    padding: 0px 10% 52px;
+    padding: 1rem /* 0px 10% 52px; */
   }
 }
 
@@ -161,7 +161,7 @@ nav.nav-bar ul li ul li {
 
 a.zola-anchor {
   color: $shamrock-green;
-  margin-right: 6px;
+  margin-right: 0.5rem;
 }
 
 .frame-p {
@@ -333,7 +333,7 @@ a.zola-anchor {
       a {
         display: inline-block;
         text-decoration: none;
-        padding: 0.3em 0.35em;
+        padding: 0.3rem 0.35rem;
         color: $white;
       }
     }
@@ -502,37 +502,49 @@ a.zola-anchor {
 
 .inner-post {
   h1 {
-    font-size: 36px;
-    line-height: 42px;
-    margin: 1em 0 0.5em 0;
+    font-size: 1.5867rem;//1.8627rem;//1.8627rem;//36px;;
+    line-height: 2.5625rem;//42px;
+    margin: 1.6rem 0 0.3rem 0;
+    text-shadow: 0.2rem 0.2rem 0.5rem lighten($gray,10%);
   }
   h2 {
-    font-size: 26px;
-    margin: 1em 0 0.5em 0;
-  }
+    font-size: 1.4644rem;//1.7192rem;//26px;
+    margin: 1.6rem 0 0.3rem 0;
+    //background-color: linear-gradient(90deg, darken($overlay-color-dark,2%),darken($overlay-color-dark,10%));
+    //box-shadow: 0rem 0.3rem 0.3rem darken($overlay-color-dark,2%);
+    text-shadow: 0.2rem 0.2rem 0.5rem lighten($gray,10%);//darken($overlay-color-dark,5%);
+  } 
   h3 {
-    font-size: 23px;
+    font-size: 1.3515rem;//1.5867rem;
+    //font-weight: bold;
+    margin: 0.6rem 0 0.3rem 0;//0.5rem 0;
+    text-shadow: 0.2rem 0.2rem 0.5rem lighten($gray,20%);
   }
   h4 {
-    font-size: 20px;
+    font-size: 1.2474rem;//1.4644rem;
     font-weight: bold;
+    margin: 0.5rem 0;
+    text-shadow: 0.2rem 0.2rem 0.5rem lighten($gray,35%);
   }
-  h3,
-  h4,
-  h5,
-  h6 {
+  h5 {
+    font-size: 1.3515rem;
     font-weight: bold;
-    margin: 0.5em 0;
+    margin: 0.5rem 0;
+  }
+  h6 {
+    font-size: 1.2474rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
   }
   p {
-    font-size: 17px;
-    margin: 0.5em 0;
+    font-size: 1.0625rem;//17px;
+    margin: 0.5rem 0;
     line-height: 1.6;
   }
   small {
     color: darken($white, 40);
-    font-size: 17px;
-    margin: 0.5em 0;
+    font-size: 1rem;//0.9806rem;//17px;
+    margin: 0.5rem 0;
     display: block;
   }
   a:not(.btn):not(.pagination_pager):not(.zola-anchor) {
@@ -545,19 +557,19 @@ a.zola-anchor {
     list-style-type: square;
   }
   dt {
-    font-size: 14px;
+    font-size: 1.0625rem;//14px;
   }
   dd {
-    font-size: 12px;
+    font-size: 0.9806rem;//12px;
   }
   ul,
   ol {
     list-style-position: inside;
     padding-left: 30px;
     > li {
-      font-size: 12px;
+      font-size: 0.9806rem;//12px;
       position: relative;
-      line-height: 1.4em;
+      line-height: 1.4rem;
       margin-bottom: 15px;
       &:first-child:not(#info-tag) {
         margin-top: 15px;
@@ -567,14 +579,15 @@ a.zola-anchor {
 }
 
 .post-ext-info {
-  padding: 6px 10px;
-  margin-bottom: 20px;
-  margin-right: 20px;
+  padding: 1% 1%;//6px 10px;
+  //margin-bottom: 20px;
+  //margin-right: 20px;
+  margin: 1% 1%;
   display: inline-block;
   border: 2px dashed;
   border-color: darken($white, 42);
   > p {
-    font-size: 12px;
+    font-size: 0.9806rem;//12px;
     margin-bottom: unset;
   }
 }
@@ -588,7 +601,7 @@ a.zola-anchor {
   border: 2px dashed;
   border-color: darken($white, 42);
   > p {
-    font-size: 12px;
+    font-size: 0.9806rem;//12px;
     margin-bottom: unset;
   }
 }
@@ -602,7 +615,7 @@ a.zola-anchor {
     position: relative;
     left: auto;
     bottom: auto;
-    font-size: 32px;
+    font-size: 1.8627rem;//32px;
     filter: drop-shadow(0 1px 3px);
   }
   .tags > li {
@@ -610,7 +623,7 @@ a.zola-anchor {
     border: 1px solid rgba($white, 0.4);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
     color: $white;
-    font-size: 12px;
+    font-size: 0.9806rem;//12px;
     filter: drop-shadow(0 1px 3px);
   }
   .section-line {
@@ -621,7 +634,7 @@ a.zola-anchor {
     display: -ms-flexbox;
     display: flex;
     align-items: center;
-    font-size: 25px;
+    font-size: 1.5867rem;//25px;
     margin-bottom: 20px;
     &:after {
       content: '';
@@ -662,8 +675,8 @@ a.zola-anchor {
 
 .date-highlight {
   text-align: center;
-  font-size: 16px;
-  margin: 50px 0 50px;
+  font-size: 1.0625rem;//16px;
+  margin: 2rem 0 2rem; //50px 0 50px;
   color: $overlay-color;
   display: -webkit-box;
   display: -moz-box;
@@ -695,7 +708,7 @@ a.zola-anchor {
   padding-right: 20px;
   display: block;
   > h2 {
-    font-size: 22px;
+    font-size:  1.3515rem;//22px;
     padding-top: 20px;
     padding-left: 20px;
     #project-archived {
@@ -703,13 +716,13 @@ a.zola-anchor {
     }
   }
   .project-lang {
-    font-size: 16px;
+    font-size: 1.0625rem;//16px;
   }
   .project-license {
-    font-size: 10px;
+    font-size: 0.9806rem;//10px;
   }
   .project-description {
-    font-size: 15px;
+    font-size: 1.0625rem;//15px; BIS HIER
   }
   > ul {
     padding: 0;
@@ -734,7 +747,7 @@ a.zola-anchor {
   }
   .tags:is(.project-tags) > li {
     margin: 0;
-    font-size: 8px;
+    font-size: .9806rem;//8px;
     padding: 4px;
     margin-right: 10px;
     margin-bottom: 10px;
@@ -793,7 +806,7 @@ a.zola-anchor {
   margin: 1em 0 1em;
   &_pager {
     display: inline-block;
-    padding: 0.32em 0.65em;
+    padding: 0.32rem 0.65rem;
     font-size: 16px;
     font-weight: 400;
     background-color: darken($white, 5%);
@@ -829,7 +842,7 @@ a.zola-anchor {
 }
 
 .toc-anchor {
-  font-size: 15px;
+  font-size: .9806rem; /*15px;*/
 }
 
 .footer-content {
@@ -898,34 +911,34 @@ a.zola-anchor {
   }
   .inner-post {
     h1 {
-      line-height: 36px;
+      line-height: 1.8627rem;//36px;;
     }
     h2 {
-      line-height: 30px;
-      margin-bottom: 14px;
+      line-height: 1.7192rem;//26px;
+      margin: 1rem 0 0.5rem 0;//margin-bottom: 14px;
     }
     p,
     li {
-      font-size: 17px;
+      font-size: 0.98rem;//font-size: 17px;
     }
     .post-ext-info > p,
     .post-music > p {
-      font-size: 12px;
+      font-size: 0.6rem;
     }
   }
   .date-highlight {
-    margin: 40px 0 40px;
+    margin: 1.9rem 0 1.9rem;//40px 0 40px;
   }
   .post-title-section {
     .section-line {
       display: none;
     }
     .section-title {
-      font-size: 30px;
+      font-size: 1.8627rem;//30px;
     }
   }
   .section-title {
-    font-size: 32px;
+    font-size: 1.8627rem;//32px;
   }
   .block-right {
     .content {
@@ -939,7 +952,7 @@ a.zola-anchor {
     }
   }
   table {
-    font-size: 17px;
+    font-size: small//17px;
   }
 }
 
@@ -1021,7 +1034,7 @@ a.zola-anchor {
   }
   .inner-post {
     h1,
-    h2,
+    h2 { color: $overlay-color-notsodark; background-color: darken($overlay-color-dark,20%);} 
     h3,
     h4,
     h5,
@@ -1067,7 +1080,7 @@ a.zola-anchor {
     }
   }
   a.zola-anchor {
-    color: $green;
+    color: $shamrock-green;
   }
   .entry-info {
     color: darken($white, 35) !important;
