@@ -1,9 +1,9 @@
 {%- macro main_images_style(home_url, posts_url) -%}
-#posts .block-left{background:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),url("{{ posts_url | safe }}") no-repeat;background-size:cover,cover}.block-left{background:linear-gradient(rgba(44,45,51,0.9),rgba(44,45,51,0.9)),url("{{ home_url | safe }}") no-repeat;background-size:cover}
+#posts .block-left{background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("{{ posts_url | safe }}") no-repeat;background-size:cover;background-position:left;}.block-left{background:linear-gradient(rgba(44,45,51,0.5),rgba(44,45,51,0.5)),url("{{ home_url | safe }}") no-repeat;background-size:cover;background-position:center;}
 {%- endmacro main_images_style -%}
 
 {%- macro image_style(url) -%}
-#posts.inner-post-page .block-left{background:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),url("{{ url | safe }}") no-repeat;background-size:cover}
+#posts.inner-post-page .block-left{background:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)),url("{{ url | safe }}") no-repeat;background-size:cover;background-position:center;}
 {%- endmacro image_style -%}
 
 {%- macro music(artist, track) -%}

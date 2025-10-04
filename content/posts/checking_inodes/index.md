@@ -8,7 +8,7 @@ tags = ["Linux", "Partition Types"]
 [extra]
 subtitle = "1. Checking inode consumption on different parition types"
 disable_comments = true
-image = "urban.gif"
+image = "punk_car.png"
 +++
 ## Related Articels
 

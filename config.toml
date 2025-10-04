@@ -1,9 +1,9 @@
 theme = "halve-z"
 base_url = "https://deckmoss.github.io"
-title = "Portfolio"
+title = "weblog"
 description = ""
-default_language = "en"
-author = "Prismatic Arbiter"
+default_language = "de"
+author = "Michael Fröhlich"
 
 compile_sass = true
 minify_html = true
@@ -39,7 +39,7 @@ taxonomies = "safe"
 anchors = "safe"
 
 [extra]
-locale = "en_US"
+locale = "de_DE"
 logo = "icon-192x192.png"
 manifest = "manifest.json"
 read_time = true
@@ -51,15 +51,15 @@ tags = false
 subtitle = false
 
 [extra.home]
-title = "Prismatic Arbiter"
-subtitle = "portfolio<br>&<br>web blog"
+title = "╰ganz direkt╯"
+subtitle = "╭╼╼╼weblog╾╾╾╮"
 glitch = true #false
 logo = { enabled = false, height = "100", width = "100" }
 footer = true
 
 [extra.images]
-home = "c1tyh4ll.png" #https://failsafe.monster/c1tyh4ll.png
-post_list = "bk-prk.png" #https://failsafe.monster/bk-prk.jpg
+home = "tc2_gv.png"#"c1tyh4ll.png" #https://failsafe.monster/c1tyh4ll.png
+post_list = "c1tyh4ll.png" #https://failsafe.monster/bk-prk.jpg
 default_post = "bk-prk.png" #https://failsafe.monster/bk-prk.jpg
 categories = [
     { name = "media", image = "https://raw.githubusercontent.com/bearcott/8bit-art/master/cities/urban.gif" },
