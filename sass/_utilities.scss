@@ -74,9 +74,10 @@
 @media (prefers-color-scheme: dark) {
   .btn {
     background-color: lighten($black, 30%);
-    color: lighten($white, 20%);
+    color: darken($overlay-color, 5%);
     &:hover {
-      color: lighten($black, 5%);
+      color: lighten($overlay-color, 10%);
+      box-shadow: 0.2rem 0.2rem 0.5rem lighten($gray,10%);
     }
     &_info {
       background-color: darken($aqua, 5%);
