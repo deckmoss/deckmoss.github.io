@@ -1,6 +1,6 @@
 +++
 template = "index.html"
-title = "[ ☄️ ]-(`MyBlog`):"
+title = "[ ☄️ ]-ganzdirekt"
 +++
 
 <div class="introduction">
