@@ -58,8 +58,8 @@ logo = { enabled = false, height = "100", width = "100" }
 footer = true
 
 [extra.images]
-home = "tc2_gv.png"#"c1tyh4ll.png" #https://failsafe.monster/c1tyh4ll.png
-post_list = "c1tyh4ll.png" #https://failsafe.monster/bk-prk.jpg
+home = "c1tyh4ll.png" #"c1tyh4ll.png" #https://failsafe.monster/c1tyh4ll.png
+post_list =  "tc2_gv.png" #https://failsafe.monster/bk-prk.jpg
 default_post = "bk-prk.png" #https://failsafe.monster/bk-prk.jpg
 categories = [
     { name = "media", image = "https://raw.githubusercontent.com/bearcott/8bit-art/master/cities/urban.gif" },

@@ -25,9 +25,11 @@
 .btn {
   display: inline-block;
   padding: 0.4rem 0.7rem;
-  margin: 0 10% 0 10%;
-  width: 80%;
+  margin: 0 auto 0.4rem 0;
+  overflow: clip;
+  width: 38%;
   border: 2px solid black;
+  border-radius: 9px;
   font-size: 0.7rem;
   font-weight: 400;
   background-color: darken($white, 7%);

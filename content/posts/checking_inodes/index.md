@@ -12,9 +12,8 @@ image = "punk_car.png"
 +++
 ## Related Articels
 
-<a href="/posts/degarbage_nixos" class="btn btn_info" width="100%">[ 0. main article ]</a>
-
-<a href="/posts/nixos-garbage-collector" class="btn btn_success">[ 2. how to perform storage clean ups]</a>
+├──<a href="/posts/degarbage_nixos" class="btn btn_info" width="100%">[ 0. main article ]</a><br>
+╰──<a href="/posts/nixos-garbage-collector" class="btn btn_success">[ 2. performing storage clean ups]</a>
 ## A Examining disk usage and inode consumption statistics on `btrfs`, `ext4` and `xfs` 
 
 <p class="notice_info"><strong>What are Inodes?</strong> An <em>Inode</em> is an abbreavation for <em>index node</em>. <em>Index nodes</em> are memory units that store <em>metadata</em>, such as the memory sectors where a certain file is actually stored and the <abbr title="like creation time and last access time and access restrictions">file attributes</abbr>.</p>

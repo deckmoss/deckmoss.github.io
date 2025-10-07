@@ -21,7 +21,6 @@ It turned out that hundreds of thousands of files and system links had been crea
 
 ## Continue with
 
-<a href="/posts/checking_inodes" class="btn btn_info" border="5px solid black">[ 1. checking partition stats ] </a> 
-
-<a href="/posts/nixos-garbage-collector" class="btn btn_success">[ 2. running garbage-collector ]</a>
+├──<a href="/posts/checking_inodes" class="btn btn_info" border="5px solid black">[ 1. checking partition stats ]</a><br>
+╰──<a href="/posts/nixos-garbage-collector" class="btn btn_success">[ 2. running garbage-collector ]</a>
 
