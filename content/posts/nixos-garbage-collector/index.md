@@ -8,7 +8,6 @@ tags = ["Linux", "NixOS", "configuration.nix", "Migration"]
 [extra]
 subtitle = "2. Running and declaring NixOS garbage-collector routines"
 disable_comments = true
-image = "punk_car.png"
 +++
 
 ## Related articles
