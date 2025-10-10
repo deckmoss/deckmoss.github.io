@@ -8,7 +8,6 @@ tags = ["Linux", "NixOS", "configuration.nix", "Migration"]
 [extra]
 subtitle = "Employ your garbage collector sustainably on NixOS."
 disable_comments = true
-image = "Frankfurt_Silvesternacht.png"
 +++
 
 ## In case you're like me new to NixOS...
