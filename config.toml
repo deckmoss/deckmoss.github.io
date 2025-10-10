@@ -60,7 +60,7 @@ footer = true
 
 [extra.images]
 home = "c1tyh4ll.png" #"c1tyh4ll.png" #https://failsafe.monster/c1tyh4ll.png
-post_list =  "obsidian_sphere.gif"#"tc2_gv.png" #https://failsafe.monster/bk-prk.jpg
+post_list =  "obsidian.png"#"obsidian_sphere.gif"#"tc2_gv.png" #https://failsafe.monster/bk-prk.jpg
 default_post = "ffmultra.gif"#"bk-prk.png" #https://failsafe.monster/bk-prk.jpg
 categories = [
     { name = "media", image = "https://raw.githubusercontent.com/bearcott/8bit-art/master/cities/urban.gif" },
