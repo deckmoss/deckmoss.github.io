@@ -3,7 +3,7 @@ title = "How to unchain inodes on NixOS, while getting rid of orphaned packages 
 date = 2025-07-15T14:02:00Z
 #updated =  2025-07-15T12:15:00Z
 [taxonomies]
-categories = ["Nix/OS"]
+categories = ["NixOS"]
 tags = ["Linux", "NixOS", "configuration.nix", "Migration"]
 [extra]
 subtitle = "2. Running and declaring NixOS garbage-collector routines"

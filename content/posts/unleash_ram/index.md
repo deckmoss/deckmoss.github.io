@@ -3,7 +3,7 @@ title = "Unleash a notebook's de-facto RAM capacity"
 date = 2025-05-16T12:00:00Z
 updated =  2025-06-03T14:18:00Z
 [taxonomies]
-categories = ["hardware"]
+categories = ["Hardware"]
 tags = ["hacks", "notebooks", "linux", "DIY"]
 [extra]
 subtitle = "How to hack your vendor's RAM capacity"

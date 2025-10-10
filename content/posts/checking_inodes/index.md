@@ -3,7 +3,7 @@ title = "How to unchain inodes on NixOS, while getting rid of orphaned packages 
 date = 2025-07-12T11:48:00Z
 updated =  2025-08-07T16:29:00Z
 [taxonomies]
-categories = ["Nix/OS"]
+categories = ["NixOS"]
 tags = ["Linux", "Partition Types"]
 [extra]
 subtitle = "1. Checking inode consumption on different parition types"
