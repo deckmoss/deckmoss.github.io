@@ -12,7 +12,7 @@
   float: right;
   overflow-y: auto;
   .content {
-    max-width: 45rem;
+    max-width: 42rem;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -404,7 +404,7 @@ a.zola-anchor {
   to{
     color:$white;
     font-size:auto;
-    text-shadow: 0 0 200px rgba(black, 1);
+    text-shadow: none;//0 0 200px rgba(black, 1);
   }
 }
 
@@ -413,57 +413,73 @@ a.zola-anchor {
     transform: translateY(0); 
    }
   3%{
-    text-shadow: 1cap 1cap 2px rgba(255,0,127, 1);
+    color:rgba(#fff, 0);
+    text-shadow: 1rem 1rem 2px rgba(255,0,127, 1);
   }
-  5% {
-    text-shadow: 1cap 1cap 200px rgba(255,0,127, 0.3);
-  }
-  7%{
-    text-shadow: -1cap -1cap 2px rgba($shamrock-green, 0.5);
-  }
-  9%{
-    text-shadow: 1cap 1cap 200px rgba($shamrock-green, 1);
+  10%{
+    color:rgba(#fff, 0);
+    text-shadow: none;
   }
   44% {
-    color:rgba(#fff, 1); 
+    color:rgba(#fff, 1);
   }
   50% {
-    transform: translateY(-1rem);
+    transform: translateY(-0.5rem);
     color:rgba(#fff, 0);
+    text-shadow: 
+      20rem -20rem 40rem rgba( 255,0,0, 0.1),
+      -20rem 20rem 40rem rgba( 0,255,128, 0.1);
+    animation-timing-function: steps(1);
   }
-  77% {
+  60% {
    color:rgba(#fff, 1); 
   }
-  97% {
-    text-shadow: -1cap -1cap 2px rgba($shamrock-green, 1);
+  75% {
+    color: rgba($black, 1);
+    text-shadow:
+      10rem -10rem 20rem rgba( 0,255,128, 0.5),
+      -10rem 10rem 20rem rgba( 255,0,0, 0.5);  
+    animation-timing-function: steps(start,2);
   }
-  99% {
-    text-shadow: 1cap 1cap 2px rgba(0,0,0, 1);
+  89% {
+    color: rgba($aqua, 1);
+    text-shadow:
+      -1.2rem -1.2rem 2px rgba( 0,255,128, 1),
+      1.2rem 1.2rem 2px rgba( 255,0,0, 1);  
+    animation-timing-function: steps(2);
   }
-  to {
+  90% {
+    color: rgba(#fff, 0);
+    text-shadow: -1rem -1rem 2px rgba($shamrock-green, 1);
+  }
+  94% {
+    text-shadow: 1rem 1rem 2px rgba(0,0,0, 1);
+  }
+  100% {
+    color: $white;
     transform: translateY(0);
-    text-shadow: 1cap 1cap 200px rgba($shamrock-green, 1);
+    //text-shadow: 0 0 200px rgba($white, 1);
   }
 }
 
 
 .main-info {
   color: $white;
-  animation: bounce 6s   ease-out;
+  animation: bounce 6s  ease-out;
   animation-delay: 4.3s;
   h1 {
     font-family: $caps-font;
     font-size: 3.2rem;
     font-weight: bold;
     letter-spacing: 1px;
-    animation: blendin 3.6s;
+    animation: blendin 3.6s step-end;
   }
   h2 {
     font-family: $caps-font;
     font-size: 1.8rem;
     margin: 30px 0;
     padding-top: 10px;
-    animation:blendin 5.5s;
+    animation:blendin 5.5s step-end;
     &:after {
       display: none;
     }
