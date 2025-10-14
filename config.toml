@@ -52,7 +52,8 @@ tags = false
 subtitle = false
 
 [extra.home]
-title = "ganz󱜙<br>direkt"
+title1 = "ganz󱜙"
+title2 = "direkt"
 subtitle = "╼weblog╾"
 glitch = true #false
 logo = { enabled = false, height = "100", width = "100" }

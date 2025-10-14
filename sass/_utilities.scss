@@ -35,7 +35,7 @@
   background-color: darken($white, 7%);
   color: lighten($black, 20%);
   text-align: center;
-  white-space: nowrap;
+  white-space: wrap;
   vertical-align: middle;
   cursor: pointer;
   transition: all 0.3s ease-in-out;

@@ -1,5 +1,5 @@
 
-@font-face {
+/* @font-face {
   font-family: 'Press Start 2P';
   font-style: normal;
   font-weight: 400;
@@ -82,7 +82,7 @@
   font-weight: 700;
   font-style: italic;
   font-display: swap;
-}
+} */
 
 @font-face {
   font-family: 'CascadiaCode';
@@ -93,10 +93,42 @@
 }
 
 @font-face {
+  font-family: 'CascadiaCode';
+  src: url('webfonts/CascadiaCode/CaskaydiaCoveNerdFont-Italic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CascadiaCode';
+  src: url('webfonts/CascadiaCode/CaskaydiaCoveNerdFont-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EnvyCodeR';
+  src: url('webfonts/EnvyCodeR/EnvyCodeRNerdFontPropo-Regular.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* @font-face {
   font-family: 'EnvyCodeR';
   src: url('webfonts/EnvyCodeR/EnvyCodeRNerdFontPropo-Bold.ttf') format('truetype');
   font-weight: 700;
-  font-style: normal;
+  font-style: italic;
+  font-display: swap;
+} */
+
+@font-face {
+  font-family: 'EnvyCodeR';
+  src: url('webfonts/EnvyCodeR/EnvyCodeRNerdFontPropo-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: bold;
   font-display: swap;
 }
 
@@ -109,8 +141,24 @@
 }
 
 @font-face {
+  font-family: '3270';
+  src: url('webfonts/3270/3270NerdFontPropo-Italic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: '3270';
+  src: url('webfonts/3270/3270NerdFontPropo-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: bold;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'HeavyData';
-  src: url('webfonts/HeavyData/HeavyDataNerdFont-Regular.ttf') format('truetype');
+  src: url('webfonts/HeavyData/HeavyDataNerdFontPropo-Regular.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
