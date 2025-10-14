@@ -37,7 +37,6 @@
   filter: drop-shadow(0 0px 4px);
 }
 
-
 #homepage {
   .block-left {
     width: 50%;
@@ -355,19 +354,30 @@ a.zola-anchor {
   }
 }
 
+@keyframes blendin {
+  from{color:rgba(0, 0, 0, 0);};
+  to{color:$white;}
+}
+
+
 .main-info {
   color: $white;
+  text-shadow: 0 0 10px rgba(black, 1);
   h1 {
     font-family: $caps-font;
-    font-size: 50px;
+    font-size: 3.2rem;
     font-weight: bold;
     letter-spacing: 1px;
+    animation-name:blendin;
+    animation-duration: 3s;
   }
   h2 {
     font-family: $caps-font;
-    font-size: 32px;
+    font-size: 1.8rem;
     margin: 30px 0;
     padding-top: 10px;
+    animation-name:blendin;
+    animation-duration:5s;
     &:after {
       display: none;
     }

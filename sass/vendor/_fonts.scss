@@ -100,14 +100,14 @@
   font-display: swap;
 }
 
-@font-face {
+/* @font-face {
   font-family: 'CascadiaCode';
   src: url('webfonts/CascadiaCode/CaskaydiaCoveNerdFont-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: bold;
   font-display: swap;
 }
-
+ */
 @font-face {
   font-family: 'EnvyCodeR';
   src: url('webfonts/EnvyCodeR/EnvyCodeRNerdFontPropo-Regular.ttf') format('truetype');
@@ -153,21 +153,5 @@
   src: url('webfonts/3270/3270NerdFontPropo-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: bold;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'HeavyData';
-  src: url('webfonts/HeavyData/HeavyDataNerdFontPropo-Regular.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'DepartureMono';
-  src: url('webfonts/DepartureMono/DepartureMonoNerdFont-Regular.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
   font-display: swap;
 }
