@@ -354,6 +354,7 @@ a.zola-anchor {
   }
 }
 
+/*
 @keyframes blendin {
   from {
     font-size:1rem; 
@@ -458,6 +459,39 @@ a.zola-anchor {
   100% {
     color: $white;
     transform: translateY(0);
+    ext-shadow: 0 0 200px rgba($white, 1  }
+}*/
+
+@keyframes bounce {
+  from {
+    transform:translate3d(0,0,0); 
+   }
+  50% {
+    //transform: translateY(-0.5rem);
+    transform:translate3d(-1rem,-1rem,0);
+    color:rgba(#fff, 0);
+    text-shadow: 
+      20rem -20rem 40rem rgba( 255,0,0, 0.1),
+      -20rem 20rem 40rem rgba( 0,255,128, 0.1);
+    animation-timing-function: steps(start,4);
+  }
+  80% {
+    color: rgba($aqua, 1);
+    text-shadow:
+      -1.2rem -1.2rem 2px rgba( 0,255,128, 1),
+      1.2rem 1.2rem 2px rgba( 255,0,0, 1);  
+    //animation-timing-function: steps(2);
+  }
+  90% {
+    color: rgba(#fff, 0);
+    text-shadow: -1rem -1rem 2px rgba($shamrock-green, 1);
+  }
+  to {
+    color: $white;
+    transform:translate3d(0,0,0);
+    text-shadow: 1rem 1rem 2px rgba(black, 1);
+    
+    //transform: translateY(0);
     //text-shadow: 0 0 200px rgba($white, 1);
   }
 }
@@ -465,21 +499,22 @@ a.zola-anchor {
 
 .main-info {
   color: $white;
-  animation: bounce 6s  ease-out;
-  animation-delay: 4.3s;
+  text-shadow: 0 0 0.5rem $dark-blue;
+  animation: bounce 3s  ease-out;
+  //animation-delay: 4.3s;
   h1 {
     font-family: $caps-font;
     font-size: 3.2rem;
     font-weight: bold;
     letter-spacing: 1px;
-    animation: blendin 3.6s step-end;
+    //animation: blendin 3.6s step-end;
   }
   h2 {
     font-family: $caps-font;
     font-size: 1.8rem;
     margin: 30px 0;
     padding-top: 10px;
-    animation:blendin 5.5s step-end;
+    //animation:blendin 5.5s step-end;
     &:after {
       display: none;
     }
@@ -490,7 +525,7 @@ a.zola-anchor {
   text-align: left;
   h1,
   h2 {
-    font-size: 30px;
+    font-size: 1.6rem;
     color: lighten($black, 27.8431);
     &:after {
       position: absolute;
@@ -499,7 +534,7 @@ a.zola-anchor {
       transform: none;
       background: $shamrock-green;
       left: 0;
-      width: 200px;
+      width: 8.5rem;
     }
   }
   p {
