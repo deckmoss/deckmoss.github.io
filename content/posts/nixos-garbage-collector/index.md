@@ -16,4 +16,6 @@ disable_comments = true
 
 <a href="/posts/checking_inodes" class="btn btn_info" border="5px solid black">[ 1. checking partition stats ] </a> 
 
-##  
+## A Visualisation
+
+{{ image(src="mm_nixos_profiles.png") }}
