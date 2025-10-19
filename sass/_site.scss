@@ -461,47 +461,47 @@ a.zola-anchor {
     transform: translateY(0);
     ext-shadow: 0 0 200px rgba($white, 1  }
 }*/
-
-@keyframes bounce {
-  from {
-    transform:translate3d(0,0,0); 
-   }
-  50% {
-    //transform: translateY(-0.5rem);
-    transform:translate3d(-1rem,-1rem,0);
-    color:rgba(#fff, 0);
-    text-shadow: 
-      20rem -20rem 40rem rgba( 255,0,0, 0.1),
-      -20rem 20rem 40rem rgba( 0,255,128, 0.1);
-    animation-timing-function: steps(start,4);
-  }
-  80% {
-    color: rgba($aqua, 1);
-    text-shadow:
-      -1.2rem -1.2rem 2px rgba( 0,255,128, 1),
-      1.2rem 1.2rem 2px rgba( 255,0,0, 1);  
-    //animation-timing-function: steps(2);
-  }
-  90% {
-    color: rgba(#fff, 0);
-    text-shadow: -1rem -1rem 2px rgba($shamrock-green, 1);
-  }
-  to {
-    color: $white;
-    transform:translate3d(0,0,0);
-    text-shadow: 1rem 1rem 2px rgba(black, 1);
-    
-    //transform: translateY(0);
-    //text-shadow: 0 0 200px rgba($white, 1);
+@media not (prefers-reduced-motion) {
+  @keyframes bounce {
+    from {
+      transform:translate3d(0,0,0); 
+    }
+    50% {
+      //transform: translateY(-0.5rem);
+      transform:translate3d(-1rem,-1rem,0);
+      color:rgba(#fff, 0);
+      text-shadow: 
+        20rem -20rem 9rem rgba( 255,255,255, 0.1),
+        -20rem 20rem 2rem rgba( 0,255,128, 0.01);
+      animation-timing-function: steps(start,4);
+    }
+    80% {
+      color: rgba($aqua, 1);
+      text-shadow:
+        -1.2rem -1.2rem 2px rgba( 0,255,128, 1),
+        1.2rem 1.2rem 2px rgba( 255,0,0, 1);  
+      //animation-timing-function: steps(2);
+    }
+    90% {
+      color: rgba(#fff, 0);
+      text-shadow: -1rem -1rem 2px rgba($shamrock-green, 1);
+    }
+    to {
+      color: $white;
+      transform:translate3d(0,0,0);
+      text-shadow: 1rem 1rem 2px rgba(black, 1);
+      
+      //transform: translateY(0);
+      //text-shadow: 0 0 200px rgba($white, 1);
+    }
   }
 }
-
 
 .main-info {
   color: $white;
   text-shadow: 0 0 0.5rem $dark-blue;
   animation: bounce 3s  ease-out;
-  //animation-delay: 4.3s;
+  animation-delay: 1s;
   h1 {
     font-family: $caps-font;
     font-size: 3.2rem;
