@@ -1,19 +1,12 @@
 "use strict";
 
 const broadcast = new BroadcastChannel('sw-channel');
-const cacheName =  "v18";
+const cacheName =  "v19";
 const cacheList = [
   "/",
-  "/offline/",
   "/404.html",
   "/notifications.js",
   "/manifest.json",
-  "/webfonts/CascadiaCode/CaskaydiaCoveNerdFont-Regular.ttf",
-  "/webfonts/CascadiaCode/CaskaydiaCoveNerdFont-Italic.ttf",
-  "/webfonts/EnvyCodeR/EnvyCodeRNerdFontPropo-Regular.ttf",
-  "/webfonts/EnvyCodeR/EnvyCodeRNerdFontPropo-Bold.ttf",
-  "/webfonts/3270/3270NerdFontPropo-Regular.ttf",
-  "/webfonts/3270/3270NerdFontPropo-Italic.ttf",
 ];
 
 oninstall = (event) => {
@@ -33,7 +26,12 @@ oninstall = (event) => {
 };
 
 onfetch = (event) => {
-  if (event.request.url.startsWith("https://matrix.cactus.chat")) {
+  try {
+    const reqUrl = new URL(event.request.url);
+    if (reqUrl.hostname === "matrix.cactus.chat") {
+      return;
+    }
+  } catch (e) {
     return;
   }
 

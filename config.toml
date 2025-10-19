@@ -106,21 +106,21 @@ links = [
 #[extra.mastodon]
 #author = "@user@server"
 
-[extra.comments]
-system = "Linux"
+#[extra.comments]
+#system = "Linux"
 
-[extra.comments.cactus]
-site = "site_name"
-page_size = 10
-guest_posting = true
-update_interval = 0
+#[extra.comments.cactus]
+#site = "site_name"
+#page_size = 10
+#guest_posting = true
+#update_interval = 0
 
-[extra.comments.giscus]
-repo = "deckmoss/gh-pages"
-repo_id = ""
-category = "Comments"
-category_id = ""
-mapping = "pathname"
-strict = "1"
-reactions = "1"
-lang = "en"
+#[extra.comments.giscus]
+#repo = "deckmoss/gh-pages"
+#repo_id = ""
+#category = "Comments"
+#category_id = ""
+#mapping = "pathname"
+#strict = "1"
+#reactions = "1"
+#lang = "en"
