@@ -2,17 +2,24 @@
 title = "How to unchain inodes on NixOS, while getting rid of orphaned packages [Part 1]"
 date = 2025-07-12T11:48:00Z
 updated =  2025-08-07T16:29:00Z
+description = "1. Checking inode consumption on different parition types"
+weight = 0
+draft = false
+render = true
+aliases = []
+authors = ["Michael Fröhlich"]
+in_search_index = true
 [taxonomies]
-categories = ["NixOS"]
-tags = ["Linux", "Partition Types"]
+categories = ["DIY"]
+tags = ["Linux","Filesystems"]
 [extra]
 subtitle = "1. Checking inode consumption on different parition types"
-disable_comments = true
 +++
+
 ## Related Articels
 
-├──<a href="/posts/degarbage_nixos" class="btn btn_info" width="100%">[ 0. main article ]</a><br>
-╰──<a href="/posts/nixos-garbage-collector" class="btn btn_success">[ 2. performing storage clean ups]</a>
+├──<a href="/posts/diy/degarbage_nixos" class="btn btn_info" width="100%">[ 0. main article ]</a><br>
+╰──<a href="/posts/diy/degarbage_nixos/nixos-garbage-collector" class="btn btn_success">[ 2. performing storage clean ups]</a>
 ## A Examining disk usage and inode consumption statistics on `btrfs`, `ext4` and `xfs` 
 
 <p class="notice_info"><strong>What are Inodes?</strong> An <em>Inode</em> is an abbreavation for <em>index node</em>. <em>Index nodes</em> are memory units that store <em>metadata</em>, such as the memory sectors where a certain file is actually stored and the <abbr title="like creation time and last access time and access restrictions">file attributes</abbr>.</p>

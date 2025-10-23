@@ -2,14 +2,21 @@
 title = "Unleash a notebook's de-facto RAM capacity"
 date = 2025-05-16T12:00:00Z
 updated =  2025-06-03T14:18:00Z
+description = "How to hack your vendor's RAM capacity"
+weight = 0
+draft = false
+render = true
+aliases = []
+authors = ["Michael Fröhlich"]
+in_search_index = true
 [taxonomies]
-categories = ["Hardware"]
-tags = ["hacks", "notebooks", "linux", "DIY"]
+categories = ["DIY"]
+tags = ["Linux","Notebooks"]
 [extra]
 subtitle = "How to hack your vendor's RAM capacity"
-disable_comments = true
 image = "urban.gif"
 +++
+
 
 ## ⚠️ Disclaimer:
 

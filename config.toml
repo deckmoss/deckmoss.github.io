@@ -2,7 +2,7 @@ theme = "halve-z"
 base_url = "https://deckmoss.github.io"
 title = "weblog"
 description = ""
-default_language = "de"
+default_language = "en"
 author = "Michael Fröhlich"
 
 compile_sass = true
@@ -10,7 +10,7 @@ minify_html = true
 generate_feeds = false
 build_search_index = true
 generate_sitemap = true
-hard_link_static = true
+hard_link_static = false
 
 taxonomies = [
     { name = "categories", feed = true },
@@ -52,8 +52,8 @@ tags = false
 subtitle = false
 
 [extra.home]
-title1 = "ganz󱜙"
-title2 = "direkt"
+title1 = "kreativ"
+title2 = "deck"
 subtitle = "╼weblog╾"
 glitch = true #false
 logo = { enabled = false, height = "100", width = "100" }
@@ -69,9 +69,11 @@ categories = [
 
 [extra.menu]
 posts = true
-posts_label = "Posts"
+posts_label = "Blog"
 links = [
-    { name = "Code", url = "/projects/" },
+    { name = "DIY", url= "/diy/" },
+#    { name = "Projects", url = "/projects/" },
+    { name = "About", url= "/uebermich/" },
 ]
 
 [extra.footer]

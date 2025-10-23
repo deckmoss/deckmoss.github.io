@@ -45,7 +45,7 @@
         <ul class="nav-menu">
           <li{% if active_path == "/" %} class="nav-active"{% endif %}><a href="{{ "/" | safe }}">Home</a></li>
           {% if config.extra.menu.posts == true %}
-          <li{% if active_path is starting_with("/posts/") or active_path is starting_with("/tags/") or active_path is starting_with("/categories/")%} class="nav-active"{% endif %}><a href="{{ "/categories/" | safe }}" aria-haspopup="true">{{ config.extra.menu.posts_label }}</a>
+          <li{% if active_path is starting_with("/posts/") or active_path is starting_with("/tags/") or active_path is starting_with("/categories/")%} class="nav-active"{% endif %}><a href="{{ "/posts/" | safe }}" aria-haspopup="true">{{ config.extra.menu.posts_label }}</a>
             <ul class="dropdown" aria-label="submenu">
               <li><a href="{{ "/posts/" | safe }}">Index</a></li>
               <li><a href="{{ "/tags/" | safe }}">Tags</a></li>
@@ -54,7 +54,7 @@
           </li>
           {% endif %}
           {% for link in config.extra.menu.links %}
-          <li{% if page %}{% if active_path is starting_with(link.url) %} class="nav-active"{% endif %}{% endif %}><a href="{% if link.url is starting_with("@") %}{{ get_url(path=link.url, trailing_slash=true) | safe }}{% else %}{{ link.url | safe }}{% endif %}">{{ link.name }}</a></li>
+          <li{% if active_path is starting_with(link.url) %} class="nav-active"{% endif %}><a href="{% if link.url is starting_with("@") %}{{ get_url(path=link.url, trailing_slash=true) | safe }}{% else %}{{ link.url | safe }}{% endif %}">{{ link.name }}</a></li>
           {% endfor %}
         </ul>
       </nav>

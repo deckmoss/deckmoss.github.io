@@ -1,13 +1,22 @@
 +++
 title = "How to unchain inodes on NixOS, while getting rid of orphaned packages [Introduction]"
-date = 2025-07-12T11:48:00Z
-updated =  2025-07-15T12:15:00Z
-[taxonomies]
-categories = ["NixOS"]
-tags = ["Linux", "NixOS", "configuration.nix", "Migration"]
+description = "How to employ your garbage collector sustainably on NixOS"
+draft = false
+sort_by = "date"
+weight = 0
+#template = "posts.html"
+page_template = "post.html"
+paginate_by = 10
+paginate_path = "page"
+paginate_reversed = false
+insert_anchor_links = "left"
+in_search_index = true
+render = true
+transparent = false
+aliases = []
+generate_feeds = false
 [extra]
 subtitle = "Employ your garbage collector sustainably on NixOS."
-disable_comments = true
 +++
 
 ## In case you're like me new to NixOS...
