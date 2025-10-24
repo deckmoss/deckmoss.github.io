@@ -18,8 +18,8 @@ subtitle = "1. Checking inode consumption on different parition types"
 
 ## Related Articels
 
-├──<a href="/posts/diy/degarbage_nixos" class="btn btn_info" width="100%">[ 0. main article ]</a><br>
-╰──<a href="/posts/diy/degarbage_nixos/nixos-garbage-collector" class="btn btn_success">[ 2. performing storage clean ups]</a>
+├──<a href="/diy/degarbage_nixos" class="btn btn_info" width="100%">[ 0. main article ]</a><br>
+╰──<a href="/diy/degarbage_nixos/nixos-garbage-collector/" class="btn btn_success">[ 2. performing storage clean ups]</a>
 ## A Examining disk usage and inode consumption statistics on `btrfs`, `ext4` and `xfs` 
 
 <p class="notice_info"><strong>What are Inodes?</strong> An <em>Inode</em> is an abbreavation for <em>index node</em>. <em>Index nodes</em> are memory units that store <em>metadata</em>, such as the memory sectors where a certain file is actually stored and the <abbr title="like creation time and last access time and access restrictions">file attributes</abbr>.</p>
@@ -121,7 +121,7 @@ System,DUP: Size:8.00MiB, Used:64.00KiB (0.78%)
 /dev/mapper/luks-4b890b26-f927-468e-9ce2-ead3d942224f	  16.00MiB
 ```
 
-<p class="notice_success">✅ Actually i must have enough space for inode allocation left. On this <code>btrfs</code> partition, only <strong>59.46%</strong> of the preserved space for Metadata/DUP was consumed. This is no surprise, because i already have fixed this. But if you actually don't have any space left, please continue <a href="/posts/nixos-garbage-collector">here</a> to call the garbage collector and consider also to perform a btrfs scrub.</p>
+<p class="notice_success">✅ Actually i must have enough space for inode allocation left. On this <code>btrfs</code> partition, only <strong>59.46%</strong> of the preserved space for Metadata/DUP was consumed. This is no surprise, because i already have fixed this. But if you actually don't have any space left, please continue <a href="/diy/degarbage_nixos/nixos-garbage-collector">here</a> to call the garbage collector and consider also to perform a btrfs scrub.</p>
 
 Let's focus on this part of the previous output:
 
@@ -183,7 +183,7 @@ tmpfs            126496     36   126460    1% /run/user/1000
 
 ## D Comparison of btrfs, ext4 and xfs
 
-<p class="notice_info">Depending on your partition type you must find the correct tool to gather the wanted information about actual inode consumption.<br>E.g. for btrfs i would go for the <a href="/posts/checking_inodes/#[%F0%9F%A7%A9]_C.1_Optional:_btrfs">btrfs usage tool</a> and then check the metadata paragraph.<br><br>For at least <code>ext4</code> and <code>xfs</code> filesystems will <code>df -i</code> do the trick</p>
+<p class="notice_info">Depending on your partition type you must find the correct tool to gather the wanted information about actual inode consumption.<br>E.g. for btrfs i would go for the <a href="/diy/degarbage_nixos/checking_inodes/#[%F0%9F%A7%A9]_C.1_Optional:_btrfs">btrfs usage tool</a> and then check the metadata paragraph.<br><br>For at least <code>ext4</code> and <code>xfs</code> filesystems will <code>df -i</code> do the trick</p>
 
 
 ╰──<a href="/diy/degarbage_nixos/nixos-garbage-collector" class="btn btn_success">[ next ]</a>
