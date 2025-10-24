@@ -19,7 +19,7 @@
     <div class="inner-post content">
       {% block date %}{{ super() }}{% endblock date %}
       {% if page.extra.subtitle %}<h1>{{ page.extra.subtitle | safe}}</h1>{% endif %}
-      {% if current_path is starting_with("/posts/") %}
+      {% if current_path is starting_with("/posts/") or current_path is starting_with("/diy/") or current_path is starting_with("/uebermich/") %}
       {% if config.extra.read_time == true or page.updated %}
       <div class="post-info"><div class="post-ext-info">
         {% if config.extra.read_time == true %}
