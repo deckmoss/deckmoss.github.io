@@ -7,16 +7,6 @@ const cacheList = [
   "/404.html",
   "/notifications.js",
   "/manifest.json",
-  "/webfonts/Pixeboy.woff2",
-  "/webfonts/PressStart2P-latin-v15.woff2",
-  "/webfonts/PressStart2P-latin-ext-v15.woff2",
-  "/webfonts/PressStart2P-greek-v15.woff2",
-  "/webfonts/PressStart2P-cyrillic-v15.woff2",
-  "/webfonts/PressStart2P-cyrillic-ext-v15.woff2",
-  "/webfonts/hack-bold.woff2",
-  "/webfonts/hack-bolditalic.woff2",
-  "/webfonts/hack-italic.woff2",
-  "/webfonts/hack-regular.woff2",
 ];
 
 oninstall = (event) => {
