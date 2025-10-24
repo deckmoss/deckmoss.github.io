@@ -7,7 +7,7 @@
         {% if page.taxonomies["tags"] %}
         <ul class="tags"
           {%-for tag in page.taxonomies["tags"] %}
-          ><li><a href="/tags/{{ tag | slugify }}/">{{ tag }}</a></li
+          ><li><a href="/tags/{{ tag | safe }}/">{{ tag }}</a></li
             {%- if not loop.last %}
             {%- endif -%}
           {% endfor %}
