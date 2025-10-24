@@ -12,7 +12,7 @@ paginate_reversed = false
 insert_anchor_links = "left"
 in_search_index = true
 render = true
-transparent = true
+transparent = false
 aliases = []
 generate_feeds = false
 [extra]
