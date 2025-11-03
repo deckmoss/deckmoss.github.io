@@ -39,6 +39,14 @@ paths = "safe"
 taxonomies = "safe"
 anchors = "safe"
 
+[languages.de]
+generate_feeds = true # there will be a feed for French content
+build_search_index = true
+taxonomies = [
+    { name = "categories", feed = true },
+    { name = "tags", feed = false },
+]
+
 [extra]
 locale = "de_DE"
 logo = "icon-192x192.png"

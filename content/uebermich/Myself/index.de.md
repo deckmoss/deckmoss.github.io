@@ -2,7 +2,7 @@
 title = "Über mich"
 date = 2025-07-12T11:48:00Z
 updated =  2025-07-15T12:15:00Z
-description = "Myself"
+description = "Portfolio"
 weight = 0
 draft = false
 render = true
@@ -13,14 +13,14 @@ in_search_index = true
 #path = "aboutme/myself" 
 template = "page.html"
 [taxonomies]
-categories = ["about"]
-tags = ["me"]
+categories = ["Über Mich"]
+tags = ["Portfolio", "CV"]
 [extra]
 subtitle = "Über mich"
 disable_toc = false
 +++
 
-## About Me
+## Über Mich
 
-I'm Michael, a Rhineland based auto-didactic IT-Generalist.
+Ich bin Michael, Autodidakt und IT-Generalist vom Rheinland.
 
