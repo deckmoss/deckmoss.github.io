@@ -23,13 +23,13 @@ disable_toc = false
 <p>
 I'm Michael, a Rhineland based auto-didactic IT generalist.
 
-## As IT system administrator well experienced in
-- analyzing and reverse-engineering complex IT environments 
-- providing, migrating and enhancing IT infrastructures, including:  
-	- writing department specific domain policies
-	- orchestrating customized services (on-premises)
-	- (semi-/)automating and solving cost-expensive IT workarounds including reproducible system failures
-	- modernizing and streamlining legacy workflows in over decades-grown environments
+## As IT System Administrator Well Experienced in
+- Analyzing and Reverse-Engineering Complex IT Environments 
+- Providing, Migrating and Enhancing IT Infrastructures, Including:  
+	- Writing Department Specific Domain Policies
+	- Orchestrating Customized Services (On-Premises)
+	- (Semi-/)Automating and Solving Cost-Expensive IT Workarounds Including Reproducible System Failures
+	- Modernizing and Streamlining Legacy Workflows in Over Decades-Grown Environments
 
 ## Theoretical expertise in
  - Operating System Concepts
