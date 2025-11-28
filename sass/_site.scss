@@ -301,15 +301,16 @@ a.zola-anchor {
 
   ul {
     text-decoration: inherit;
-    filter: drop-shadow(0 1px 7px);
+    //filter: drop-shadow(0 1px 7px);
     display: grid;
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
     grid-auto-flow: column;
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 auto;
     li {
-      text-align:left;
+      text-align:unset;
+      box-sizing: border-box;
       vertical-align: middle;
       transform: translateZ(0);
       box-shadow: none; //0 0 0px rgba(0, 0, 0, 0);
