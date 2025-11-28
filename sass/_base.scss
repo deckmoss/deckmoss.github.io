@@ -385,6 +385,12 @@ footer {
   }
 }
 
+mark {
+  background-color: inherit;
+  font-weight: bolder;
+}
+
+
 #precache-payload{
   display: none;
 }

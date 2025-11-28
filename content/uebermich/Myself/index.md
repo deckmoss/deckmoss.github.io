@@ -1,8 +1,8 @@
 +++
 title = "Über mich"
-date = 2025-07-12T11:48:00Z
-updated =  2025-07-15T12:15:00Z
-description = "How to employ your garbage collector sustainably on NixOS"
+date = 2025-11-28T13:24:00Z
+#updated =  2025-07-15T12:15:00Z
+description = "Myself"
 weight = 0
 draft = false
 render = true
@@ -16,14 +16,90 @@ template = "page.html"
 categories = ["about"]
 tags = ["me"]
 [extra]
-subtitle = "Über mich"
+subtitle = "About me"
 disable_toc = false
 +++
 
-## Über mich
+<p>
+I'm Michael, a Rhineland based auto-didactic IT generalist.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim aeque doleamus animo, cum corpore dolemus, fieri tamen permagna accessio potest, si aliquod.
+## As IT system administrator well experienced in
+- analyzing and reverse-engineering complex IT environments 
+- providing, migrating and enhancing IT infrastructures, including:  
+	- writing department specific domain policies
+	- orchestrating customized services (on-premises)
+	- (semi-/)automating and solving cost-expensive IT workarounds including reproducible system failures
+	- modernizing and streamlining legacy workflows in over decades-grown environments
 
-## Hallo Welt
+## Theoretical expertise in
+ - Operating System Concepts
+ - Relational Databases
+ - Computer Networks & Distributed Systems
+ - Theory of Computation & Formal Methods
+ - Computer Architecture & Organization
+ - Fundamentals of Low-Level & High-Level Software Development in
+	- Assembler
+	- C++
+	- Python
+	- Java
+	- SQL
 
-Nos a libidinum impetu et a falsis initiis profecta vera esse non possunt, conficiuntur et angore et metu maximeque cruciantur, cum sero sentiunt frustra se aut pecuniae studuisse aut imperiis aut opibus aut gloriae. Nullas enim consequuntur voluptates, quarum potiendi spe inflammati multos labores magnosque susceperant.
+## Practical and self-taught experiences in
+ - Computer Languages
+	 - Bash
+	 - Powershell
+	 - CMD (BATCH)
+	 - CSS/HTML
+	 - PHP
+	 - Ansible
+ - Software Packaging, Deployment Issues & Concepts
+ - Operating System Customization & Deployment of OS-Derivatives Based Upon 
+	 - Unix Kernels 
+	 - Linux Kernels
+	 - Windows-NT Kernels 
+ - Virtualization & Sandboxing
+	 - VMWare's vSphere
+	 - Oracle's Virtualbox
+	 - Docker
+	 - Flatpaks
+	 - Nix Derivations
+ - Documentation and Massive Note-Taking in Obsidian 
+	 - Nearly Zettelkasten-Compliant
+	 - Documentation of IT Knowledge & Practices
+		 - \>1.000 Notes Written within one Year
+
+</p>
+
+
+## 2024-2025 Training Courses: Agile Software Developer
+
+Complementing my senior expertise in system migrations by attending full-time courses in 
+ - Project Management
+ - Professional Scrum Master
+ - Business English
+ - Python
+ - Java
+ - C++
+
+## 2019-2024: IT coordinator at a metropolitan medical diagnostics center
+
+<p>
+Self‑reliantly, I revolutionized the diagnosis center’s heavily customized and decades-grown IT infrastructure by 
+
+identifying the common and individual properties of every system, system cluster, and system class. Then backing up and rebuilding or hardening each one individually while adhering to regulatory security policies.  
+</p>
+
+<p class="notice_success"><strong>✅ The transformation resulted in a significantly higher level of automation, increased availability of core services, and improved long‑term stability while keeping expenses affordable.</strong></p> 
+
+## Since 2006
+
+Playing with 
+ - Linux Kernels
+ - Open Source Software Repositories
+ - Network Protocols 
+ - Software Development
+
+## Digital Since 1996
+
+Using Computers 
+ - MSDOS

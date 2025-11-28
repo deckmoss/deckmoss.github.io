@@ -22,6 +22,22 @@
   margin-left: 1.5em;
 }
 
+.notice {
+  color: rgba($gray, 1);
+}
+.info {
+  color: rgba($aqua, 1);
+}
+.success {
+  color: rgba($shamrock-green, 1);
+}
+.warning {
+  color: rgba($yellow, 1);
+}
+.danger {
+  color: rgba($red, 1);
+}
+
 .btn {
   display: inline-block;
   padding: 0.4rem 0.7rem;
@@ -115,7 +131,7 @@
   text-indent: initial;
   background-color: mix(#ddd, $notice-color, 73%);
   border-radius: 0;
-  box-shadow: 0.2rem 0.2rem 0.5rem lighten($gray,10%);//0 1px 1px rgba($notice-color, 0.25);
+  box-shadow: none;//0.2rem 0.2rem 0.5rem lighten($gray,10%);//0 1px 1px rgba($notice-color, 0.25);
   @media (prefers-color-scheme: dark) {
     background-color: mix(#333, $notice-color, 65%);
   }
