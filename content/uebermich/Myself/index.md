@@ -23,15 +23,15 @@ disable_toc = false
 <p>
 I'm Michael, a Rhineland based auto-didactic IT generalist.
 
-## As IT system administrator well experienced in
-- analyzing and reverse-engineering complex IT environments 
-- providing, migrating and enhancing IT infrastructures, including:  
-	- writing department specific domain policies
-	- orchestrating customized services (on-premises)
-	- (semi-/)automating and solving cost-expensive IT workarounds including reproducible system failures
-	- modernizing and streamlining legacy workflows in over decades-grown environments
+## As IT System Administrator Well Experienced in
+- Analyzing and Reverse-Engineering Complex IT Environments 
+- Providing, Migrating and Enhancing IT Infrastructures, Including:  
+	- Writing Department Specific Domain Policies
+	- Orchestrating Customized Services (On-Premises)
+	- (Semi-/)Automating and Solving Cost-Expensive IT Workarounds Including Reproducible System Failures
+	- Modernizing and Streamlining Legacy Workflows in Over Decades-Grown Environments
 
-## Theoretical expertise in
+## Theoretical Expertise in
  - Operating System Concepts
  - Relational Databases
  - Computer Networks & Distributed Systems
@@ -44,7 +44,7 @@ I'm Michael, a Rhineland based auto-didactic IT generalist.
 	- Java
 	- SQL
 
-## Practical and self-taught experiences in
+## Practical and Self-Taught Experiences in
  - Computer Languages
 	 - Bash
 	 - Powershell
@@ -73,7 +73,7 @@ I'm Michael, a Rhineland based auto-didactic IT generalist.
 
 ## 2024-2025 Training Courses: Agile Software Developer
 
-Complementing my senior expertise in system migrations by attending full-time courses in 
+Complementing My Senior Expertise in System Migrations by Attending Full-Time Courses in 
  - Project Management
  - Professional Scrum Master
  - Business English
@@ -81,7 +81,7 @@ Complementing my senior expertise in system migrations by attending full-time co
  - Java
  - C++
 
-## 2019-2024: IT coordinator at a metropolitan medical diagnostics center
+## 2019-2024: IT Coordinator at a Metropolitan Medical Diagnostics Center for Body Fluids
 
 <p>
 Self‑reliantly, I revolutionized the diagnosis center’s heavily customized and decades-grown IT infrastructure by 
