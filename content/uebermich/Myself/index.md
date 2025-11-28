@@ -81,7 +81,7 @@ Complementing my senior expertise in system migrations by attending full-time co
  - Java
  - C++
 
-## 2019-2024: IT coordinator at a metropolitan medical diagnostics center
+## 2019-2024: IT Coordinator at a Metropolitan Medical Diagnostics Center for Body Fluids
 
 <p>
 Self‑reliantly, I revolutionized the diagnosis center’s heavily customized and decades-grown IT infrastructure by 
