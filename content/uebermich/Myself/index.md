@@ -31,7 +31,7 @@ I'm Michael, a Rhineland based auto-didactic IT generalist.
 	- (Semi-/)Automating and Solving Cost-Expensive IT Workarounds Including Reproducible System Failures
 	- Modernizing and Streamlining Legacy Workflows in Over Decades-Grown Environments
 
-## Theoretical expertise in
+## Theoretical Expertise in
  - Operating System Concepts
  - Relational Databases
  - Computer Networks & Distributed Systems
@@ -44,7 +44,7 @@ I'm Michael, a Rhineland based auto-didactic IT generalist.
 	- Java
 	- SQL
 
-## Practical and self-taught experiences in
+## Practical and Self-Taught Experiences in
  - Computer Languages
 	 - Bash
 	 - Powershell
@@ -73,7 +73,7 @@ I'm Michael, a Rhineland based auto-didactic IT generalist.
 
 ## 2024-2025 Training Courses: Agile Software Developer
 
-Complementing my senior expertise in system migrations by attending full-time courses in 
+Complementing My Senior Expertise in System Migrations by Attending Full-Time Courses in 
  - Project Management
  - Professional Scrum Master
  - Business English
