@@ -1,7 +1,7 @@
 +++
 title = "Über mich"
-date = 2025-07-12T11:48:00Z
-updated =  2025-07-15T12:15:00Z
+date = 2025-11-28T13:24:00Z
+#updated =  2025-07-15T12:15:00Z
 description = "Myself"
 weight = 0
 draft = false
@@ -66,7 +66,7 @@ I'm Michael, a Rhineland based auto-didactic IT generalist.
  - Documentation and Massive Note-Taking in Obsidian 
 	 - Nearly Zettelkasten-Compliant
 	 - Documentation of IT Knowledge & Practices
-		 - \>1.000 Notes Written
+		 - \>1.000 Notes Written within one Year
 
 </p>
 
@@ -91,47 +91,15 @@ identifying the common and individual properties of every system, system cluster
 
 <p class="notice_success"><strong>✅ The transformation resulted in a significantly higher level of automation, increased availability of core services, and improved long‑term stability while keeping expenses affordable.</strong></p> 
 
-## 1996-2019 Digital Native
+## Since 2006
 
-<pre class="mermaid">
-	timeline
-		title History of Enthusiasm
-		1990 : Birth
-		1996 : First Personal Computer With MSDOS
-		2006 : Switching to Linux Based OS
-		: First Programming Language "Object Pascal"
-		2008 : Auto-Didactic Development in PHP, HTML & CSS
-		2009 : First Time Flashing my Router with Customized Linux Firmware
-		: Establishing First Self-Hosting Military-Class Encrypted Internet-Protocol-Tunnels Providing Remote Services
-		2010 - 2012 : Apprenticeship as a State-Certified IT Assistant
-		: Practical Emphasized Training in OOP with Java & Relational Databases with MySQL
-		: Guided Migration of a Virtualized Novel X500 Service
-		: Self-Taught Migration of a High Availability Cluster
-		: Self-Taught Modernization of a NagiOS Based Monitoring System Within a Sophisticated Multi-Wi-Fi Radio Production Environment
-		2012 : First Time Flashing my Phone with a Customized Linux Firmware
-		2013 - 2016 : Matriculation in Applied Technical Computer Science and then Applied Computer Science
-		2016 - 2019 : Leave of Absence due to Recovery from Misfortune
-</pre>
+Playing with 
+ - Linux Kernels
+ - Open Source Software Repositories
+ - Network Protocols 
+ - Software Development
 
+## Digital Since 1996
 
-
-```mermaid
-timeline
-	title History of Enthusiasm
-	1990 : Birth
-	1996 : First Personal Computer With MSDOS
-	2006 : Switching to Linux Based OS
-	: First Programming Language "Object Pascal"
-	2008 : Auto-Didactic Development in PHP, HTML & CSS
-	2009 : First Time Flashing my Router with Customized Linux Firmware
-	: Establishing First Self-Hosting Military-Class Encrypted Internet-Protocol-Tunnels Providing Remote Services
-	2010 - 2012 : Apprenticeship as a State-Certified IT Assistant
-	: Practical Emphasized Training in OOP with Java & Relational Databases with MySQL
-	: Guided Migration of a Virtualized Novel X500 Service
-	: Self-Taught Migration of a High Availability Cluster
-	: Self-Taught Modernization of a NagiOS Based Monitoring System Within a Sophisticated Multi-Wi-Fi Radio Production Environment
-	2012 : First Time Flashing my Phone with a Customized Linux Firmware
-	2013 - 2016 : Matriculation in Applied Technical Computer Science and then Applied Computer Science
-	2016 - 2019 : Leave of Absence due to Recovery from Misfortune
-
-```
+Using Computers 
+ - MSDOS
