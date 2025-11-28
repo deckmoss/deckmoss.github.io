@@ -12,8 +12,8 @@ My actual topics:
 </p>
 <p>
 <ul>
-	<li><a href="/tags/NixOS/"> Random discoveries on NixOS</a></li>
-	<li><a href="/tags/Notebooks/"> DIY: Upgrading notebooks</a></li>
+	<li><a href="/tags/NixOS/"> Random Discoveries on NixOS</a></li>
+	<li><a href="/tags/Notebooks/"> DIY: Upgrading Notebooks</a></li>
 	<li><a href="/uebermich/Myself/"> About Me</a></li>
 </ul>
 </p>
