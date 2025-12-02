@@ -21,7 +21,7 @@ subtitle = "2. Running and declaring NixOS garbage-collector routines"
 ├──<a href="/diy/degarbage_nixos" class="btn btn_info">[ 0. main article ]</a><br>
 ╰──<a href="/diy/degarbage_nixos/checking_inodes" class="btn btn_info" border="5px solid black">[ 1. checking partition stats ] </a> 
 
-## Introduction
+## A Introduction
 
 As investigated in my [previous article](@/diy/degarbage_nixos/checking_inodes.md), NixOS consumes an increasing amount of the limited metadata storage area of a filesystem with each new build. 
 
@@ -29,19 +29,19 @@ For instance, I use NixOS on my regular desktop computers, so I rarely add or re
 
 The reason is simple: a rebuild produces [the latest generation](@/diy/degarbage_nixos/nixos-garbage-collector.md#NixOS_Generations_for_Beginners), which contains almost the same system links as the earlier generation while adding only a few packages from the Internet.
 
-### The Emergency Fix
+### [🧩] A.1 The Emergency Fix
 
 <p class="notice_success">✅ NixOS is equipped with its own garbage collector, which can be invoked imperatively whenever needed. This frees inodes instantly in critical situations, such as after a system build fails and reports that no space is left.</p>
 
 ╰──<a href="/diy/degarbage_nixos/nixos-garbage-collector/#How_to_Clean-Up_Your_System" class="btn btn_success" border="5px solid black">Show Emergency Fix</a>
 
-### The Declarative Approach
+### [🧩] A.2 The Declarative Approach
 
 <p class="notice_success">✅ Besides the imperative clean-up, it is highly recommended to declare an automated garbage-collection routine in the <abbr title="/etc/nixos/configuration.nix">configuration.nix</abbr> file in order to prevent any unwanted future shortages of filesystem space.</p>
 
 ╰──<a href="/diy/degarbage_nixos/nixos-garbage-collector/#Declaring_Garbage-Collector_in_Configuration.nix" class="btn btn_success" border="5px solid black">Show Declarative Fix</a>
 
-## NixOS Generations for Beginners
+## B NixOS Generations for Beginners
 
 <p>Generations in the context of NixOS are originally called build-generations of a distinct profile. Whenever you run <code>nixos-rebuild "switch"</code>, it incrementally builds the next generation of your system. 
 
@@ -61,7 +61,7 @@ This design guarantees an almost incorruptible operating system. In case of misc
 
 {{ image(src="mm_nixos_profiles.png", link="mm_nixos_profiles.png", alt="Mermaid Diagram of NixOS Profiles", caption="Diagram of NixOS User Environment Profiles") }} 
 
-### How to List All Existing Generations
+### [🧩] B.2 How to List All Existing Generations
 
 To keep things simple, I address the _system profile_ only in this article; it is not user‑specific and therefore serves as the public profile for all users on a system. Multiple profiles are possible, e.g., one for each user on multi‑user systems.
 
@@ -70,13 +70,13 @@ sudo nix-env -p /nix/var/nix/profiles/system --list-generations
 ```
 <cite>Bash</cite> --- <cite>lists all existing generations of the system profile</cite>
 
-## The Garbage-Collector
+## C The Garbage-Collector
 
 (Simplified) The garbage collector likely traverses the local <abbr title="/nix/store">nix-store</abbr> recursively and collects all unlinked packages. These are orphaned nix‑store paths because they are no longer linked to any of the existing generation’s system‑profile trees.
 
-## How to Clean-Up Your System 
+## D How to Clean-Up Your System 
 
-### 1. Removing Legacy Generations Imperatively
+### [🧩] D.1 Removing Legacy Generations Imperatively
 
 As [mentioned above](@/diy/degarbage_nixos/nixos-garbage-collector.md#Introduction), we can free some filesystem space by removing legacy generations of our active profile. 
 
@@ -85,7 +85,7 @@ sudo nix-collect-garbage --delete-older-than 14d
 ```
 <cite>Bash</cite> --- <cite>this removes all generations including their orphaned packages older than 14d</cite>
 
-### 2. Deduplicating Store Dependencies
+### [🧩] D.2 Deduplicating Store Dependencies
 
 The <code>nix store optimise</code> operation collects all identical files in your nix-store and replaces each one with a hard link that points to a single original file. This usually frees about 25–30 % of the store. Theoretically, it removes duplicate inodes and the filesystem blocks they were holding pointers to.
 
@@ -96,7 +96,7 @@ nix store optimise
 ```
 <cite>Bash</cite> --- <cite>replaces identical files in the store by hard links</cite>
 
-#### Self-Testing Results
+#### [🧩] D.2.a Self-Testing Results
 
 I use btrfs as my filesystem, so I must run **this** command to plot a summary of the <abbr title="/nix/store">nix-store</abbr> filesystem statistics:
 
@@ -105,7 +105,7 @@ sudo btrfs filesystem usage /nix/store
 ```
 <cite>Bash</cite> --- <cite>firstly mentioned in my [previous article](@/diy/degarbage_nixos/checking_inodes.md#[%F0%9F%A7%A9]_C.1_Optional:_btrfs) (you must choose the correct tool depending on your local filesystem)</cite>
 
-##### Storage statistics before the invocation of <code>nix store optimise</code>:
+##### [🧩] D.2.a.i Storage statistics before the invocation of <code>nix store optimise</code>:
 
 ```text
 Overall:
@@ -136,7 +136,7 @@ Unallocated:
 
 ```
 
-##### After the invocation: 
+##### [🧩] D.2.a.ii After the invocation: 
 
 ```text
 Overall:
@@ -167,13 +167,13 @@ Unallocated:
 
 ```
 
-##### Summary
+##### [🧩] D.1.a.iii Summary
 
 The procedure freed 
  - around 9.0GiB in my data area
  - around 0.7GiB in my meta-data area
 
-## Declaring Garbage-Collector in Configuration.nix
+## E Declaring Garbage-Collector in Configuration.nix
 
 Adding these two lines to the <abbr title="/etc/nixos/configuration.nix">configuration.nix</abbr> results in automatic garbage collection whenever `nixos-rebuild` is triggered to build the next generation of your system.
 
