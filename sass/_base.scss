@@ -211,7 +211,7 @@ blockquote {
     font-size: 0.85em;
     &:before {
       content: "\2014";
-      padding-right: 5px;
+      padding-left: 5px;
     }
   }
 }
@@ -223,6 +223,7 @@ address {
 cite {
   font-style: italic;
   font-size: 0.85em;
+  text-align: end;
 }
 
 ul > li {

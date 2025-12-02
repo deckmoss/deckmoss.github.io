@@ -1,3 +1,4 @@
+// Idee: Hier padding für bottom auf 0 setzen und eine neue klasse hinzufügen für cite oder span, welche padding nach oben 0 hat, nach unten jedoch 1.
 pre {
   padding: 1rem;
   overflow: auto;
@@ -17,6 +18,7 @@ pre table td {
 
 pre table td:nth-of-type(1) {
   text-align: center;
+  vertical-align: top;
   user-select: none;
 }
 
