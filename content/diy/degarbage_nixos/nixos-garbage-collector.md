@@ -188,4 +188,4 @@ Adding these two lines to the <abbr title="/etc/nixos/configuration.nix">configu
 ```
 configuration.nix --- <cite>removes all generations older than 30 days during every build</cite>
 
-<p class="notice_info">ℹ️ It is also possible to automate the <a href="/diy/degarbage_nixos/nixos-garbage-collector/#2._Deduplicating_Store_Dependencies">optimization procedure</a> via declaration. Please read the <a href="https://nixos.wiki/wiki/Storage_optimization">corresponding official NixOS wiki article</a> for further instructions.</p>
+<p class="notice_info">ℹ️ It is also possible to automate the <a href="/diy/degarbage_nixos/nixos-garbage-collector/#D.2_Deduplicating_Store_Dependencies">optimization procedure</a> via declaration. Please read the <a href="https://nixos.wiki/wiki/Storage_optimization">corresponding official NixOS wiki article</a> for further instructions.</p>
