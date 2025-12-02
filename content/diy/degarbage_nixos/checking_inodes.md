@@ -54,7 +54,7 @@ tmpfs           3,1G  200K  3,1G   1% /run/user/1000
 <p class="notice_success">✅ 40% of <abbr title="the line where / is in the row of 'Mounted on'">system root directory</abbr> are free and theres also no sub-partition mounted in root besides boot and tempfs. Therefore the "no space left" error was not caused by a lack of overall disk space.</p>
 
 <br>
-<p class="notice_info">ℹ️ If you simply don't have disk space left, because you have also forgotten to declare garbage collection cycles, you could do this now manually by continuing from <a href="/diy/degarbage_nixos/nixos-garbage-collector/#How_to_Clean-Up_Your_System)">here</a>. Otherwise wipe some gigabites and consider to extend your partition.</p>
+<p class="notice_info">ℹ️ If you simply don't have disk space left, because you have also forgotten to declare garbage collection cycles, you could do this now manually by continuing from <a href="/diy/degarbage_nixos/nixos-garbage-collector/#How_to_Clean-Up_Your_System">here</a>. Otherwise wipe some gigabites and consider to extend your partition.</p>
 <br><br>
 
 ## B Checking out the inode consumption with <abbr title="disk free -inodes">df -i</abbr>
