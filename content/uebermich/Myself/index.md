@@ -73,7 +73,7 @@ I'm Michael, a Rhineland based auto-didactic IT generalist.
 
 ## 2024-2025 Training Courses: Agile Software Developer
 
-Complementing My Senior Expertise in System Migrations by Attending Full-Time Courses in 
+Complementing My Expertise in System Migrations by Attending Full-Time Courses in 
  - Project Management
  - Professional Scrum Master
  - Business English
