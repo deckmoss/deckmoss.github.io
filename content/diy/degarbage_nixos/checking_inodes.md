@@ -22,7 +22,7 @@ subtitle = "1. Checking inode consumption on different parition types"
 ╰──<a href="/diy/degarbage_nixos/nixos-garbage-collector/" class="btn btn_success">[ 2. performing storage clean ups]</a>
 ## A Examining disk usage and inode consumption statistics on `btrfs`, `ext4` and `xfs` 
 
-<p class="notice_info"><strong>What are Inodes?</strong> An <em>Inode</em> is an abbreavation for <em>index node</em>. <em>Index nodes</em> are memory units that store <em>metadata</em>, such as the memory sectors where a certain file is actually stored and the <abbr title="like creation time and last access time and access restrictions">file attributes</abbr>.</p>
+<p class="notice_info">ℹ️ <strong>What are Inodes?</strong> An <em>Inode</em> is an abbreavation for <em>index node</em>. <em>Index nodes</em> are memory units that store <em>metadata</em>, such as the memory sectors where a certain file is actually stored and the <abbr title="like creation time and last access time and access restrictions">file attributes</abbr>.</p>
 
 To put an emphasize on slightly differences between some random filesystem types i was able to examine.
 
@@ -54,7 +54,7 @@ tmpfs           3,1G  200K  3,1G   1% /run/user/1000
 <p class="notice_success">✅ 40% of <abbr title="the line where / is in the row of 'Mounted on'">system root directory</abbr> are free and theres also no sub-partition mounted in root besides boot and tempfs. Therefore the "no space left" error was not caused by a lack of overall disk space.</p>
 
 <br>
-<p class="notice_info">If you simply don't have disk space left, because you have also forgotten to declare garbage collection cycles, you could do this now manually by continuing from <a href="/diy/degarbage_nixos/nixos-garbage-collector/#How_to_Clean-Up_Your_System)">here</a>. Otherwise wipe some gigabites and consider to extend your partition.</p>
+<p class="notice_info">ℹ️ If you simply don't have disk space left, because you have also forgotten to declare garbage collection cycles, you could do this now manually by continuing from <a href="/diy/degarbage_nixos/nixos-garbage-collector/#How_to_Clean-Up_Your_System)">here</a>. Otherwise wipe some gigabites and consider to extend your partition.</p>
 <br><br>
 
 ## B Checking out the inode consumption with <abbr title="disk free -inodes">df -i</abbr>
@@ -183,7 +183,7 @@ tmpfs            126496     36   126460    1% /run/user/1000
 
 ## D Comparison of btrfs, ext4 and xfs
 
-<p class="notice_info">Depending on your partition type you must find the correct tool to gather the wanted information about actual inode consumption.<br>E.g. for btrfs i would go for the <a href="/diy/degarbage_nixos/checking_inodes/#[%F0%9F%A7%A9]_C.1_Optional:_btrfs">btrfs usage tool</a> and then check the metadata paragraph.<br><br>For at least <code>ext4</code> and <code>xfs</code> filesystems will <code>df -i</code> do the trick</p>
+<p class="notice_info">ℹ️ Depending on your partition type you must find the correct tool to gather the wanted information about actual inode consumption.<br>E.g. for btrfs i would go for the <a href="/diy/degarbage_nixos/checking_inodes/#[%F0%9F%A7%A9]_C.1_Optional:_btrfs">btrfs usage tool</a> and then check the metadata paragraph.<br><br>For at least <code>ext4</code> and <code>xfs</code> filesystems will <code>df -i</code> do the trick</p>
 
 
 ╰──<a href="/diy/degarbage_nixos/nixos-garbage-collector" class="btn btn_success">[ next ]</a>
