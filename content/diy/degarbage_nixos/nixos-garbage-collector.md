@@ -27,7 +27,7 @@ As investigated in my [previous article](@/diy/degarbage_nixos/checking_inodes.m
 
 For instance, I use NixOS on my regular desktop computers, so I rarely add or remove more than one or two packages in my <abbr title="/etc/nixos/configuration.nix">configuration.nix</abbr> file before invoking a rebuild process, which then consumes far more space in the metadata area than in the data area
 
-The reason is simple: a rebuild produces [the latest generation](@/diy/degarbage_nixos/nixos-garbage-collector.md#B_NixOS_Generations_for_Beginners), which contains almost the same system links as the earlier generation while adding only a few packages from the Internet.
+The reason is simple: a rebuild produces [the latest generation](@/diy/degarbage_nixos/nixos-garbage-collector.md#B_NixOS_Generations_for_Beginners), which contains almost the same amount of system links as the earlier generation while adding only a few packages from the Internet.
 
 ### A.1 The Emergency Fix
 
