@@ -31,7 +31,7 @@ Let us begin with printing the disk usage with the <abbr title="disk free">df</a
 ```sh
 df -h
 ```
-```
+```hl_lines=5
 Filesystem      Size  Used Avail Use% Mounted on
 devtmpfs        1,6G     0  1,6G   0% /dev
 tmpfs            16G   63M   16G   1% /dev/shm
@@ -53,7 +53,7 @@ tmpfs           3,1G  200K  3,1G   1% /run/user/1000
 
 <p class="notice_success">✅ 40% of <abbr title="the line where / is in the row of 'Mounted on'">system root directory</abbr> are free and theres also no sub-partition mounted in root besides boot and tempfs. Therefore the "no space left" error was not caused by a lack of overall disk space.</p>
 
-<p class="notice_info">ℹ️ If you simply don't have disk space left, because you have also forgotten to declare garbage collection cycles, you could do this now manually by continuing from <a href="/diy/degarbage_nixos/nixos-garbage-collector/#How_to_Clean-Up_Your_System">here</a>. Otherwise wipe some gigabites and consider to extend your partition.</p>
+<p class="notice_info">ℹ️ If you simply don't have disk space left, because you have also forgotten to declare garbage collection cycles, you could do this now manually by continuing from <a href="/diy/degarbage_nixos/nixos-garbage-collector/#D_How_to_Clean-Up_Your_System">here</a>. Otherwise wipe some gigabites and consider to extend your partition.</p>
 
 ## B Checking out the inode consumption with <abbr title="disk free -inodes">df -i</abbr>
 
@@ -62,7 +62,7 @@ tmpfs           3,1G  200K  3,1G   1% /run/user/1000
 df -i
 ```
 
-```
+```hl_lines=5
 Filesystem       Inodes  IUsed    IFree IUse% Mounted on
 devtmpfs        3987643    837  3986806    1% /dev
 tmpfs           3990104    389  3989715    1% /dev/shm
@@ -94,7 +94,7 @@ As demonstrated right above, every partition format uses its own technique to pr
 sudo btrfs filesystem usage /
 ```
 
-```
+```hl_lines=18
 Overall:
 Device size:         456.52GiB
 Device allocated:    456.52GiB
@@ -138,7 +138,7 @@ My root partition on my Fedora system is formatted with ext4. I'm providing `df 
 df -i
 ```
 
-```
+```hl_lines=2
 Filesystem       Inodes  IUsed    IFree   IUse% Mounted on
 /dev/dm-0       6291456  1145703  5145753   19% /
 devtmpfs        4340946      762  4340184    1% /dev
@@ -165,7 +165,7 @@ Also for comparison reasons i called for `df -i` statistics from my MX Linux mac
 df -i
 ```
 
-```
+```hl_lines=4
 Filesystem       Inodes  IUsed    IFree IUse% Mounted on
 udev             116689    439   116250    1% /dev
 tmpfs            126496    645   125851    1% /run
