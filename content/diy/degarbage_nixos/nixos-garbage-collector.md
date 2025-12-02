@@ -27,19 +27,19 @@ As investigated in my [previous article](@/diy/degarbage_nixos/checking_inodes.m
 
 For instance, I use NixOS on my regular desktop computers, so I rarely add or remove more than one or two packages in my <abbr title="/etc/nixos/configuration.nix">configuration.nix</abbr> file before invoking a rebuild process, which then consumes far more space in the metadata area than in the data area
 
-The reason is simple: a rebuild produces [the latest generation](@/diy/degarbage_nixos/nixos-garbage-collector.md#NixOS_Generations_for_Beginners), which contains almost the same system links as the earlier generation while adding only a few packages from the Internet.
+The reason is simple: a rebuild produces [the latest generation](@/diy/degarbage_nixos/nixos-garbage-collector.md#B_NixOS_Generations_for_Beginners), which contains almost the same system links as the earlier generation while adding only a few packages from the Internet.
 
 ### A.1 The Emergency Fix
 
 <p class="notice_success">✅ NixOS is equipped with its own garbage collector, which can be invoked imperatively whenever needed. This frees inodes instantly in critical situations, such as after a system build fails and reports that no space is left.</p>
 
-╰──<a href="/diy/degarbage_nixos/nixos-garbage-collector/#How_to_Clean-Up_Your_System" class="btn btn_success" border="5px solid black">Show Emergency Fix</a>
+╰──<a href="/diy/degarbage_nixos/nixos-garbage-collector/#D_How_to_Clean-Up_Your_System" class="btn btn_success" border="5px solid black">Show Emergency Fix</a>
 
 ### A.2 The Declarative Approach
 
 <p class="notice_success">✅ Besides the imperative clean-up, it is highly recommended to declare an automated garbage-collection routine in the <abbr title="/etc/nixos/configuration.nix">configuration.nix</abbr> file in order to prevent any unwanted future shortages of filesystem space.</p>
 
-╰──<a href="/diy/degarbage_nixos/nixos-garbage-collector/#Declaring_Garbage-Collector_in_Configuration.nix" class="btn btn_success" border="5px solid black">Show Declarative Fix</a>
+╰──<a href="/diy/degarbage_nixos/nixos-garbage-collector/#E_Declaring_Garbage-Collector_in_Configuration.nix" class="btn btn_success" border="5px solid black">Show Declarative Fix</a>
 
 ## B NixOS Generations for Beginners
 
@@ -78,7 +78,7 @@ Bash --- <cite>lists all existing generations of the system profile</cite>
 
 ### D.1 Removing Legacy Generations Imperatively
 
-As [mentioned above](@/diy/degarbage_nixos/nixos-garbage-collector.md#Introduction), we can free some filesystem space by removing legacy generations of our active profile. 
+As [mentioned above](@/diy/degarbage_nixos/nixos-garbage-collector.md#A_Introduction), we can free some filesystem space by removing legacy generations of our active profile. 
 
 ```sh
 sudo nix-collect-garbage --delete-older-than 14d
@@ -103,7 +103,7 @@ I use btrfs as my filesystem, so I must run **this** command to plot a summary o
 ```sh
 sudo btrfs filesystem usage /nix/store
 ```
-Bash --- <cite>firstly mentioned in my [previous article](@/diy/degarbage_nixos/checking_inodes.md#[%F0%9F%A7%A9]_C.1_Optional:_btrfs) (you must choose the correct tool depending on your local filesystem)</cite>
+Bash --- <cite>firstly mentioned in my [previous article](@/diy/degarbage_nixos/checking_inodes.md#C_Choosing_the_correct_inode_measurement_tool_depending_on_the_filesystem_format) (you must choose the correct tool depending on your local filesystem)</cite>
 
 ##### Storage statistics I
 <p class="notice_info">ℹ️ before the invocation of <code>nix store optimise</code>:</p>
