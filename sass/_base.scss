@@ -136,10 +136,12 @@ figure {
   @include clearfix();
   figcaption {
     margin-bottom: 0.5em;
-    color: lighten($black, 40);
-    font-size: 1em; //12px;
+    color: $black;
+    //color: lighten($black, 40);
+    font-size:.85em;
     width: 100%;
-    text-align: center;
+    text-align:end;
+    font-style: italic;
   }
   @media (prefers-color-scheme: dark) {
     figcaption {

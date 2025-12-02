@@ -33,11 +33,16 @@ highlight_themes_css = [
 ]
 render_emoji = true
 external_links_target_blank = true
+insert_anchor_links = "left"
 
 [slugify]
 paths = "safe"
 taxonomies = "safe"
 anchors = "safe"
+
+[link_checker]
+internal_level = "warn"
+external_level = "warn"
 
 [languages.de]
 generate_feeds = true # there will be a feed for French content
