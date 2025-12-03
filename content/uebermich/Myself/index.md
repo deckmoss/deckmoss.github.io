@@ -23,7 +23,7 @@ disable_toc = false
 
 <p class="notice_info">ℹ️ I am Michael, a Rhineland based senior IT generalist. <br><br>
 > I am seeking a new challenge, whether as a Project Leader, Data-Center Administrator, or as a participant on an interdisciplinary research or development team.<br><br>
-> Preferably in a private health-care organisation, a digitization improvement project or in an initiative that promotes digital sovereignty.<br><br>
+> Preferably in a private health-care organisation, a digitization improvement project, or in an initiative that promotes digital sovereignty.<br><br>
 > I welcome inquiries regarding suitable opportunities.</p>
 <p><br>
 Trained or certified in the following aspects:
@@ -75,7 +75,6 @@ Trained or certified in the following aspects:
 
 </p>
 
-
 ## 2024-2025 Training Courses: Agile Software Developer
 
 Complementing my expertise in system migrations by attending full-time courses in 
@@ -100,7 +99,7 @@ identifying the common and individual properties of every system, system cluster
 
 ## Digital Autonomy Since 2007
 
-As teenager with more time and more enthusiasm than budget, I liberated myself from the disadvantages of commercial software. 
+As a teenager with more recreational time and enthusiasm than budget, I liberated myself from the disadvantages of commercial software. 
 
 Self-Taught Engagement in 
 - Free Operating Systems
