@@ -21,7 +21,9 @@ disable_toc = false
 +++
 
 <p>
-I'm Michael, a Rhineland based auto-didactic IT generalist.
+I am Michael, a Rhineland based senior IT generalist. Looking for a new position as project leader, data-center administrator or software developer. Preferably in private health-care organisations or in digitization improvement projects or in private or public initiatives that promote digital sovereignty.
+
+Well trained and certified in different aspects:
 
 ## As IT System Administrator Well Experienced in
 - Analyzing and Reverse-Engineering Complex IT Environments 
@@ -73,7 +75,7 @@ I'm Michael, a Rhineland based auto-didactic IT generalist.
 
 ## 2024-2025 Training Courses: Agile Software Developer
 
-Complementing My Expertise in System Migrations by Attending Full-Time Courses in 
+Complementing my expertise in system migrations by attending full-time courses in 
  - Project Management
  - Professional Scrum Master
  - Business English
@@ -90,16 +92,18 @@ identifying the common and individual properties of every system, system cluster
 </p>
 
 <p class="notice_success"><strong>✅ The transformation resulted in a significantly higher level of automation, increased availability of core services, and improved long‑term stability while keeping expenses affordable.</strong></p> 
+.
+.
+.
+## Digital Autonomy Since 2007
 
-## Since 2006
+As teenager with more time and more enthusiasm than budget, I liberated myself from the disadvantages of commercial software. 
 
-Playing with 
- - Linux Kernels
- - Open Source Software Repositories
- - Network Protocols 
- - Software Development
+Self-Taught Engagement in 
+- Free Operating Systems
+- Free Software Repositories
+- Network Protocols
+
+Attended the software development class in school.
 
 ## Digital Since 1996
-
-Using Computers 
- - MSDOS
