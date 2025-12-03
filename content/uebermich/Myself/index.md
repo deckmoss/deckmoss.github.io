@@ -108,5 +108,3 @@ Self-Taught Engagement in
 - Network Protocols
 
 Attended the software development class in school.
-
-## Digital Since 1996
