@@ -23,7 +23,7 @@ disable_toc = false
 
 <p class="notice_info">ℹ️ I am Michael, a Rhineland based senior IT generalist. <br><br>
 > I am seeking a new challenge, whether as a Project Leader, Data-Center Administrator, or as a participant on an interdisciplinary research or development team.<br><br>
-> Preferably in a private health-care organisation or in a digitization improvement project or in a private or public initiative that promote digital sovereignty.<br><br>
+> Preferably in a private health-care organisation, a digitization improvement project or in an initiative that promotes digital sovereignty.<br><br>
 > I welcome inquiries regarding suitable opportunities.</p>
 <p><br>
 Trained or certified in the following aspects:
