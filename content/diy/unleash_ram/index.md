@@ -14,7 +14,7 @@ categories = ["DIY"]
 tags = ["Linux","Notebooks"]
 [extra]
 subtitle = "How to hack your vendor's RAM capacity"
-image = "urban.gif"
+#image = "urban.gif"
 +++
 
 

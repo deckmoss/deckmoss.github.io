@@ -19,11 +19,14 @@ tags = ["me"]
 subtitle = "About me"
 disable_toc = false
 +++
+ 
 
-<p>
-I am Michael, a Rhineland based senior IT generalist. Looking for a new position as project leader, data-center administrator or software developer. Preferably in private health-care organisations or in digitization improvement projects or in private or public initiatives that promote digital sovereignty.
-
-Well trained and certified in different aspects:
+<p class="notice_info">ℹ️ I am Michael, a Rhineland based senior IT generalist. <br><br>
+> I am seeking a new challenge, whether as a Project Leader, Data-Center Administrator, or as a participant on an interdisciplinary research or development team.<br><br>
+> Preferably in a private health-care organisation or in a digitization improvement project or in a private or public initiative that promote digital sovereignty.<br><br>
+> I welcome inquiries regarding suitable opportunities.</p>
+<p><br>
+Trained or certified in the following aspects:
 
 ## As IT System Administrator Well Experienced in
 - Analyzing and Reverse-Engineering Complex IT Environments 
@@ -92,9 +95,9 @@ identifying the common and individual properties of every system, system cluster
 </p>
 
 <p class="notice_success"><strong>✅ The transformation resulted in a significantly higher level of automation, increased availability of core services, and improved long‑term stability while keeping expenses affordable.</strong></p> 
-.
-.
-.
+
+. . .
+
 ## Digital Autonomy Since 2007
 
 As teenager with more time and more enthusiasm than budget, I liberated myself from the disadvantages of commercial software. 
