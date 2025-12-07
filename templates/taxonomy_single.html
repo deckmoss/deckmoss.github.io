@@ -7,9 +7,11 @@
         <u><h2>{{ term.name }}</h2></u>
         {%- for year, posts in term.pages | group_by(attribute="year") %}
           <h3>{{ year }}</h3>
+          <ul>
           {%- for page in posts %}
-            <h4><a href="{{ page.path | safe }}">{{ page.title | safe }}</a> <time datetime="{{ page.date }}">{{ page.date | date(format="%F") }}</time></h4>
+            <li class="entry-info"><a href="{{ page.path | safe }}">{{ page.title | safe }}</a> <time datetime="{{ page.date }}">{{ page.date | date(format="%F") }}</time></li>
           {%- endfor %}
+          </ul>
         {%- endfor %}
       </div>
     </div>
