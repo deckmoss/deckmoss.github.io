@@ -1,13 +1,11 @@
 +++
-title = "Under Construction"
+title = "Datsusara"
 date = 2025-10-23T15:00:00Z
 [taxonomies]
-categories = ["ideas"]
+categories = ["Idea Pool"]
 tags = ["content"]
 [extra]
-subtitle = "Under Construction"
+subtitle = "First Post"
 +++
 
-## Under Construction
-
-## Hello World
+## 

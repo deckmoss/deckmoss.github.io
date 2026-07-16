@@ -8,7 +8,7 @@ title = "froehlich"
 
 <p>Welcome to my tiny self-made weblog. 
 
-My actual topics:
+My current topics:
 </p>
 <p>
 <ul>

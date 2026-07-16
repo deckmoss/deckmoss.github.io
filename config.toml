@@ -24,16 +24,29 @@ include_path = false
 include_content = true
 index_format = "elasticlunr_json"
 
-[markdown]
-highlight_code = true
-highlight_theme = "css"
-highlight_themes_css = [
-    { theme = "OneHalfDark", filename = "syntax-theme-dark.css" },
-    { theme = "OneHalfLight", filename = "syntax-theme-light.css" },
-]
-render_emoji = true
-external_links_target_blank = true
-insert_anchor_links = "left"
+[markdown.highlighting]
+style = "class"
+theme = "one-dark-pro"
+#light_theme = "OneHalfLight"
+#dark_theme = "OneHalfDark"
+
+
+#[markdown]
+#highlight_code = true
+#highlight_theme = "css"
+#highlight_themes_css = [
+#    { theme = "OneHalfDark", filename = "syntax-theme-dark.css" },
+#    { theme = "OneHalfLight", filename = "syntax-theme-light.css" },
+#]
+#render_emoji = true
+#external_links_target_blank = true
+#insert_anchor_links = "left"
+
+#[markdown.highlighting]
+#style = "class"
+#error_on_missing_language = false
+#theme = "one-dark-pro"
+
 
 [slugify]
 paths = "safe"
@@ -102,6 +115,7 @@ links = [
 [extra.social]
 email = "codeeeee@posteo.it"
 #mastodon = "server/@user_name"
+bookwyrm = "ramblingreaders.org/user/truerly"
 #twitter = "user_name"
 #facebook = "user_name"
 #codeberg = "username"
