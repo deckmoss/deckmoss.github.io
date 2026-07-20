@@ -35,18 +35,6 @@ body {
   background: $white;                   // global bg color
 }
 
-/*
-  *** relict from my experiment scroll-toggle.js
-  ***
-body.scrollToggle { 
-  h1, h2, h3, h4 {
-    text-shadow: 1px 1px 1pt $shamrock-green, 
-      0.14rem 0.14rem 1pt $aqua, 
-      0.2rem 0.2rem 1pt $red; 
-    transition:all 0.3s; 
-  }
-}
-*/
 a {
   color: $dark-blue;
   outline: none;
@@ -214,8 +202,7 @@ img {
   -ms-interpolation-mode: bicubic;
   image-rendering: optimizeQuality;
   margin: 0 auto;
-  border: none; //1px solid;
-  //border-color: $overlay-color;
+  border: none;
 }
 
 blockquote {
@@ -415,3 +402,11 @@ mark {
 #precache-payload{
   display: none;
 }
+
+/* Selected Content
+p,abbr,code,em,strong,cite,h1,h2,h3 { &::selection {
+      background: lighten($gray,1%);
+      text-shadow: 
+        1pt 1pt 1pt $green;  
+}}
+*/
