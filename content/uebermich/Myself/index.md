@@ -18,7 +18,6 @@ categories = ["about"]
 tags = ["me"]
 [extra]
 subtitle = "About me"
-disable_toc = false
 +++
  
 
