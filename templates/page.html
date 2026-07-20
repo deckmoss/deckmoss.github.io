@@ -18,23 +18,30 @@
   {% block right %}
     <div class="inner-post content">
       {% block date %}{{ super() }}{% endblock date %}
-      {% if page.extra.subtitle %}<h1>{{ page.extra.subtitle | safe}}</h1>{% endif %}
-      {% if current_path is starting_with("/posts/") or current_path is starting_with("/diy/") %}
-      {% if config.extra.read_time == true or page.updated %}
-      <div class="post-info"><div class="post-ext-info">
-        {% if config.extra.read_time == true %}
-        <p>{{ page.reading_time }} minute{{ page.reading_time | pluralize }} reading time</p>
-        {% endif %}
-        {% if page.updated %}<p>Updated {{ page.updated | date(format="%d %b %Y") }}</p>{% endif %}
-      </div>
+      {% if page.extra.subtitle %}
+        <h1>{{ page.extra.subtitle | safe}}</h1>
       {% endif %}
+      {% if current_path is starting_with("/posts/") or current_path is starting_with("/diy/") %}   
+        {% if config.extra.read_time == true or page.updated %}
+          <div class="post-info">
+          <div class="post-ext-info">
+            {% if config.extra.read_time == true %}
+              <p>{{ page.reading_time }} minute{{ page.reading_time | pluralize }} reading time</p>
+            {% endif %}
+            {% if page.updated %}
+              <p>Updated {{ page.updated | date(format="%d %b %Y") }}</p>
+            {% endif %}
+          </div>
+            {% endif %}
       {% block music %}
       {% if page.extra.music %}
-        {%- if page.extra.music | length != 2 %}{{ throw(message="'" ~ page.title ~ "' page has invalid 'music' variable") }}{% endif %}
+        {%- if page.extra.music | length != 2 %}
+          {{ throw(message="'" ~ page.title ~ "' page has invalid 'music' variable") }}
+        {% endif %}
         {{ macros::music(artist=page.extra.music[0], track=page.extra.music[1]) }}
-      {% endif %}
+        {% endif %}
       {% endblock music %}
-      </div>
+    </div>
       {% if config.extra.toc == true and not page.extra.disable_toc %}{% if page.toc %}{% if page.toc | length >= 2 %}
       <div class="toc-block">
         <ul>

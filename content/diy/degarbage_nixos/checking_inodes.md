@@ -9,6 +9,7 @@ render = true
 aliases = []
 authors = ["Michael Fröhlich"]
 in_search_index = true
+insert_anchor_links = "left"
 [taxonomies]
 categories = ["DIY"]
 tags = ["Linux","Filesystems"]

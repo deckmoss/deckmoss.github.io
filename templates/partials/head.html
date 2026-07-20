@@ -134,9 +134,9 @@
   {% endif %}
   {% endif %}
   <link rel="stylesheet" type="text/css" href="/langs.css?v={{ get_hash(path='/langs.css', sha_type=512, base64=false) | safe }}">
-  {%- if config.markdown.highlight_code and config.markdown.highlight_theme == "css" %}
-  <link rel="stylesheet" type="text/css" href="/syntax-theme-light.css?v={{ get_hash(path='/syntax-theme-light.css', sha_type=512, base64=false) | safe }}" media="(prefers-color-scheme: light)">
-  <link rel="stylesheet" type="text/css" href="/syntax-theme-dark.css?v={{ get_hash(path='/syntax-theme-dark.css', sha_type=512, base64=false) | safe }}" media="(prefers-color-scheme: dark)">
+  {%- if config.markdown.highlighting.style == "class" %}
+  <link id="giallo-dark" rel="stylesheet" type="text/css" href="/giallo-dark.css?v={{ get_hash(path='/giallo-dark.css', sha_type=512, base64=false) | safe }}" media="(prefers-color-scheme: dark)" >
+  <link id="giallo-light" rel="stylesheet" type="text/css" href="/giallo-light.css?v={{ get_hash(path='/giallo-light.css', sha_type=512, base64=false) | safe }}" media="(prefers-color-scheme: light)" >  
   {%- endif %}
   {%- if config.extra.manifest %}
   <link rel="stylesheet" type="text/css" href="/sw-style.css?v={{ get_hash(path='/sw-style.css', sha_type=512, base64=false) | safe }}">
@@ -152,3 +152,6 @@
   <style>{{ macros::image_style(url=default_post_image) }}</style>
   {%- endif %}
   <style>{{ macros::main_images_style(home_url=home_image, posts_url=post_list_image) }}</style>
+  {% if config.extra.scroll_toggle %}
+    <script type="module" integrity="sha512-{{ get_hash(path='scroll-toggle.js', sha_type=512, base64=true) | safe }}" src="{{ '/scroll-toggle.js?v=' ~ get_hash(path='scroll-toggle.js', sha_type=512, base64=false) | safe }}"></script>
+  {%- endif %}

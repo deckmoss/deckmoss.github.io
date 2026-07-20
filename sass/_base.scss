@@ -25,14 +25,30 @@ body {
   line-height: 1.2
 }
 
+/* 
+  *** global (color) settings
+  *** must be declared here 
+*/
 body {
-  font-family: $base-font;
-  color: $overlay-color;
-  background: $white;
+  font-family: $base-font;              // global font type
+  color: $dark-blue;                // global font color
+  background: $white;                   // global bg color
 }
 
+/*
+  *** relict from my experiment scroll-toggle.js
+  ***
+body.scrollToggle { 
+  h1, h2, h3, h4 {
+    text-shadow: 1px 1px 1pt $shamrock-green, 
+      0.14rem 0.14rem 1pt $aqua, 
+      0.2rem 0.2rem 1pt $red; 
+    transition:all 0.3s; 
+  }
+}
+*/
 a {
-  color: $overlay-color;
+  color: $dark-blue;
   outline: none;
   text-decoration: none
 }
@@ -92,6 +108,8 @@ summary {
 *:before {
   box-sizing: border-box
 }
+
+
 
 h1,
 h2,

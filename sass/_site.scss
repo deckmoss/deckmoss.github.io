@@ -1,5 +1,5 @@
 .block-left {
-  width: 40%;
+  width: 45%;
   float: left;
   .content {
     z-index: 1;
@@ -8,7 +8,7 @@
 }
 
 .block-right {
-  width: 60%;
+  width: 55%;
   float: right;
   overflow-y: auto;
   .content {
@@ -252,17 +252,24 @@ a.zola-anchor {
   text-shadow: none;
 }
 
+/* 
+   *** content style on welcome page/ home page / hp
+   *** 
+*/
  .about-info {
    max-width: 22rem;
   ul {  
     grid-template-rows: repeat(3, auto);
     text-decoration: inherit;
-      li {
+    li { // link fields/ pseudo-buttons(pseudo-btn) on welcome page
         &:before {
-          background: $aqua;
+          background: $blue;
+          display: inline-block;
         }
         a {
           color: $dark-blue;
+          display: block;
+          width: 100%;
         }
       }
   }
@@ -450,7 +457,7 @@ a.zola-anchor {
   h1,
   h2 {
     font-size: 1.6rem;
-    color: lighten($black, 27.8431);
+    color: $overlay-color;//lighten($black, 27.8431);
     &:after {
       position: absolute;
       left: auto;
@@ -462,7 +469,7 @@ a.zola-anchor {
     }
   }
   p {
-    color: $overlay-color;
+    //color: $dark-blue;
     font-size: 19px;
     margin: 10px 0;
     padding-top: 0;
@@ -587,30 +594,28 @@ a.zola-anchor {
 }
 
 .inner-post {
+  h1,h2,h3,h4 {
+    text-shadow: 
+      1px 1px 1pt $shamrock-green;
+  }  
   h1 {
-    font-size: 1.5867rem;//1.8627rem;//1.8627rem;//36px;;
+    font-size: 1.867rem;//1.8627rem;//1.8627rem;//36px;;
     line-height: 2.5625rem;//42px;
     margin: 1.6rem 0 0.3rem 0;
-    text-shadow: 0.2rem 0.2rem 0.5rem lighten($gray,10%);
   }
   h2 {
-    font-size: 1.4644rem;//1.7192rem;//26px;
+    font-size: 1.644rem;//1.7192rem;//26px;
     margin: 1.6rem 0 0.3rem 0;
-    //background-color: linear-gradient(90deg, darken($overlay-color-dark,2%),darken($overlay-color-dark,10%));
-    //box-shadow: 0rem 0.3rem 0.3rem darken($overlay-color-dark,2%);
-    text-shadow: 0.2rem 0.2rem 0.5rem lighten($gray,10%);//darken($overlay-color-dark,5%);
   } 
   h3 {
-    font-size: 1.3515rem;//1.5867rem;
+    font-size: 1.515rem;//1.5867rem;
     //font-weight: bold;
     margin: 0.6rem 0 0.3rem 0;//0.5rem 0;
-    text-shadow: 0.2rem 0.2rem 0.5rem lighten($gray,20%);
   }
   h4 {
-    font-size: 1.2474rem;//1.4644rem;
+    font-size: 1.474rem;//1.4644rem;
     font-weight: bold;
     margin: 0.5rem 0;
-    text-shadow: 0.2rem 0.2rem 0.5rem lighten($gray,35%);
   }
   h5 {
     font-size: 1.2rem;
@@ -662,7 +667,14 @@ a.zola-anchor {
       }
     }
   }
+  .toc-block a { 
+    &:hover {
+      text-shadow: 1px 2px 1px darken($aqua,10%);
+      transition:all 0.3s; 
+    }
+  }
 }
+
 
 .post-ext-info {
   padding: 1% 1%;//6px 10px;
@@ -940,6 +952,9 @@ a.zola-anchor {
   align-items: center;
   height: auto;
   line-height: 0.6rem;
+a {
+      color: $shamrock-green;
+  }
 }
 
 .footer-links {
@@ -1058,12 +1073,22 @@ a.zola-anchor {
   }
 }
 
+/*
+  *** dark color scheme
+  ***
+*/
 @media (prefers-color-scheme: dark) {
   .about-info {
     h1,
     h2 {
       &:after {
         background: $green;
+      }
+    }
+    ul li { // link fields/ pseudo-buttons(pseudo-btn) on welcome page
+      &:before {
+        background: darken($blue, 18%);
+        display: inline-block;
       }
     }
   }
@@ -1129,6 +1154,10 @@ a.zola-anchor {
     border-color: darken($white, 30);
   }
   .inner-post {
+    h1 { text-shadow: 0.2rem 0.2rem 0.5rem lighten($gray,10%); }
+    h2 { text-shadow: 0.2rem 0.2rem 0.5rem lighten($gray,10%); } 
+    h3 { text-shadow: 0.2rem 0.2rem 0.5rem lighten($gray,20%); }
+    h4 { text-shadow: 0.2rem 0.2rem 0.5rem lighten($gray,35%); }
     h1,
     h2, 
     h3,

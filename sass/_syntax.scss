@@ -31,3 +31,26 @@ pre table {
   width: 100%;
   border-collapse: collapse;
 }
+.giallo-l {
+  font-family: $code-font;
+  display: inline-block;
+  min-height: 1lh;
+  width: 100%;
+}
+.giallo-ln {
+  font-family: $code-font;
+  display: inline-block;
+  width: 100%;
+  user-select: none;
+  margin-right: 0.4em;
+  padding: 0.4em;
+  min-width: 3ch;
+  text-align: right;
+  opacity: 0.8;  
+}
+
+.z-hl {
+  background-color: var(--blue);
+  display: inline-block;
+  min-width: 105%;
+}

@@ -1,8 +1,9 @@
-//$white: #d8d8d8;
-$white: #ffffff;
+$white: #f0f0f0;
+//$white: #ffffff;
 //$blue: #0071bc;
 $black: #000000;
-$dark-blue: #0c0c45;
+//$dark-blue: #0c0c45;
+$dark-blue: #111113;
 $gray: #92b7d6;
 //$gray: #d4d4d4;
 $overlay-color: #2c2d33;
@@ -21,3 +22,19 @@ $caps-font: "NF3270", monospace;
 $code-font: "CascadiaCode", monospace;
 
 $small: 750px;
+
+:root {
+    --shamrock-green: #{$shamrock-green};
+    --white: #{$white};
+    --black: #{$black};
+    --dark-blue: #{$dark-blue};
+    --gray: #{$gray};
+    --overlay-color: #{$overlay-color};
+    --overlay-color-dark: #{$overlay-color-dark};
+    --overlay-color-notsodark: #{$overlay-color-notsodark};
+    --green: #{$green};
+    --red: #{$red};
+    --blue : #{$blue};
+    --yellow: #{$yellow};
+    --aqua: #{$aqua};
+}

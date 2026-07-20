@@ -2,7 +2,7 @@
 title = "Datsusara"
 date = 2025-10-23T15:00:00Z
 [taxonomies]
-categories = ["Idea Pool"]
+categories = ["IdeaPool"]
 tags = ["content"]
 [extra]
 subtitle = "First Post"
