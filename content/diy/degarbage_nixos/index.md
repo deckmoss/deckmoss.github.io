@@ -1,7 +1,7 @@
 +++
 title = "How to unchain inodes on NixOS, while getting rid of orphaned packages [Introduction]"
-date = 2025-07-12T11:48:00Z
-updated =  2025-07-15T12:15:00Z
+date = 2025-07-11T11:48:00Z
+updated =  2025-07-12T12:15:00Z
 description = "How to employ your garbage collector sustainably on NixOS"
 weight = 10
 draft = false

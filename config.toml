@@ -10,6 +10,7 @@ minify_html = true
 generate_feeds = false
 build_search_index = true
 generate_sitemap = true
+exclude_paginated_pages_in_sitemap = "all"
 hard_link_static = false
 
 taxonomies = [

@@ -12,9 +12,9 @@ in_search_index = true
 insert_anchor_links = "left"
 [taxonomies]
 categories = ["DIY"]
-tags = ["Linux","Filesystems"]
+tags = ["Linux","Filesystems","NixOS"]
 [extra]
-subtitle = "1. Checking inode consumption on different parition types"
+subtitle = "1. Checking inode consumption on different partition types"
 +++
 
 ## Related Articels
@@ -27,7 +27,7 @@ subtitle = "1. Checking inode consumption on different parition types"
 
 To put an emphasize on slightly differences between some random filesystem types i was able to examine.
 
-### [🧩] A.1 Check Disk Usage
+### A.1 Checking disk usage
 Let us begin with printing the disk usage with the <abbr title="disk free">df</abbr> tool out, to rule this out.
 ```sh
 df -h
@@ -58,7 +58,7 @@ tmpfs           3,1G  200K  3,1G   1% /run/user/1000
 
 ## B Checking out the inode consumption with <abbr title="disk free -inodes">df -i</abbr>
 
-### [🧩] B.1 Optional: btrfs (won't work)
+### B.1 Optional: btrfs (won't work)
 ```sh
 df -i
 ```
@@ -90,7 +90,7 @@ tmpfs              1024      1     1023    1% /run/credentials/getty@tty2.servic
 
 As demonstrated right above, every partition format uses its own technique to preserve or balance a contingent of inodes. Inodes are responsible for storing file-related metadata, like systemlinks, timestamps, ownership, access rights and so on. 
 
-### [🧩] C.1 Optional: btrfs
+### C.1 Optional: btrfs
 ```sh
 sudo btrfs filesystem usage /
 ```
@@ -131,7 +131,7 @@ Metadata,DUP: Size:8.00GiB, Used:4.76GiB (59.56%)
 
 The reserved space for metadata equals 16.00<abbr title="A gibibyte is a more technical unit of memory size than a gigabyte. Gibibytes are based on powers of two, which fit perfectly with binary processing.">GiB</abbr> of total disk space but de-facto only 8.00GiB are allocatable for metadata or inodes. These 8.00GiB are mirrored to maximize file consistency. There should always be a backup, just in case. I guess **DUP** simply means _duplicate_.
 
-### [🧩] C.2 Optional: ext4
+### C.2 Optional: ext4
 
 My root partition on my Fedora system is formatted with ext4. I'm providing `df -i` for a comparison:
 
@@ -158,7 +158,7 @@ tmpfs              1024        2     1022    1% /run/credentials/getty@tty3.serv
 
 <p class="notice_success">✅ <code>df -i</code> is able to read and process inode statistics of ext4 partitions</p>
 
-### [🧩] C.3 Optional: xfs
+### C.3 Optional: xfs
 
 Also for comparison reasons i called for `df -i` statistics from my MX Linux machine with a xfs formated root partition.
 

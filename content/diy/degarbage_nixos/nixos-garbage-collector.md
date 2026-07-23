@@ -19,7 +19,7 @@ subtitle = "2. Running and declaring NixOS garbage-collector routines"
 ## Related articles
 
 ├──<a href="/diy/degarbage_nixos" class="btn btn_info">[ 0. main article ]</a><br>
-╰──<a href="/diy/degarbage_nixos/checking_inodes" class="btn btn_info" border="5px solid black">[ 1. checking partition stats ] </a> 
+╰──<a href="/diy/degarbage_nixos/checking_inodes" class="btn btn_info">[ 1. checking partition stats ] </a> 
 
 ## A Introduction
 
@@ -33,13 +33,13 @@ The reason is simple: NixOS release upgrades or full system updates completed by
 
 <p class="notice_success">✅ NixOS is equipped with its own garbage collector, which can be invoked imperatively whenever needed. This frees inodes instantly in critical situations, such as after a system build fails and reports that no space is left.</p>
 
-╰──<a href="/diy/degarbage_nixos/nixos-garbage-collector/#D_How_to_Clean-Up_Your_System" class="btn btn_success" border="5px solid black">Show Emergency Fix</a>
+╰──<a href="/diy/degarbage_nixos/nixos-garbage-collector/#D_How_to_Clean-Up_Your_System" class="btn btn_success">Show Emergency Fix</a>
 
 ### A.2 The Declarative Approach
 
 <p class="notice_success">✅ Besides the imperative clean-up, it is highly recommended to declare an automated garbage-collection routine in the <abbr title="/etc/nixos/configuration.nix">configuration.nix</abbr> file in order to prevent any unwanted future shortages of filesystem space.</p>
 
-╰──<a href="/diy/degarbage_nixos/nixos-garbage-collector/#E_Declaring_Garbage-Collector_in_Configuration.nix" class="btn btn_success" border="5px solid black">Show Declarative Fix</a>
+╰──<a href="/diy/degarbage_nixos/nixos-garbage-collector/#E_Declaring_Garbage-Collector_in_Configuration.nix" class="btn btn_success">Show Declarative Fix</a>
 
 ## B NixOS Generations for Beginners
 
@@ -105,7 +105,7 @@ sudo btrfs filesystem usage /nix/store
 ```
 Bash --- <cite>firstly mentioned in my [previous article](@/diy/degarbage_nixos/checking_inodes.md#C_Choosing_the_correct_inode_measurement_tool_depending_on_the_filesystem_format) (you must choose the correct tool depending on your local filesystem)</cite>
 
-##### Storage statistics I
+##### Storage Statistics I
 <p class="notice_info">ℹ️ before the invocation of <code>nix store optimise</code>:</p>
 
 ```text,hl_lines=7 15 18

@@ -44,11 +44,12 @@
       <nav class="nav-bar" role="navigation">
         <ul class="nav-menu">
           <li{% if active_path == "/" %} 
-            class="nav-active"
-          {% endif %}>
-          <a href="{{ "/" | safe }}">Home</a></li>
+              class="nav-active"
+            {% endif %}>
+            <a href="{{ "/" | safe }}">Home</a>
+          </li>
           {% if config.extra.menu.posts == true %}
-            <li{% if active_path is starting_with("/posts/") or active_path is starting_with("/tags/") or active_path is starting_with("/categories/")%} 
+            <li{% if active_path is starting_with("/posts/") or active_path is starting_with("/tags/") or active_path is starting_with("/categories/") %} 
                 class="nav-active"
               {% endif %}>
               <a href="{{ "/posts/" | safe }}" aria-haspopup="true">{{ config.extra.menu.posts_label }}</a>
