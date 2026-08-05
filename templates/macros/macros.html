@@ -1,5 +1,21 @@
 {%- macro main_images_style(home_url, posts_url) -%}
-#posts .block-left{background:linear-gradient(30deg,rgba(255,0,0,0.2),rgba(0,255,128,0.2)),url("{{ posts_url | safe }}") no-repeat;background-size:contain;background-position:center;background-color: #1a1a1a;}.block-left{background:linear-gradient(rgba(44,45,51,0.76),rgba(44,45,51,0.76)),url("{{ home_url | safe }}") no-repeat;background-size:cover;background-position:center;}
+
+.block-left {
+  background: 
+    linear-gradient(rgba(44,45,51,0.50)),
+    url("{{ home_url | safe }}") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#posts .block-left {
+  background: 
+    linear-gradient(30deg,rgba(255,0,0,0.2),rgba(0,255,128,0.2)),
+    url("{{ posts_url | safe }}") no-repeat;
+  background-size: contain;
+  background-position: center;
+    background-color: #1a1a1a;
+}
+
 {%- endmacro main_images_style -%}
 
 {%- macro image_style(url) -%}

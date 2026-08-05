@@ -74,9 +74,10 @@ footer = true
 [extra.images]
 home = "EMotor_Zeche20121005_132704.jpg"
 post_list =  "obsidian.png"
-default_post = "ffmultra.gif"
+default_post = "ffmultra.webp"
 categories = [
     { name = "media", image = "https://raw.githubusercontent.com/bearcott/8bit-art/master/cities/urban.gif" },
+    { name = "about", image = "img/suns.webp" },
 ]
 
 [extra.menu]

@@ -2,7 +2,7 @@
 import { showToast } from "./notifications.js";
 
 const data = document.getElementById("precache-payload").textContent;
-const precacheList = data.split(" ");
+const precacheList = data.split("+");
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", async () => {
     try {

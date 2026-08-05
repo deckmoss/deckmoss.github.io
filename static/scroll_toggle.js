@@ -2,7 +2,9 @@ const THRESHOLD = 50;
 
 document.addEventListener('DOMContentLoaded', () => {
   'inner-post-page'
-  const scroller = document.querySelector('.content');
+  const scroller = document.querySelector("#posts > div.block-right > div.inner-post.content");
+  scroller.focus();
+  console.log(scroller);
 
   if (!scroller) {
     console.warn('Scroller not found');

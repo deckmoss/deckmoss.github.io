@@ -86,7 +86,7 @@ sudo dmidecode -t memory
 ```
 ### Output:
 
-```c
+```yaml
 # dmidecode 3.6
 Getting SMBIOS data from sysfs.
 SMBIOS 3.1.1 present.
