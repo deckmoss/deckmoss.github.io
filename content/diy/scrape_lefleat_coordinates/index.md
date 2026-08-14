@@ -95,7 +95,7 @@ gpsbabel -t -i csv -f geoCoordinates.txt -o gpx -F geoCoordinates.gpx
 
 I also created a bash function containing a pipeline, which you can copy into your `~/.bashrc` file. You'll find it at [the end of this article](#The_Function:).
 
-## F Importing the GPX File by OsmAnd~
+## G Importing the GPX File by OsmAnd~
 
 <p class="notice_warning">⚠️ This will import additional waymarks with non-informative names into your standard favorite profile, may cluttering it up depending on how many you have actually scraped.</p>
 
@@ -109,11 +109,11 @@ I also created a bash function containing a pipeline, which you can copy into yo
 6. OsmAnd~ should be on screen and displaying it's import dialog. Tap on the `Favorit` entry.
 {{ image(src="osmand-import-dialog.png", link="osmand-import-dialog.png", alt="Screenshot of the OsmAnd~ app's -Import- dialog where a pointer is placed on the -Favorit- entry", caption="Android OsmAnd~ Import Dialog on Waydroid") }}
 
-## G Final Impression
+## H Final Impression
 
 {{ image(src="osmand-w-spots.png", link="osmand-w-spots.png", alt="Screenshot of the OsmAnd~ app's map view displaying imported graphiti spots in yellow", caption="Android OsmAnd~ Map Perspective on Waydroid") }}
 
-## H Optimizations
+## I Optimizations
 
 As you already may have noticed, the procedure above has still potential for optimizations. So let's start by writing a simple pipeline.
 
