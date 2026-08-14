@@ -120,10 +120,14 @@ As you already may have noticed, the procedure above has still potential for opt
 ##### The Pipeline:
 
 ```bash
+gpsbabel -t -i csv -f <(\
 curl -L --compressed https://www.your-leaflet.page/foo \
-| grep -Eo "[-]?[[:alnum:]]{1,2}\.[[:alnum:]]*, [-]?[[:alnum:]]{1,2}\.[[:alnum:]]*" \
-| gpsbabel -t -i csv -o gpx - -F geoCoordinates.gpx
+	| grep -Eo "[-]?[[:alnum:]]{1,2}\.[[:alnum:]]*, [-]?[[:alnum:]]{1,2}\.[[:alnum:]]*"\
+) -o gpx -F geoCoordinates.gpx
 ```
+
+Regarding to `gpsbabel -h`, pipelining should be possible with `-i -` for stdin. I tried around for some time and gave up. I inserted a `file here substitution` instead and it worked.
+
 _Ok, now let's wrap up this pipeline into a function!_
 
 ##### The Function:
