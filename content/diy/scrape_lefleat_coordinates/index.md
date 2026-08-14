@@ -79,7 +79,7 @@ curl -L --compressed https://www.your-leaflet.page/foo > somepage.html
 
 ```bash
 cat somepage.html \
-| grep -Eo "[-]?[[:alnum:]]{1,2}\.[[:alnum:]]*, [-]?[[:alnum:]]{1,2}\.[[:alnum:]]*"  \
+| grep -Eo "[-]?[[:alnum:]]{1,2}\.[[:alnum:]]*, [-]?[[:alnum:]]{1,2}\.[[:alnum:]]*" \
 > geoCoordinates.txt
 ```
 
@@ -142,6 +142,12 @@ leaflet2gpx() {
         | grep -Eo "[-]?[[:alnum:]]{1,2}\.[[:alnum:]]*, [-]?[[:alnum:]]{1,2}\.[[:alnum:]]*"\
     ) -o gpx -F ${2};
 }
+```
+
+Don't forget to reload your modified `~/.bashrc` file afterwards:
+
+```bash
+source ~/.bashrc
 ```
 
 Example call:
