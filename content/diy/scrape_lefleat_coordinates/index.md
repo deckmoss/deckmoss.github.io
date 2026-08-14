@@ -121,7 +121,7 @@ As you already may have noticed, the procedure above has still potential for opt
 
 ```bash
 gpsbabel -t -i csv -f <(\
-curl -L --compressed https://www.your-leaflet.page/foo \
+	curl -L --compressed https://www.your-leaflet.page/foo \
 	| grep -Eo "[-]?[[:alnum:]]{1,2}\.[[:alnum:]]*, [-]?[[:alnum:]]{1,2}\.[[:alnum:]]*"\
 ) -o gpx -F geoCoordinates.gpx
 ```
