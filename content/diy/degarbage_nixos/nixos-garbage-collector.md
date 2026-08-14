@@ -1,5 +1,5 @@
 +++
-title = "How to unchain inodes on NixOS, while getting rid of orphaned packages [Part 2]"
+title = "How to free inodes on NixOS, while getting rid of orphaned packages [Part 2]"
 date = 2025-07-15T14:02:00Z
 updated =  2025-12-01T12:10:00Z
 description = "How to run and declare NixOS garbage-collector routines"
@@ -10,7 +10,7 @@ aliases = []
 authors = ["Michael Fröhlich"]
 in_search_index = true
 [taxonomies]
-categories = ["DIY"]
+categories = ["NixOS"]
 tags = ["NixOS"]
 [extra]
 subtitle = "2. Running and declaring NixOS garbage-collector routines"
@@ -37,7 +37,7 @@ The reason is simple: NixOS release upgrades or full system updates completed by
 
 ### A.2 The Declarative Approach
 
-<p class="notice_success">✅ Besides the imperative clean-up, it is highly recommended to declare an automated garbage-collection routine in the <abbr title="/etc/nixos/configuration.nix">configuration.nix</abbr> file in order to prevent any unwanted future shortages of filesystem space.</p>
+<p class="notice_success">✅ Besides the imperative clean-up, it also optional to declare an automated garbage-collection routine in the <abbr title="/etc/nixos/configuration.nix">configuration.nix</abbr> file in order to prevent any unwanted future shortages of filesystem space.</p>
 
 ╰──<a href="/diy/degarbage_nixos/nixos-garbage-collector/#E_Declaring_Garbage-Collector_in_Configuration.nix" class="btn btn_success">Show Declarative Fix</a>
 
@@ -50,7 +50,7 @@ The <code>"switch"</code>-argument causes the system to transition directly to t
 ```sh
 nixos-rebuild "switch" --use-remote-sudo
 ```
-<cite>Bash</cite> --- <cite>like in the [official NixOS Wiki](https://nixos.wiki/wiki/Nixos-rebuild) (seen in November 2025)</cite>
+Bash --- <cite>like in the [unofficial NixOS Wiki](https://nixos.wiki/wiki/Nixos-rebuild) (seen in November 2025)</cite>
 
 A newly created entry at the top of your boot menu refers to the latest generation while preserving the previous ones.
 
@@ -59,7 +59,7 @@ This design guarantees an almost incorruptible operating system. In case of misc
 <cite>In my opinion, this is the most valuable advantage of using NixOS.</cite>
 </p>
 
-{{ image(src="mm_nixos_profiles.png", link="mm_nixos_profiles.png", alt="Mermaid Diagram of NixOS Profiles", caption="Diagram of NixOS User Environment Profiles") }} 
+{{ image(src="mm_nixos_profiles.png", link="nixos-garbage-collector/mm_nixos_profiles.png", alt="Mermaid Diagram of NixOS Profiles", caption="Diagram of NixOS User Environment Profiles") }} 
 
 ### B.1 How to List All Existing Generations
 
@@ -76,6 +76,8 @@ Bash --- <cite>lists all existing generations of the system profile</cite>
 
 ## D How to Clean-Up Your System 
 
+In this paragraph, you'll find two distinct methods for freeing up some storage. The first method wipes out older generations. The second method simply optimizes the used space of the local <abbr title="/nix/store">nix-store</abbr>. Both methods are useful and can be used in sequence.
+
 ### D.1 Removing Legacy Generations Imperatively
 
 As [mentioned above](@/diy/degarbage_nixos/nixos-garbage-collector.md#A_Introduction), we can free some filesystem space by removing legacy generations of our active profile. 
@@ -87,16 +89,18 @@ Bash --- <cite>this removes all generations including their orphaned packages ol
 
 ### D.2 Deduplicating Store Dependencies
 
-The <code>nix store optimise</code> operation collects all identical files in your nix-store and replaces each one with a hard link that points to a single original file. This usually frees about 25–30 % of the store. Theoretically, it removes duplicate inodes and the filesystem blocks they were holding pointers to.
+<p class="notice_warning">⚠️ This operation is very hungry for resources and may consume a lot of time.</p>
 
-<p class="notice_warning">⚠️ Attention! This operation is very hungry for resources and may consume a lot of time.</p>
+The <code>nix store optimise</code> operation collects all identical files in your nix-store and replaces each one with a hard link that points to a single original file. This usually frees about 25–30 % of the store. Theoretically, it removes duplicate inodes and the filesystem blocks they were holding pointers to.
 
 ```sh
 nix store optimise
 ```
-<cite>Bash</cite> --- <cite>replaces identical files in the store by hard links</cite>
+Bash --- <cite>replaces identical files in the store by hard links</cite>
 
-## D.2 Results of Self-Experiment
+<p class="notice_info">ℹ️ It is also possible to automate the <a href="/diy/degarbage_nixos/nixos-garbage-collector/#D.2_Deduplicating_Store_Dependencies">optimization procedure</a> via declaration. Please read the <a href="https://nixos.wiki/wiki/Storage_optimization">corresponding unofficial NixOS wiki article</a> for further instructions.</p>
+
+### D.3 Results of Self-Experiment
 
 I use btrfs as my filesystem, so I must run **this** command to plot a summary of the <abbr title="/nix/store">nix-store</abbr> filesystem statistics:
 
@@ -178,7 +182,10 @@ The procedure freed
 
 ## E Declaring Garbage-Collector in Configuration.nix
 
+<p class="notice_warning">⚠️ This removes old generations without asking for confirmation. If your last known stable generation is older than 30 days, it will be deleted unless it is also the latest/current generation. You should disable this routine whenever your latest generation is unstable (e.g., if it does not boot). It might be less critical to <a href="#D.1_Removing_Legacy_Generations_Imperatively">perform those cleanups manually</a>.</p>
+
 Adding these two lines to the <abbr title="/etc/nixos/configuration.nix">configuration.nix</abbr> results in automatic garbage collection whenever `nixos-rebuild` is triggered to build the next generation of your system.
+
 
 ```nix
 {
@@ -187,5 +194,3 @@ Adding these two lines to the <abbr title="/etc/nixos/configuration.nix">configu
 }
 ```
 configuration.nix --- <cite>removes all generations older than 30 days during every build</cite>
-
-<p class="notice_info">ℹ️ It is also possible to automate the <a href="/diy/degarbage_nixos/nixos-garbage-collector/#D.2_Deduplicating_Store_Dependencies">optimization procedure</a> via declaration. Please read the <a href="https://nixos.wiki/wiki/Storage_optimization">corresponding official NixOS wiki article</a> for further instructions.</p>

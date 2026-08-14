@@ -1,5 +1,5 @@
 +++
-title = "How to unchain inodes on NixOS, while getting rid of orphaned packages [Part 1]"
+title = "How to free inodes on NixOS, while getting rid of orphaned packages [Part 1]"
 date = 2025-07-12T11:48:00Z
 updated =  2025-08-07T16:29:00Z
 description = "1. Checking inode consumption on different parition types"
@@ -11,7 +11,7 @@ authors = ["Michael Fröhlich"]
 in_search_index = true
 insert_anchor_links = "left"
 [taxonomies]
-categories = ["DIY"]
+categories = ["NixOS"]
 tags = ["Linux","Filesystems","NixOS"]
 [extra]
 subtitle = "1. Checking inode consumption on different partition types"

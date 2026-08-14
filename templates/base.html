@@ -52,9 +52,9 @@
             <li{% if active_path is starting_with("/posts/") or active_path is starting_with("/tags/") or active_path is starting_with("/categories/") %} 
                 class="nav-active"
               {% endif %}>
-              <a href="{{ "/posts/" | safe }}" aria-haspopup="true">{{ config.extra.menu.posts_label }}</a>
+              <a href="{{ "/diy/" | safe }}" aria-haspopup="true">{{ config.extra.menu.posts_label }}</a>
               <ul class="dropdown" aria-label="submenu">
-                <li><a href="{{ "/posts/" | safe }}">Index</a></li>
+                <li><a href="{{ "/diy/" | safe }}">Index</a></li>
                 <li><a href="{{ "/tags/" | safe }}">Tags</a></li>
                 <li><a href="{{ "/categories/" | safe }}">Categories</a></li>
               </ul>
@@ -88,7 +88,7 @@
       {% endblock nav %}
   {% block right %}
       <div class="content">
-        {% block date %}<div class="date-highlight">{% if page.date %}{{ page.date | date(format="%d %b %Y") }}{% else %}<a href='/posts/modern_internet/'>🔺</a>{% endif %}</div>{% endblock date %}
+        {% block date %}<div class="date-highlight">{% if page.date %}{{ page.date | date(format="%d %b %Y") }}{% else %}🔺{% endif %}</div>{% endblock date %}
         {% block content %}{% endblock content %}
       {% block paginator %}
       {% if paginator.previous or paginator.next %}

@@ -29,7 +29,7 @@ subtitle = "How to hack your vendor's RAM capacity"
 
 ## A Vendors may lie for profit:
 
-<p class="notice_warning"><strong>🐧 Attention! you'll need a <em>linux</em> powered operating system!</strong></p>
+<p class="notice_warning"><strong>🐧 You'll need a <em>linux</em> powered operating system!</strong></p>
 <p class="notice_info"><strong>For the maximization of profits, vendors may lie about the actual supported random access memory limits. <br>It could also be a fact that later firmware releases support greater amounts than the initial ones. </strong></p>
 
 <p>

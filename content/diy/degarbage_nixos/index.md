@@ -1,5 +1,5 @@
 +++
-title = "How to unchain inodes on NixOS, while getting rid of orphaned packages [Introduction]"
+title = "How to free inodes on NixOS, while getting rid of orphaned packages [Introduction]"
 date = 2025-07-11T11:48:00Z
 updated =  2025-07-12T12:15:00Z
 description = "How to employ your garbage collector sustainably on NixOS"
@@ -10,7 +10,7 @@ aliases = []
 authors = ["Michael Fröhlich"]
 in_search_index = true
 [taxonomies]
-categories = ["DIY"]
+categories = ["NixOS"]
 tags = ["NixOS","Linux"]
 [extra]
 subtitle = "Employ your garbage collector sustainably on NixOS."
