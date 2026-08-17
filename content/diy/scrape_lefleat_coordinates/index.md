@@ -79,7 +79,7 @@ curl -L --compressed https://www.your-leaflet.page/foo > somepage.html
 
 ```bash
 cat somepage.html \
-| grep -Eo "[-]?[[:alnum:]]{1,2}\.[[:alnum:]]*, [-]?[[:alnum:]]{1,2}\.[[:alnum:]]*" \
+| grep -Eo "[-]?[[:alnum:]]{1,2}\.[[:alnum:]]*, [-]?[[:alnum:]]{1,3}\.[[:alnum:]]*" \
 > geoCoordinates.txt
 ```
 
@@ -122,7 +122,7 @@ As you already may have noticed, the procedure above has still potential for opt
 ```bash
 gpsbabel -t -i csv -f <(\
 	curl -L --compressed https://www.your-leaflet.page/foo \
-	| grep -Eo "[-]?[[:alnum:]]{1,2}\.[[:alnum:]]*, [-]?[[:alnum:]]{1,2}\.[[:alnum:]]*"\
+	| grep -Eo "[-]?[[:alnum:]]{1,2}\.[[:alnum:]]*, [-]?[[:alnum:]]{1,3}\.[[:alnum:]]*"\
 ) -o gpx -F geoCoordinates.gpx
 ```
 
@@ -139,7 +139,7 @@ leaflet2gpx() {
     # usage: leaflet2gpx <URL> <Output File Name>
     gpsbabel -t -i csv -f <(\ 
         curl -L --compressed ${1} \
-        | grep -Eo "[-]?[[:alnum:]]{1,2}\.[[:alnum:]]*, [-]?[[:alnum:]]{1,2}\.[[:alnum:]]*"\
+        | grep -Eo "[-]?[[:alnum:]]{1,2}\.[[:alnum:]]*, [-]?[[:alnum:]]{1,3}\.[[:alnum:]]*"\
     ) -o gpx -F ${2};
 }
 ```
