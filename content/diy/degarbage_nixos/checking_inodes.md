@@ -182,7 +182,7 @@ tmpfs            126496     36   126460    1% /run/user/1000
 
 ## D Comparison of btrfs, ext4 and xfs
 
-<p class="notice_info">ℹ️ Depending on your partition type you must find the correct tool to gather the wanted information about actual inode consumption.<br>E.g. for btrfs i would go for the <a href="/diy/degarbage_nixos/checking_inodes/#[%F0%9F%A7%A9]_C.1_Optional:_btrfs">btrfs usage tool</a> and then check the metadata paragraph.<br><br>For at least <code>ext4</code> and <code>xfs</code> filesystems will <code>df -i</code> do the trick</p>
+<p class="notice_info">ℹ️ Depending on your partition type you must find the correct tool to gather the wanted information about actual inode consumption.<br>E.g. for btrfs i would go for the <a href="/diy/degarbage_nixos/checking_inodes/#C.1_Optional:_btrfs">btrfs usage tool</a> and then check the metadata paragraph.<br><br>For at least <code>ext4</code> and <code>xfs</code> filesystems will <code>df -i</code> do the trick</p>
 
 
 ╰──<a href="/diy/degarbage_nixos/nixos-garbage-collector" class="btn btn_success">[ next ]</a>
