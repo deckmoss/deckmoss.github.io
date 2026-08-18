@@ -64,8 +64,8 @@ tags = false
 subtitle = false
 
 [extra.home]
-title1 = "michael"
-title2 = "fröhlich"
+title1 = ""
+title2 = "nomad"
 subtitle = "╼weblog╾"
 glitch = true #false
 logo = { enabled = false, height = "100", width = "100" }
@@ -101,8 +101,8 @@ links = [
 ]
 
 [extra.social]
-email = "codeeeee@posteo.it"
-#mastodon = "server/@user_name"
+email = "deckmoss@posteo.eu"
+mastodon = "techhub.social/@trurl"
 bookwyrm = "ramblingreaders.org/user/truerly"
 #twitter = "user_name"
 #facebook = "user_name"

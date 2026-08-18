@@ -99,7 +99,7 @@ identifying the common and individual properties of every system, system cluster
 
 ## Digital Autonomy Since 2007
 
-As a teenager with more recreational time and enthusiasm than budget, I liberated myself from the disadvantages of commercial software. 
+As a teenager with more recreational time and enthusiasm than budget, I liberated myself by the power of libre and open source software.
 
 Self-Taught Engagement in 
 - Free Operating Systems
