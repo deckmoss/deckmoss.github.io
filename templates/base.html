@@ -49,7 +49,7 @@
             <a href="{{ "/" | safe }}">Home</a>
           </li>
           {% if config.extra.menu.posts == true %}
-            <li{% if active_path is starting_with("/posts/") or active_path is starting_with("/tags/") or active_path is starting_with("/categories/") %} 
+            <li{% if active_path is starting_with("/diy/") or active_path is starting_with("/tags/") or active_path is starting_with("/categories/") %} 
                 class="nav-active"
               {% endif %}>
               <a href="{{ "/diy/" | safe }}" aria-haspopup="true">{{ config.extra.menu.posts_label }}</a>
