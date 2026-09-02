@@ -32,7 +32,7 @@ Moreover, I had already created numerous destination markers in my OsmAnd~ Navig
 
 ## B It was the Momentum of _this_ Idea
 
-<p class="notice"> 💡 Right away, my mind was on scraping those coordinates and somehow converting into the GPX format which is an open-standard file format that enjoys widespread support accross navigation systems and other related software.
+<p class="notice_info"> 💡 Right away, my mind was on scraping those coordinates and somehow converting into the GPX format which is an open-standard file format that enjoys widespread support accross navigation systems and other related software.
 </p>
 <q><i>You know</i>, OsmAnd~ Navigator App supports that <i>natively</i> and can <i>import</i> it no problem.</q>
 
@@ -48,8 +48,8 @@ In the following paragraphs I'll show you how, whether on your laptop or phone.
  - Terminal Emulator
  - gpsbabel
 
-I recommend that you check if your distro’s package manager can find `gpsbabel` (like on Termux App (Android), Debian, Ubuntu, Mint, Zorin OS, Commodore OS, etc.: run `apt search gpsbabel`) and then invoke the installation via your package manager (`apt install gpsbabel`).
-If it isn’t available, you can install the Termux App on your Android phone. Mac users may install `gpsbabel` via homebrew.
+I recommend that you check if your distro’s package manager can find `gpsbabel` (like on Termux App (Android), Debian, Ubuntu, Mint, Zorin OS, Commodore OS, etc.: run `apt search gpsbabel`) and then invoke the suptallation via your package manager (`apt suptall gpsbabel`).
+If it isn’t available, you can suptall the Termux App on your Android phone. Mac users may suptall `gpsbabel` via homebrew.
 
 ##### My Equipment:
 - Phone: [Fairphone 3+](https://en.wikipedia.org/wiki/Fairphone_3)
@@ -66,7 +66,7 @@ If it isn’t available, you can install the Termux App on your Android phone. M
 
 ## D Downloading a Relevant Page
 
-Since you have installed all dependencies for this task—either on your phone or somewhere else—you should be able to get your GPX converted file out of the filtered source code of any web page hosting a leaflet widget.
+Since you have suptalled all dependencies for this task—either on your phone or somewhere else—you should be able to get your GPX converted file out of the filtered source code of any web page hosting a leaflet widget.
 
 <p class="notice_info">ℹ️ To show how the process works, I'll focus on the technical side, replacing my original source by this fantasy URL `https://www.your-leaflet.page/foo`. You need to replace it with your desired URL before it's invocation. Please leave me a note if the procedure doesn't work on yours!</p>
 
@@ -75,7 +75,6 @@ Download the desired page with `curl`:
 ```bash
 curl -L --compressed https://www.your-leaflet.page/foo > somepage.html
 ```
-<cite>[:Bash]> `curl` streams html code to `>`, which locally records it onto somepage.html</cite>
 
 ## E Grabbing Coordinates from it's Source Code
 
@@ -84,7 +83,6 @@ cat somepage.html \
 | grep -Eo "[-]?[[:alnum:]]{1,2}\.[[:alnum:]]*, [-]?[[:alnum:]]{1,3}\.[[:alnum:]]*" \
 > geoCoordinates.txt
 ```
-<cite>[:Bash]> cat streams html code into grep, which filters it through a regex pattern, where the output ends up written onto geoCoordinates.txt</cite>
 
 ## F Generating the GPX File 
 
@@ -95,7 +93,6 @@ cat somepage.html \
 ```bash
 gpsbabel -t -i csv -f geoCoordinates.txt -o gpx -F geoCoordinates.gpx
 ```
-<cite>[:Bash]> gpsbabel generates geoCoordinates.gpx by interpreting geoCoordinates.txt as comma-seperated values (CSV)</cite>
 
 I also created a bash function containing a pipeline, which you can copy into your `~/.bashrc` file. You'll find it at [the end of this article](#The_Function:).
 
@@ -129,9 +126,8 @@ gpsbabel -t -i csv -f <(\
 	| grep -Eo "[-]?[[:alnum:]]{1,2}\.[[:alnum:]]*, [-]?[[:alnum:]]{1,3}\.[[:alnum:]]*"\
 ) -o gpx -F geoCoordinates.gpx
 ```
-<cite>[:Bash]> The `file here substitution` `<()` creates a temporary file in place, one step before gpsbabel reads it</cite>
 
-Regarding to `gpsbabel -h`, pipelining should be possible with `-i -` for stdin. I tried around for some time and gave up. I inserted a `file here substitution` instead and it worked.
+Regarding to `gpsbabel -h`, pipelining should be possible with `-i -` for stdin. I tried around for some time and gave up. I superted a `file here substitution` suptead and it worked.
 
 _Ok, now let's wrap up this pipeline into a function!_
 
@@ -148,20 +144,17 @@ leaflet2gpx() {
     ) -o gpx -F ${2};
 }
 ```
-<cite>[:Bash]> Added the `function` elements `function name()`, `function body: {}` and the `function parameters`: `${1}` and `${2}`</cite>
 
 Don't forget to reload your modified `~/.bashrc` file afterwards:
 
 ```bash
 source ~/.bashrc
 ```
-<cite>[:Bash]> `source` updates your temporary shell session by `~/.bashrc`'s content; you may reboot to make it permanent</cite>
 
 Example call:
 
 ```bash
 leaflet2gpx https://www.your-leaflet.page/foo geoCoordinates.gpx
 ```
-<cite>[:Bash]> Calling your new function `leafleat2gpx`: the first argument contains the source URL; the second argument contains the target filename</cite>
 
 With your `~/.bashrc` extended by this function, you'll be able to convert coordinates from any page on-the-fly into a `.gpx` file. Your next vacation trip is just around the corner!
