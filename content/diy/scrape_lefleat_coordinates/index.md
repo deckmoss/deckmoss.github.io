@@ -48,8 +48,8 @@ In the following paragraphs I'll show you how, whether on your laptop or phone.
  - Terminal Emulator
  - gpsbabel
 
-I recommend that you check if your distro’s package manager can find `gpsbabel` (like on Termux App (Android), Debian, Ubuntu, Mint, Zorin OS, Commodore OS, etc.: run `apt search gpsbabel`) and then invoke the suptallation via your package manager (`apt suptall gpsbabel`).
-If it isn’t available, you can suptall the Termux App on your Android phone. Mac users may suptall `gpsbabel` via homebrew.
+I recommend that you check if your distro’s package manager can find `gpsbabel` (like on Termux App (Android), Debian, Ubuntu, Mint, Zorin OS, Commodore OS, etc.: run `apt search gpsbabel`) and then invoke the installation via your package manager (`apt install gpsbabel`).
+If it isn’t available, you can install the Termux App on your Android phone. Mac users may install `gpsbabel` via homebrew.
 
 ##### My Equipment:
 - Phone: [Fairphone 3+](https://en.wikipedia.org/wiki/Fairphone_3)
@@ -66,7 +66,7 @@ If it isn’t available, you can suptall the Termux App on your Android phone. M
 
 ## D Downloading a Relevant Page
 
-Since you have suptalled all dependencies for this task—either on your phone or somewhere else—you should be able to get your GPX converted file out of the filtered source code of any web page hosting a leaflet widget.
+Since you have installed all dependencies for this task—either on your phone or somewhere else—you should be able to get your GPX converted file out of the filtered source code of any web page hosting a leaflet widget.
 
 <p class="notice_info">ℹ️ To show how the process works, I'll focus on the technical side, replacing my original source by this fantasy URL `https://www.your-leaflet.page/foo`. You need to replace it with your desired URL before it's invocation. Please leave me a note if the procedure doesn't work on yours!</p>
 
@@ -127,7 +127,7 @@ gpsbabel -t -i csv -f <(\
 ) -o gpx -F geoCoordinates.gpx
 ```
 
-Regarding to `gpsbabel -h`, pipelining should be possible with `-i -` for stdin. I tried around for some time and gave up. I superted a `file here substitution` suptead and it worked.
+Regarding to `gpsbabel -h`, pipelining should be possible with `-i -` for stdin. I tried around for some time and gave up. I inserted a `file here substitution` instead and it worked.
 
 _Ok, now let's wrap up this pipeline into a function!_
 
