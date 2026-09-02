@@ -91,7 +91,7 @@ Bash --- <cite>this removes all generations including their orphaned packages ol
 
 <p class="notice_warning">⚠️ This operation is very hungry for resources and may consume a lot of time.</p>
 
-The <code>nix store optimise</code> operation collects all identical files in your nix-store and replaces each one with a hard link that points to a single original file. This usually frees about 25–30 % of the store. Theoretically, it removes duplicate inodes and the filesystem blocks they were holding pointers to.
+The <code>nix store optimise</code> operation collects all identical files in your nix-store and replaces each one with a hard link that points to a single original file. This usually frees about 25–30 % of the store. This frees memory in the data volume as well as in the inode table or metadata volume.
 
 ```sh
 nix store optimise
