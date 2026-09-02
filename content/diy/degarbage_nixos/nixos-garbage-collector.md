@@ -59,7 +59,7 @@ This design guarantees an almost incorruptible operating system. In case of misc
 <cite>In my opinion, this is the most valuable advantage of using NixOS.</cite>
 </p>
 
-{{ image(src="mm_nixos_profiles.png", link="nixos-garbage-collector/mm_nixos_profiles.png", alt="Mermaid Diagram of NixOS Profiles", caption="Diagram of NixOS User Environment Profiles") }} 
+{{ image(src="mm_nixos_profiles.png", link="mm_nixos_profiles.png", alt="Mermaid Diagram of NixOS Profiles", caption="Diagram of NixOS User Environment Profiles") }} 
 
 ### B.1 How to List All Existing Generations
 
