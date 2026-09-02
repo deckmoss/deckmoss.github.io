@@ -25,9 +25,9 @@ subtitle = "2. Running and declaring NixOS garbage-collector routines"
 
 As investigated in my [previous article](@/diy/degarbage_nixos/checking_inodes.md), NixOS consumes an increasing amount of the limited metadata storage area of a filesystem with each new build. 
 
-For instance, I use NixOS on my regular desktop computers, so I rarely add or remove more than one or two packages in my <abbr title="/etc/nixos/configuration.nix">configuration.nix</abbr> file before invoking a rebuild process, which then consumes far more space in the metadata area than in the data area
+For instance, I use NixOS on my regular desktop computers, so I rarely add or remove more than one or two packages in my <abbr title="/etc/nixos/configuration.nix">configuration.nix</abbr> file before invoking a rebuild process, which then consumes far more space in the metadata area than in the data area. Each rebuild usually creates up to tens of thousands of new symbolic links. Each symbolic link consumes one inode.
 
-The reason is simple: NixOS release upgrades or full system updates completed by a rebuild produce [the latest generation](@/diy/degarbage_nixos/nixos-garbage-collector.md#B_NixOS_Generations_for_Beginners), which installs the latest version of each package and its individual dependencies without removing their previous versions. Those procedures have the potential to double the amount of storage used.
+Another reason: NixOS release upgrades or full system updates completed by a rebuild produce [the latest generation](@/diy/degarbage_nixos/nixos-garbage-collector.md#B_NixOS_Generations_for_Beginners), which installs the latest version of each package and its individual dependencies without removing their previous versions. Upgrade procedures have the potential to double the amount of storage used.
 
 ### A.1 The Emergency Fix
 
